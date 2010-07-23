@@ -1,0 +1,35 @@
+<% form_for @comment, :url => comment_url(@blog.permalink) do |f| %>
+<div class='comments'>
+  <h3>Post your comment:</h3>
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :email -%>
+    <%= f.text_field :email -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title -%>
+  </div>
+
+  <div class='field message_field'>
+    <%= f.label :body -%>
+    <%= f.text_area :body, :rows => 8 -%>
+  </div>
+  
+  <% if BlogSetting.enable_captcha %>
+    <h3>Are you human?</h3>
+    <div class='field'>
+      <%= Raptcha.input :kw => {:background => 'black'} %>
+    </div>
+  <% end %>
+  
+  <div class='actions'>
+    <%= f.submit 'Add comment' %>
+  </div>
+</div>
+<% end -%>

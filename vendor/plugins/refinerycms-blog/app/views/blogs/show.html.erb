@@ -1,0 +1,44 @@
+<% content_for :head_after_javascript_libraries do %>
+  <%= auto_discovery_link_tag(:rss, blog_url(:format => 'rss'), {:title => "#{RefinerySetting.find_or_set(:site_name, "Company Name")} Blog"}) %>
+<% end %>
+
+<% content_for :body_content_title do %>
+  <%= @blog.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <div class="body">
+    <%= @blog.body %>
+  </div>
+  
+  <%= render :partial => '/blogs/post/authors' %>
+  <%= render :partial => '/blogs/post/categories' %>
+  <%= render :partial => '/blogs/post/tags' %>
+
+  <%= render :partial => 'comments' %>
+  
+  <% if @blog.allow_comment %>
+  
+    <!-- success message -->
+    <% flash.each do |key, value| %>
+      <div id="flash">
+        <%= value %>
+      </div>
+    <% end %>
+    
+    <%= error_messages_for :comment, :header_message => "Whoops there was a small problem",
+                                     :message => "The following problems need to be corrected:" %>
+                                    
+    <%= render :partial => 'form' %>
+  <% end %>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2>Publishing Date</h2>
+  <p>Posted on <%= @blog.publishing_date.to_s(:long_ordinal) %></p>
+
+  <%= render :partial => 'see_also' %>
+  <%= render :partial => 'side_body' %>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
