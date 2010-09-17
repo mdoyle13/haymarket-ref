@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <%= render :partial => "/shared/head", :locals => {:theme => true} %>
+  <body>
+    <%= render :partial => "/shared/site_bar" %>
+	<div id="'header_image">
+		    <div class='wrapper'>
+        		<div class='header'>
+				<%= link_to image_tag('/theme/images/haymarket_logo.gif', :id => "header_logo")  %>					<div id="header_right">
+						<h2>About Haymarket Pub & Brewery</h2>
+						<p>Coming this summer to Chicago's West Loop neighborhood is brewer Pete Crowley's long anticipated brewery 					project, the Haymarket Pub and Brewery. Conveniently located at the southeast corner of Randolph and Halsted, Haymarket is actually situated in the exact location of the Haymarket Riot of 1886. Our restaurant will commemorate this important piece of Chicago's history.<p>
+							<%= render :partial => "/shared/menu" %>
+					</div>	<!-- end header right -->
+        		</div>
+        		<div class='container'>
+					<div class='content'>
+          			<%= yield %>
+					</div><!-- end content -->
+					
+					<div class='clear'></div>
+					
+					<div class='bottom'>
+						<div id='social'>
+						</div>
+						
+						<div id='location'>
+						</div>
+						
+						<div id='contact'>
+							
+						</div>	
+						
+						<div class='clear'></div>		
+					</div>	<!-- end bottom -->
+        		</div> <!-- end container -->
+        		<div id='footer'>
+        		</div> <!-- end footer -->
+    		</div> <!-- end wrapper-->
+		</div> <!-- end head image -->
+ </body>
+</html>
