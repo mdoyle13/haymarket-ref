@@ -2,7 +2,7 @@
 cache("#{Refinery.base_cache_key}_#{RefinerySetting.find_or_set(:refinery_menu_cache_action_suffix, "site_menu")}_#{request.path}") do
   if (collection ||= @menu_pages).any?
 -%>
-    <div class='links' id="navigation">
+    <div id='navigation' class='links'>
       <%= render :partial => "/shared/menu_branch",
                  :collection => collection,
                  :locals => {

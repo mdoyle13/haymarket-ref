@@ -61,7 +61,7 @@ body {
 	background-color: black;
 	color: #F9F4A8;
 	font-family: helvetica;
-	background-image: url(/theme/images/bg_pattern.jpg);
+	background-image: url(../images/bg_pattern.jpg);
 	background-position: center top;
 	line-height: 1.5;
 }
@@ -72,7 +72,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 30px;
-	padding-bottom: 10px;;
 }
 
 h2 {
@@ -97,6 +96,17 @@ a {
 	color: #fff;
 }
 
+small { 
+	font-size: .8em; 
+}
+
+.smaller {
+	font-size: .6em;
+	font-weight: normal;
+	line-height: 17px;
+	
+}
+
 .left {
 	float: left;
 }
@@ -115,13 +125,13 @@ a:visited.tbc {
 
 /* Header styles */
 #header_image {
-	background-image: url(/theme/images/header.jpg);
+	background-image: url(../images/header.jpg);
 	background-position: top center;
 	background-repeat: no-repeat;
 }
 
 #header_logo {
-	margin: 25px 0 0 -60px;
+	margin: 15px 0 0 -60px;
 	float: left;
 }
 
@@ -133,7 +143,8 @@ a:visited.tbc {
 
 #header_right p {
 	font-family: Georgia, Times, "Times New Roman", serif;
-	font-size: 18px;
+	font-size: 14px;
+	line-height: 19px;
 }
 
 .header {
@@ -153,7 +164,7 @@ a:visited.tbc {
 	width: 110px;
 	height: 40px;
 	float: left;
-	background-image: url('/theme/images/nav_image.gif');
+	background-image: url('../images/nav_image.gif');
 	background-repeat: no-repeat;
 	background-position: left;
 	text-decoration: none;
@@ -174,7 +185,7 @@ a:visited.tbc {
 
 .container {
 	min-height: 600px;
-	background-image: url('/theme/images/transparent.png');
+	background-image: url('../images/transparent.png');
 }
 
 #left_column {
@@ -187,11 +198,17 @@ a:visited.tbc {
 	width: 350px;
 }
 
+#right_column_small {
+	float: right;
+	width: 220px;
+}
+
 #home_content {
 	min-height: 450px;
 }
 
-#home_content h3 {
+#home_content h3,
+#blog_page h3 {
 	color: #fff;
 }
 
@@ -212,11 +229,9 @@ a:visited.tbc {
 }
 
 .bottom {
-	background-image: url(/theme/images/bg_footer.jpg);
+	background-image: url(../images/bg_footer.jpg);
 	background-position: top;
-	background-repeat: no-repeat;
 	padding: 30px;
-	min-height:280px;
 }
 
 .social {
@@ -236,13 +251,13 @@ a:visited.tbc {
 	background-position: 5px 7px;
 }
 .facebook{
-	background-image: url(/theme/images/facebook_logo.jpg);
+	background-image: url(../images/facebook_logo.jpg);
 }
 .twitter{
-	background-image: url(/theme/images/twitter_logo.jpg);
+	background-image: url(../images/twitter_logo.jpg);
 }
 .youtube{
-	background-image: url(/theme/images/youtube_logo.jpg);
+	background-image: url(../images/youtube_logo.jpg);
 }
 
 
@@ -292,4 +307,39 @@ a:visited.tbc {
 	font-weight: bold;
 	padding: 10px;
 	border: 3px solid #E7AA35;
+}
+
+.latest_posts {
+	font-size: .85em;
+}
+
+.latest_posts .post {
+	margin-bottom: 20px;
+}
+
+.latest_posts h3 {
+	color: #E7AA35;
+}
+
+.latest_posts h6 {
+	margin: 0;
+}
+
+.latest_posts a {
+	text-decoration: none;
+	color: #F9F4A8;
+}
+
+.latest_posts h6 a {
+	color: #f7941e;
+}
+
+.latest_posts a:hover {
+	color: #fff;
+}
+
+.pub_date {
+	display: block;
+	margin-bottom: 5px;
+	color: #bcbcbc;
 }

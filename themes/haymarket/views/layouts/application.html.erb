@@ -1,41 +1,103 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <html>
-  <%= render :partial => "/shared/head", :locals => {:theme => true} %>
+  <%= render :partial => '/shared/head', :locals => {:theme => true} %>
   <body>
-    <%= render :partial => "/shared/site_bar" %>
-	<div id="'header_image">
+    <%= render :partial => '/shared/site_bar' %>
+	<div id='header_image'>
 		    <div class='wrapper'>
         		<div class='header'>
-				<%= link_to image_tag('/theme/images/haymarket_logo.gif', :id => "header_logo")  %>					<div id="header_right">
-						<h2>About Haymarket Pub & Brewery</h2>
-						<p>Coming this summer to Chicago's West Loop neighborhood is brewer Pete Crowley's long anticipated brewery 					project, the Haymarket Pub and Brewery. Conveniently located at the southeast corner of Randolph and Halsted, Haymarket is actually situated in the exact location of the Haymarket Riot of 1886. Our restaurant will commemorate this important piece of Chicago's history.<p>
-							<%= render :partial => "/shared/menu" %>
+				<%= link_to image_tag('/theme/images/haymarket_logo_wAddress.png', :id => 'header_logo')  %>					
+					<div id='header_right'>
+						<h2>About Haymarket Pub &amp; Brewery</h2>
+						<p>Haymarket Pub &amp; Brewery is coming this fall to Chicago's dynamic West Loop neighborhood! Haymarket will feature handcrafted beers brewed on-site by award winning brewer/owner Pete Crowley, as well as handmade sausages, rotisserie chickens and much more. Haymarket is conveniently located on the southeast corner of Randolph and Halsted, near the site of the Haymarket Riot of 1886. The space is comfortable and casual with a laid back atmosphere - the perfect place to relax after work, have dinner with friends, or watch the game. Our back bar/dining room is home to the Drinking &amp; Writing Theater, and is an ideal space for private parties. We look forward to sharing a pint with you soon!</p>
+						
+							<%= render :partial => '/shared/menu' %>
+					
 					</div>	<!-- end header right -->
-        		</div>
-        		<div class='container'>
-					<div class='content'>
-          			<%= yield %>
-					</div><!-- end content -->
-					
+       	</div>
+			
+        	<div class='container home'>
+					<div id='home_content'>
+					<div id='left_column'>
+					<div class='featured_post'>
+					<h2>Haymarket Blog</h2>
+
+					<h3>Grand Opening Planned for Late October</h3>
+
+					<small class='pub_date'>September 01, 2010</small>
+					<p>Hey, everyone! The excitement and anticipation grows, and we at Haymarket are truly grateful for everyone's interest. Whether by email or chance encounter, the question we are most often asked is 'When are you going to open?' followed by a close second 'Are you open?'.&nbsp;</p>
+					<p>The Haymarket Pub &amp; Brewery opening is planned for late October.&nbsp;</p>
+
+					<a href='/posts/3' class='tbc'>Read the rest...</a>
+
+
+					</div>
+					<div class='theater'>
+					<h2>Drinking & Writing Theater</h2>
+
+					<img alt='Drinkingandwriting_logo' class='left' src='/images/drinkingandwriting_logo.gif?1285118572' />
+					<p>
+					Through our radio program, The Drinking & Writing Brewery Radio Show, and productions on stage and in bars, our website, and on the page, The Drinking & Writing Brewery exists to preserve the spirit and devotion of the hard drinking writer and to uphold the rituals of creativity through their passion for the written word. We strive to attract others who share these principles. <br />
+					<a href='http://www.drinkingandwriting.com' class='tbc' target='_blank'>find out more about drinking & writing</a>
+					</p>
+
+					</div>
+					</div>
+					<div id='right_column'>
+					<div class='upcoming_events'>
+					<h2>Upcoming Events</h2>
+
+					<p>Check back often to see what's going on here at the Brewery.</p>
+
+					</div>
+					</div>
 					<div class='clear'></div>
-					
+					</div>
 					<div class='bottom'>
-						<div id='social'>
-						</div>
-						
-						<div id='location'>
-						</div>
-						
-						<div id='contact'>
-							
-						</div>	
-						
-						<div class='clear'></div>		
-					</div>	<!-- end bottom -->
-        		</div> <!-- end container -->
-        		<div id='footer'>
-        		</div> <!-- end footer -->
-    		</div> <!-- end wrapper-->
-		</div> <!-- end head image -->
- </body>
-</html>
+					<div class='social'>
+					<a href='http://www.facebook.com/HaymarketBrewing' class='facebook'>Friend us on Facebook</a>
+					<a href='http://www.twitter.com/' class='twitter'>Follow us on Twitter</a>
+					<a href='http://www.youtube.com/' class='youtube'>Watch us on YouTube</a>
+
+					</div>
+
+					<div class='location'>
+					<h6>Location & Hours of Operation</h6>
+					<a href='http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=737+West+Randolph+Street,+Chicago,+IL&amp;sll=41.910078,-87.986725&amp;sspn=0.010587,0.019011&amp;ie=UTF8&amp;hq=&amp;hnear=737+W+Randolph+St,+Chicago,+Cook,+Illinois+60661&amp;z=16' target='_blank'>
+					<img class='left' src='/images/minimap.jpg' />
+					</a>
+					<p class='left'>
+					737 Randolph<br />
+					<span class='smaller'>(corner of Halsted & Randolph)</span><br />
+					Chicago, IL 60661<br /><br /><br/>
+					Hours<br />
+
+					Sun-Fri 11:00-2:00<br />
+					Sat 11:00-3:00
+					</p>
+
+
+					</div>
+					<div class='contact'>
+					<h6>Signup for E-Newsletter</h6>
+
+					<form action='/subscribers' class='new_subscriber' id='new_subscriber' method='post'><div style='margin:0;padding:0;display:inline'><input name='authenticity_token' type='hidden' value='G5xvYGJdZ0xLfji3Z6GGKDgg6qYic4jyIXHAszHuZvM=' /></div>
+					    <input id='subscriber_email' name='subscriber[email]' size='30' type='text' />
+					    <input id='subscriber_submit' name='commit' type='submit' value='Signup' />
+					</form>
+
+					<div id='contact_links'>
+						<a href='/contacts/new'>Contact Us</a> | <a href='/applications/new'>Get Hired</a>
+					</div>
+
+					</div>
+					<div class='clear'></div>
+					</div>
+					</div>
+					</div>
+					</div>
+					</body>
+
+					</html>
+					
