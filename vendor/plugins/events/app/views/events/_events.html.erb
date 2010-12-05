@@ -2,8 +2,10 @@
   <% @events.each do |event| %>
     <div class="event">
       <h3><%= event.name %></h3>
-      <%= event.date.strftime("%B %d, %Y") %><br />
-      <%= link_to "Event Details", event_url(event) %>
+      <div><%= event.date.strftime("%B %d, %Y") %></div>
+			<div><%= event.description %></div>
+			<div><%= event.venue %></div>
+			<div><%= event.location %></div>
     </div>
   <% end %>
 </div>

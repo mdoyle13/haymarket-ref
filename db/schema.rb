@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20101205185949) do
     t.string   "purchase_link"
     t.string   "editor"
     t.boolean  "published"
+    t.string   "venue"
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
