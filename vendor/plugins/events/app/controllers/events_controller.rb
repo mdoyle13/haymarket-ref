@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   before_filter :find_page
 
   def index
+    @events = Event.published
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     present(@page)
@@ -14,6 +15,14 @@ class EventsController < ApplicationController
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     present(@page)
+  end
+  
+  def beer_events
+    @events = Event.published.beer
+  end
+  
+  def theatre_events
+    @events = Event.published.theatre
   end
 
 protected

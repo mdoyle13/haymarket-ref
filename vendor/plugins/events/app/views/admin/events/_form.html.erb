@@ -20,6 +20,11 @@
     <label>End Date</label>
     <%= f.datetime_select :end_date -%>
   </div>
+
+  <div class='field'>
+    <%= f.label :venue -%>
+    <%= f.text_field :venue -%>
+  </div>
   
   <div class='field'>
     <%= f.label :location -%>
@@ -27,8 +32,28 @@
   </div>
 
   <div class='field'>
-    <%# f.label :boat_id -%>
-		<%# collection_select(:event, :boat_id, Boat.all, :id, :title, {:include_blank => "N/A"}) %>
+    <%= f.label :event_type_id -%>
+		<%= collection_select(:event, :event_type_id, EventType.all, :id, :name, {:include_blank => "N/A"}) %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :featured -%>
+    <%= f.check_box(:featured) -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :price -%>
+    <%= f.text_field :price -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :purchase_link -%>
+    <%= f.text_field :purchase_link -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box(:published) -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>

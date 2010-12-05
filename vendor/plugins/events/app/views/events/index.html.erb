@@ -1,4 +1,7 @@
 <% content_for :body_content_left do %>
+<div class="event_types">
+	<%= link_to "Beer Events", beer_events_path %> - <%= link_to "Theatre Schedule", theatre_events_path %>
+</div>
 <%= render :partial => "events" %>
 <% end %>
 
