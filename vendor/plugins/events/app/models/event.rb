@@ -9,7 +9,9 @@ class Event < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true
   
   named_scope :published, :conditions => { :published => true }
+  named_scope :featured, :conditions => { :featured => true }, :limit => 1
   named_scope :beer, :conditions => [ "event_type_id = ?", 1 ]
   named_scope :theatre, :conditions => [ "event_type_id = ?", 2 ]
+  named_scope :upcoming, :conditions => [ "date >= ?", Time.now ], :order => "date ASC"
 
 end

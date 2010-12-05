@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   before_filter :find_page
 
   def index
-    @events = Event.published
+    @featured_event = Event.upcoming.featured.find(:first)
+    @events = Event.upcoming.published
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     present(@page)
@@ -18,11 +19,11 @@ class EventsController < ApplicationController
   end
   
   def beer_events
-    @events = Event.published.beer
+    @events = Event.upcoming.published.beer
   end
   
   def theatre_events
-    @events = Event.published.theatre
+    @events = Event.upcoming.published.theatre
   end
 
 protected

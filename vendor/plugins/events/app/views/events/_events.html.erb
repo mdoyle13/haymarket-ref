@@ -1,11 +1,11 @@
-<div id="events">
-  <% @events.each do |event| %>
-    <div class="event">
-      <h3><%= event.name %></h3>
-      <div><%= event.date.strftime("%B %d, %Y") %></div>
-			<div><%= event.description %></div>
-			<div><%= event.venue %></div>
-			<div><%= event.location %></div>
-    </div>
-  <% end %>
-</div>
+<% @events.each do |event| %>
+	<% unless event.id == @featured_event.id %>
+   <div class="event">
+     <h3><%= event.name %></h3>
+     <div><%= event.date.strftime("%B %d, %Y") %></div>
+		<div><%= event.description %></div>
+		<div><%= event.venue %></div>
+		<div><%= event.location %></div>
+   </div>
+	<% end %>
+ <% end %>

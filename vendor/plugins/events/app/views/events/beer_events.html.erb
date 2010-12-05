@@ -1,4 +1,5 @@
 <% content_for :body_content_left do %>
 <h2>Beer Events</h2>
-<%= render :partial => "events" %>
+<% @featured_event = "" %>
+<%= render :partial => "events", :locals => { :featured_event => @featured_event } %>
 <% end %>
