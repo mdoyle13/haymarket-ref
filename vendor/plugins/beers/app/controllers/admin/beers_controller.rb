@@ -7,6 +7,11 @@ class Admin::BeersController < Admin::BaseController
     @beer = Beer.new
     @beer.beer_pricings.build
   end
+  
+  def edit
+    @beer = Beer.find(params[:id])
+    @beer.beer_pricings.build
+  end
 
 	private
 	

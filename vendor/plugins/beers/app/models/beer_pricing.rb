@@ -7,6 +7,6 @@ class BeerPricing < ActiveRecord::Base
   belongs_to :beer_size
   
   def size_name
-    self.beer_size.name
+    self.beer_size
   end
 end

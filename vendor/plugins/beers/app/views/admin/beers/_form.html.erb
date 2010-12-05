@@ -38,8 +38,10 @@
 	</div>
 <% end %>
 
+<% unless @beer.id.nil? %>
 	<h2>Prices</h2>
 	<% f.fields_for :beer_pricings do |nf| %>
+		<%= nf.hidden_field :beer_id %>
 		<div class='field'>
 			<%= nf.label :beer_size_id %>
 			<%= nf.collection_select :beer_size_id, BeerSize.all, :id, :name, :prompt => true %>
@@ -49,6 +51,7 @@
 			<%= nf.text_field :price %>
 		</div>
 	<% end %>
+<% end %>
   
   <div class='field'>
     <%= f.label :featured -%>
