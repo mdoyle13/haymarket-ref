@@ -7,7 +7,8 @@
 		<div>
 			<%= event.description %>
 			<%= event.location %>
-			<%= link_to "For Tickets Click Here", event.purchase_link unless event.purchase_link.empty? %>
+			
+			<p><%= link_to "For Tickets Click Here", event.purchase_link unless event.purchase_link.empty? %></p>
 		</div>
    </div>
 	<% end %>
