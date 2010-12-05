@@ -1,0 +1,60 @@
+<% form_for [:admin, @beer] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :beer_category_id -%>
+    <%= f.collection_select :beer_category_id, BeerCategory.all, :id, :name, :prompt => true -%>
+  </div>  
+
+  <div class='field'>
+    <%= f.label :description -%>
+    <%= f.text_area :description, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :awards -%>
+    <%= f.text_area :awards, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :date_tapped -%>
+    <%= f.date_select :date_tapped -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :brewery -%>
+    <%= f.text_field :brewery -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :price, 'Web Price' -%>
+    <%= f.text_field :price -%>
+  </div>
+
+	<div class='field'>
+		<%= f.label :beer_size_id, 'Web Size' %>
+		<%= f.collection_select :beer_size_id, BeerSize.all, :id, :name, :prompt => true %>
+	</div>
+  
+  <div class='field'>
+    <%= f.label :featured -%>
+    <%= f.check_box :featured -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.beers.beer.delete')
+              } %>
+<% end -%>
