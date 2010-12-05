@@ -148,15 +148,13 @@ a:visited.tbc {
 }
 
 .header {
-	height: 344px;
+	height:344px;
+	width:960px;
 }
 
 #navigation {
-	width: 900px;
-	position: relative;
-	top: -7px;
-	left: -430px;
-	z-index: 10;
+	width:960px;
+	float:left;
 }
 
 #navigation a {

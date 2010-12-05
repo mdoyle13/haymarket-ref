@@ -60,7 +60,7 @@ table {
 body {
 	background-color: black;
 	color: #F9F4A8;
-	font-family: helvetica;
+	font-family: Helvetica, Arial, sans-serif;
 	background-image: url(../images/bg_pattern.jpg);
 	background-position: center top;
 	line-height: 1.5;
@@ -152,11 +152,11 @@ a:visited.tbc {
 }
 
 #navigation {
-	width: 900px;
-	position: relative;
-	top: -7px;
-	left: -430px;
-	z-index: 10;
+	width:960px;	
+	clear:both;
+	position:relative;
+	top:-15px;
+	left:20px;
 }
 
 #navigation a {
@@ -263,8 +263,18 @@ a:visited.tbc {
 
 .location {
 	float: left;
-	width: 330px;
+	width: 300px;
 	margin: 0 50px;
+	padding-left:30px;
+}
+#header-location {
+	float: right;
+	width: 220px;
+	margin: 50px 0px 0px 170px;
+}
+#header-location p {
+	font-size:12px;
+	text-align:right;
 }
 .location p {
 	margin-left: 5px;
@@ -342,4 +352,14 @@ a:visited.tbc {
 	display: block;
 	margin-bottom: 5px;
 	color: #bcbcbc;
+}
+
+.ui-event-info {
+	font-size:10px;
+	color:yellow;
+	left: 0.5em;
+	    margin-top: -12px;
+	    position: absolute;
+	    top: 50%;
+		left:80%;
 }
