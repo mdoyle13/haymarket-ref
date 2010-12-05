@@ -9,5 +9,9 @@ class Beer < ActiveRecord::Base
 	validates_presence_of :beer_category_id
 	validates_presence_of :beer_size_id
 
+  has_many :beer_pricings
+  has_many :beer_sizes, :through => :beer_pricings
+  
+  accepts_nested_attributes_for :beer_pricings, :allow_destroy => true
 
 end

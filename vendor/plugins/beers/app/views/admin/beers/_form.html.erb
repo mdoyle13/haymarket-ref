@@ -30,16 +30,25 @@
     <%= f.label :brewery -%>
     <%= f.text_field :brewery -%>
   </div>
-  
-  <div class='field'>
-    <%= f.label :price, 'Web Price' -%>
-    <%= f.text_field :price -%>
-  </div>
 
+<% unless @beer.beer_pricings.count == 0 %>
 	<div class='field'>
-		<%= f.label :beer_size_id, 'Web Size' %>
-		<%= f.collection_select :beer_size_id, BeerSize.all, :id, :name, :prompt => true %>
+		<%= f.label :beer_pricing_id, 'Menu Size' %>
+		<%= f.collection_select :beer_pricing_id, @beer.beer_pricings, :id, :size_name, :prompt => true %>
 	</div>
+<% end %>
+
+	<h2>Prices</h2>
+	<% f.fields_for :beer_pricings do |nf| %>
+		<div class='field'>
+			<%= nf.label :beer_size_id %>
+			<%= nf.collection_select :beer_size_id, BeerSize.all, :id, :name, :prompt => true %>
+		</div>
+		<div class='field'>
+			<%= nf.label :price %>
+			<%= nf.text_field :price %>
+		</div>
+	<% end %>
   
   <div class='field'>
     <%= f.label :featured -%>

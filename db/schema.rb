@@ -9,10 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205205109) do
+ActiveRecord::Schema.define(:version => 20101205214638) do
 
   create_table "beer_categories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "beer_pricings", :force => true do |t|
+    t.integer  "beer_id"
+    t.integer  "beer_size_id"
+    t.decimal  "price",        :precision => 10, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,14 +37,13 @@ ActiveRecord::Schema.define(:version => 20101205205109) do
     t.text     "awards"
     t.date     "date_tapped"
     t.string   "brewery"
-    t.integer  "price",            :limit => 10, :precision => 10, :scale => 0
     t.boolean  "featured"
     t.boolean  "published"
     t.integer  "beer_category_id"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "beer_size_id"
+    t.integer  "beer_pricing_id"
   end
 
   add_index "beers", ["id"], :name => "index_beers_on_id"
