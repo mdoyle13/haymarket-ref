@@ -1,11 +1,14 @@
 <% @events.each do |event| %>
 	<% unless event.id == @featured_event.id %>
-   <div class="event">
-     <h3><%= event.name %></h3>
-     <div><%= event.date.strftime("%B %d, %Y") %></div>
-		<div><%= event.description %></div>
-		<div><%= event.venue %></div>
-		<div><%= event.location %></div>
+   <div class="accordion">
+		<h3><a href="#"><%= event.name %></a>
+			<span class="ui-event-info"><%= event.date.strftime("%B %d, %Y") %><br /><%= event.venue %></span>
+		</h3>
+		<div>
+			<%= event.description %>
+			<%= event.location %>
+			<%= link_to "For Tickets Click Here", event.purchase_link unless event.purchase_link.empty? %>
+		</div>
    </div>
 	<% end %>
  <% end %>
