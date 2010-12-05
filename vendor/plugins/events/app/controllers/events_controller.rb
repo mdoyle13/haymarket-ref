@@ -4,7 +4,12 @@ class EventsController < ApplicationController
   before_filter :find_page
 
   def index
-    @featured_event = Event.upcoming.featured.find(:first)
+    @featured_event = Event.upcoming.published.featured.find(:first)
+    
+    if @featured_event.blank?
+      @featured_event = Event.upcoming.published.find(:first)
+    end
+    
     @events = Event.upcoming.published
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
