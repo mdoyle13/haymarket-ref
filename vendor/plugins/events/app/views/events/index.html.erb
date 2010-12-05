@@ -4,6 +4,8 @@
 	<h2>Featured Event</h2>
 	<h3><%= @featured_event.name %></h3>
 	<div><%= @featured_event.description %></div>
+	<%= @featured_event.location %><br />
+	<%= link_to "For Tickets Click Here", @featured_event.purchase_link unless @featured_event.purchase_link.empty? %>
 </div>
 
 <%= render :partial => "events", :locals => { :featured_event => @featured_event } %>
