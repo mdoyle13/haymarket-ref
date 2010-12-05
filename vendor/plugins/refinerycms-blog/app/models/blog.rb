@@ -6,6 +6,8 @@ class Blog < ActiveRecord::Base
 
   named_scope :published, lambda {{:conditions => ["publishing_date < '#{Time.now.to_formatted_s(:db)}' and draft != ?", true],
                                   :order => "publishing_date DESC"}}
+                                  
+  named_scope :latest_post, :limit => 1
 
 
   acts_as_indexed :fields => [:title, :permalink, :excerpt, :body],
