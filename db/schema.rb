@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205061112) do
+ActiveRecord::Schema.define(:version => 20101205164439) do
 
   create_table "blog_settings", :force => true do |t|
     t.string   "name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20101205061112) do
     t.string   "purchase_link"
     t.string   "editor"
     t.boolean  "published"
+    t.string   "venue"
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
