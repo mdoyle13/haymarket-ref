@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100708014636) do
+ActiveRecord::Schema.define(:version => 20101205061112) do
 
   create_table "blog_settings", :force => true do |t|
     t.string   "name"
@@ -49,6 +49,29 @@ ActiveRecord::Schema.define(:version => 20100708014636) do
   end
 
   add_index "comments", ["blog_id"], :name => "index_comments_on_blog_id"
+
+  create_table "event_types", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "date"
+    t.datetime "end_date"
+    t.string   "location"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_type_id"
+    t.boolean  "featured"
+    t.string   "price"
+    t.string   "purchase_link"
+    t.string   "editor"
+    t.boolean  "published"
+  end
+
+  add_index "events", ["id"], :name => "index_events_on_id"
 
   create_table "images", :force => true do |t|
     t.integer  "parent_id"

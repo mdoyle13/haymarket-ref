@@ -1,0 +1,24 @@
+<% content_for :body_content_title do %>
+  <%= @event.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <div>
+    <strong>Date: </strong><%= @event.date.strftime("%B %d, %Y") %>
+  </div>
+
+  <div>
+    <strong>Time: </strong><%= @event.date.strftime("%I:%M%p")%>
+  </div>
+
+  <div>
+    <strong>Where:</strong> <%= @event.location %>
+  </div>
+
+  <div>
+    <%= @event.description %>
+  </div>
+  
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

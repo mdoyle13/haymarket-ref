@@ -1,0 +1,9 @@
+<div id="events">
+  <% @events.each do |event| %>
+    <div class="event">
+      <h3><%= event.name %></h3>
+      <%= event.date.strftime("%B %d, %Y") %><br />
+      <%= link_to "Event Details", event_url(event) %>
+    </div>
+  <% end %>
+</div>

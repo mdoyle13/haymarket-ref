@@ -1,0 +1,35 @@
+<% form_for [:admin, @event] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :description -%>
+    <%= f.text_area :description, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <div class='field'>
+    <label>Start Date</label>
+    <%= f.datetime_select :date -%>
+  </div>
+
+	<div class='field'>
+    <label>End Date</label>
+    <%= f.datetime_select :end_date -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :location -%>
+    <%= f.text_field :location -%>
+  </div>
+
+  <div class='field'>
+    <%# f.label :boat_id -%>
+		<%# collection_select(:event, :boat_id, Boat.all, :id, :title, {:include_blank => "N/A"}) %>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+<% end -%>
