@@ -7,12 +7,24 @@
 		<div class='wrapper'>
 		<div class='header'>
 				<%= link_to image_tag('/theme/images/haymarket_logo_wAddress.png', :id => 'header_logo')  %>					
-					<div id='header_right'>
-						<h2>About Haymarket Pub &amp; Brewery</h2>
-						<p>Haymarket Pub &amp; Brewery is coming this fall to Chicago's dynamic West Loop neighborhood! Haymarket will feature handcrafted beers brewed on-site by award winning brewer/owner Pete Crowley, as well as handmade sausages, rotisserie chickens and much more. Haymarket is conveniently located on the southeast corner of Randolph and Halsted, near the site of the Haymarket Riot of 1886. The space is comfortable and casual with a laid back atmosphere - the perfect place to relax after work, have dinner with friends, or watch the game. Our back bar/dining room is home to the Drinking &amp; Writing Theater, and is an ideal space for private parties. We look forward to sharing a pint with you soon!</p>
+					<!-- <div id='header_right'> -->
+										<div id='header-location'>
+											<h6>Location & Hours of Operation</h6>
+											<!-- <a href='http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=737+West+Randolph+Street,+Chicago,+IL&amp;sll=41.910078,-87.986725&amp;sspn=0.010587,0.019011&amp;ie=UTF8&amp;hq=&amp;hnear=737+W+Randolph+St,+Chicago,+Cook,+Illinois+60661&amp;z=16' target='_blank'>
+																				<img class='left' src='/theme/images/minimap.jpg' /> -->
+											</a>
+											<p><a href='http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=737+West+Randolph+Street,+Chicago,+IL&amp;sll=41.910078,-87.986725&amp;sspn=0.010587,0.019011&amp;ie=UTF8&amp;hq=&amp;hnear=737+W+Randolph+St,+Chicago,+Cook,+Illinois+60661&amp;z=16' target='_blank'>	737 W. Randolph</a><br />
+												<span class='smaller'>(corner of Halsted & Randolph)</span><br />
+												Chicago, IL 60661<br /><br />
+												Hours<br />
+												Sun-Fri 11:00-2:00<br />
+												Sat 11:00-3:00<br />
+												<strong>312.638.0700</strong>
+											</p>
+										</div>
 						
 							<%= render :partial => '/shared/menu' %>
-					</div>	<!-- end header right -->
+					<!-- </div> -->	<!-- end header right -->
 				</div>
 				<div class='container home'>
 					<div id='home_content'>
@@ -56,19 +68,16 @@
 						<a href='http://www.youtube.com/' class='youtube'>Watch us on YouTube</a>
 					</div>
 					<div class='location'>
-						<h6>Location & Hours of Operation</h6>
-						<a href='http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=737+West+Randolph+Street,+Chicago,+IL&amp;sll=41.910078,-87.986725&amp;sspn=0.010587,0.019011&amp;ie=UTF8&amp;hq=&amp;hnear=737+W+Randolph+St,+Chicago,+Cook,+Illinois+60661&amp;z=16' target='_blank'>
-							<img class='left' src='/images/minimap.jpg' />
-						</a>
-						<p class='left'>
-							737 Randolph<br />
-							<span class='smaller'>(corner of Halsted & Randolph)</span><br />
-							Chicago, IL 60661<br /><br /><br/>
-							Hours<br />
-							Sun-Fri 11:00-2:00<br />
-							Sat 11:00-3:00
-						</p>
-					</div>
+														<h6>Location & Hours of Operation</h6>
+														<p class='left'>
+															737 W. Randolph<br />
+															<span class='smaller'>(corner of Halsted & Randolph)</span><br />
+															Chicago, IL 60661<br /><br /><br/>
+															Hours<br />
+															Sun-Fri 11:00-2:00<br />
+															Sat 11:00-3:00
+														</p>
+													</div>
 						<div class='contact'>
 							<h6>Signup for E-Newsletter</h6>
 							<form action='/subscribers' class='new_subscriber' id='new_subscriber' method='post'><div style='margin:0;padding:0;display:inline'><input name='authenticity_token' type='hidden' value='G5xvYGJdZ0xLfji3Z6GGKDgg6qYic4jyIXHAszHuZvM=' /></div>
@@ -76,7 +85,7 @@
 								<input id='subscriber_submit' name='commit' type='submit' value='Signup' />
 							</form>
 							<div id='contact_links'>
-								<a href='/contacts/new'>Contact Us</a> | <a href='/applications/new'>Get Hired</a>
+								<%= link_to 'Contact Us', new_inquiry_path() %> | <a href='/applications/new'>Get Hired</a>
 							</div>
 						</div>
 						<div class='clear'></div>
