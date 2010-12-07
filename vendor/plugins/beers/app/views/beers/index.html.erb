@@ -1,11 +1,24 @@
 <% content_for :body_content_left do %>
-  <ul id="beers">
-    <% @beers.each do |beer| %>
-      <li>
-        <%= link_to beer.name, beer_url(beer) %>
-      </li>
-    <% end %>
-  </ul>
+
+	<% @beer_categories.each do |category| %>
+	<div class="tab">
+		<h1><%= category.name %></h1>
+	    <% category.beers.find_all_by_published(true).each do |beer| %>
+			<div class="beer">
+	     	<h3><%= beer.name %></h3>
+				<%= beer.description %>
+				<%= beer.awards unless beer.awards.length < 10 %>
+				<p>
+					<%= "Original Gravity: #{beer.og}<br />" unless beer.og.nil? %>
+					<%= "Final Gravity: #{beer.fg}<br />" unless beer.fg.nil? %>
+					<%= "IBV: #{beer.ibv}<br />" unless beer.ibv.nil? %>
+					<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
+				</p>
+			</div>
+	    <% end %>
+	  
+	</div>
+	<% end %>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
