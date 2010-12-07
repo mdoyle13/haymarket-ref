@@ -11,5 +11,7 @@ class Beer < ActiveRecord::Base
   has_many :beer_sizes, :through => :beer_pricings
   
   accepts_nested_attributes_for :beer_pricings, :allow_destroy => true
+  
+  default_scope :order => :position
 
 end

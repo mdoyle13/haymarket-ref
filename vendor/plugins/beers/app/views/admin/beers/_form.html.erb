@@ -9,7 +9,17 @@
   <div class='field'>
     <%= f.label :beer_category_id -%>
     <%= f.collection_select :beer_category_id, BeerCategory.all, :id, :name, :prompt => true -%>
-  </div>  
+  </div>
+
+  <div class='field'>
+    <%= f.label :featured -%>
+    <%= f.check_box :featured -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
 
   <div class='field'>
     <%= f.label :description -%>
@@ -30,6 +40,26 @@
     <%= f.label :brewery -%>
     <%= f.text_field :brewery -%>
   </div>
+
+	<div class='field'>
+		<%= f.label :og, 'Original Gravity' %>
+		<%= f.text_field :og %>
+	</div>
+	
+	<div class='field'>
+		<%= f.label :fg, 'Final Gravity' %>
+		<%= f.text_field :fg %>
+	</div>
+	
+	<div class='field'>
+		<%= f.label :ibv, 'IBV' %>
+		<%= f.text_field :ibv %>
+	</div>
+	
+	<div class='field'>
+		<%= f.label :abv, 'ABV' %>
+		<%= f.text_field :abv %>
+	</div>
 
 <% unless @beer.beer_pricings.count == 0 %>
 	<div class='field'>
@@ -53,16 +83,7 @@
 	<% end %>
 <% end %>
   
-  <div class='field'>
-    <%= f.label :featured -%>
-    <%= f.check_box :featured -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :published -%>
-    <%= f.check_box :published -%>
-  </div>
-  
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,

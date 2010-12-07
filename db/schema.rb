@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205214638) do
+ActiveRecord::Schema.define(:version => 20101207125432) do
 
   create_table "beer_categories", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(:version => 20101205214638) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "beer_pricing_id"
+    t.decimal  "og"
+    t.decimal  "fg"
+    t.decimal  "ibv"
+    t.decimal  "abv"
   end
 
   add_index "beers", ["id"], :name => "index_beers_on_id"
