@@ -1,0 +1,16 @@
+nl:
+  admin:
+    beers:
+      index:
+        create_new: Maak een nieuwe Beer
+        reorder: Wijzig de volgorde van de Beers
+        reorder_done: Klaar met het wijzingen van de volgorde van de Beers
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen beers. Druk op 'Maak een nieuwe Beer' om de eerste aan te maken.
+      beer:
+        view_live: Bekijk deze beer op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze beer
+        delete: Verwijder deze beer voor eeuwig
+  beers:
+    show:
+      other: Andere Beers

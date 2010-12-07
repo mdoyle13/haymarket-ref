@@ -1,0 +1,27 @@
+<%
+categories = BeerCategory.all()
+%>
+
+<h1>Published</h1>
+<% categories.each do |category| %>
+	<h2><%= category.name %></h2>
+	<%= render :partial => 'beer', :collection => category.beers.find_all_by_published(true) unless category.beers.find_all_by_published(true).nil? %>
+	<br />
+	<br />
+<% end %>
+
+<br />
+<br />
+<br />
+
+
+<h1>Not Published</h1>
+<% categories.each do |category| %>
+	<h2><%= category.name %></h2>
+	<%= render :partial => 'beer', :collection => category.beers.find_all_by_published(false) unless category.beers.find_all_by_published(false).nil? %>
+	<br />
+	<br />
+<% end %>
+
+
+<%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>

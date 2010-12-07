@@ -1,0 +1,16 @@
+en:
+  admin:
+    beers:
+      index:
+        create_new: Create a new Beer
+        reorder: Reorder Beers
+        reorder_done: Done Reordering Beers
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no beers yet. Click "Create a new Beer" to add your first beer.
+      beer:
+        view_live: View this beer live <br/><em>(opens in a new window)</em>
+        edit: Edit this beer
+        delete: Remove this beer forever
+  beers:
+    show:
+      other: Other Beers

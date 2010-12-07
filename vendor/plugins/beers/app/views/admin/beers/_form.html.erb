@@ -1,0 +1,93 @@
+<% form_for [:admin, @beer] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :beer_category_id -%>
+    <%= f.collection_select :beer_category_id, BeerCategory.all, :id, :name, :prompt => true -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :featured -%>
+    <%= f.check_box :featured -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :description -%>
+    <%= f.text_area :description, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :awards -%>
+    <%= f.text_area :awards, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :date_tapped -%>
+    <%= f.date_select :date_tapped -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :brewery -%>
+    <%= f.text_field :brewery -%>
+  </div>
+
+	<div class='field'>
+		<%= f.label :og, 'Original Gravity' %>
+		<%= f.text_field :og %>
+	</div>
+	
+	<div class='field'>
+		<%= f.label :fg, 'Final Gravity' %>
+		<%= f.text_field :fg %>
+	</div>
+	
+	<div class='field'>
+		<%= f.label :ibv, 'IBV' %>
+		<%= f.text_field :ibv %>
+	</div>
+	
+	<div class='field'>
+		<%= f.label :abv, 'ABV' %>
+		<%= f.text_field :abv %>
+	</div>
+
+<% unless @beer.beer_pricings.count == 0 %>
+	<div class='field'>
+		<%= f.label :beer_pricing_id, 'Menu Size' %>
+		<%= f.collection_select :beer_pricing_id, @beer.beer_pricings, :id, :size_name, :prompt => true %>
+	</div>
+<% end %>
+
+<% unless @beer.id.nil? %>
+	<h2>Prices</h2>
+	<% f.fields_for :beer_pricings do |nf| %>
+		<%= nf.hidden_field :beer_id %>
+		<div class='field'>
+			<%= nf.label :beer_size_id %>
+			<%= nf.collection_select :beer_size_id, BeerSize.all, :id, :name, :prompt => true %>
+		</div>
+		<div class='field'>
+			<%= nf.label :price %>
+			<%= nf.text_field :price %>
+		</div>
+	<% end %>
+<% end %>
+  
+
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.beers.beer.delete')
+              } %>
+<% end -%>
