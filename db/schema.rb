@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205185949) do
+ActiveRecord::Schema.define(:version => 20101205231234) do
 
   create_table "blog_settings", :force => true do |t|
     t.string   "name"
@@ -73,6 +73,24 @@ ActiveRecord::Schema.define(:version => 20101205185949) do
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
+
+  create_table "food_categories", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "foods", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "food_category_id"
+    t.boolean  "daily_special"
+    t.decimal  "price"
+    t.boolean  "published"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "foods", ["id"], :name => "index_foods_on_id"
 
   create_table "images", :force => true do |t|
     t.integer  "parent_id"
