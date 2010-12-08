@@ -1,0 +1,16 @@
+nl:
+  admin:
+    awards:
+      index:
+        create_new: Maak een nieuwe Award
+        reorder: Wijzig de volgorde van de Awards
+        reorder_done: Klaar met het wijzingen van de volgorde van de Awards
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen awards. Druk op 'Maak een nieuwe Award' om de eerste aan te maken.
+      award:
+        view_live: Bekijk deze award op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze award
+        delete: Verwijder deze award voor eeuwig
+  awards:
+    show:
+      other: Andere Awards

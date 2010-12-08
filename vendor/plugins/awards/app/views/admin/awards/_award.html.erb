@@ -1,0 +1,16 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(award) -%>">
+  <span class='title'>
+    <%=h award.event_name %>
+    <span class="preview">&nbsp;</span>
+  </span>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag("application_go.png"), award_url(award),
+        :title => t('.view_live'),
+        :target => "_blank" %>
+    <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_award_path(award),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), admin_award_path(award),
+        :class => "cancel confirm-delete",
+        :title => t('.delete') %>
+  </span>
+</li>

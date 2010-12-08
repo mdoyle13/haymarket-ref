@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @award.event_name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Event Name</h3>
+    <%= @award.event_name %>
+  </div>
+  
+  <div>
+    <h3>Category</h3>
+    <%= @award.category %>
+  </div>
+  
+  <div>
+    <h3>Beer Name</h3>
+    <%= @award.beer_name %>
+  </div>
+  
+  <div>
+    <h3>Award</h3>
+    <%= @award.award %>
+  </div>
+  
+  <div>
+    <h3>Year</h3>
+    <%= @award.year %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="awards">
+    <% @awards.each do |award| %>
+      <li>
+        <%= link_to award.event_name, award_url(award) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
