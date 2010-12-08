@@ -1,0 +1,50 @@
+<% content_for :body_content_title do %>
+  <%= @food.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Name</h3>
+    <%= @food.name %>
+  </div>
+  
+  <div>
+    <h3>Description</h3>
+    <%= @food.description %>
+  </div>
+  
+  <div>
+    <h3>Food Category</h3>
+    <%= @food.food_category_id %>
+  </div>
+  
+  <div>
+    <h3>Daily Special</h3>
+    <%= @food.daily_special %>
+  </div>
+  
+  <div>
+    <h3>Price</h3>
+    <%= @food.price %>
+  </div>
+  
+  <div>
+    <h3>Published</h3>
+    <%= @food.published %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="foods">
+    <% @foods.each do |food| %>
+      <li>
+        <%= link_to food.name, food_url(food) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

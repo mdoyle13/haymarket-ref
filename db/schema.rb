@@ -9,7 +9,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205234348) do
+ActiveRecord::Schema.define(:version => 20101207125432) do
+
+  create_table "beer_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "beer_pricings", :force => true do |t|
+    t.integer  "beer_id"
+    t.integer  "beer_size_id"
+    t.decimal  "price",        :precision => 10, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "beer_sizes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "beers", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "awards"
+    t.date     "date_tapped"
+    t.string   "brewery"
+    t.boolean  "featured"
+    t.boolean  "published"
+    t.integer  "beer_category_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "beer_pricing_id"
+    t.decimal  "og"
+    t.decimal  "fg"
+    t.decimal  "ibv"
+    t.decimal  "abv"
+  end
+
+  add_index "beers", ["id"], :name => "index_beers_on_id"
 
   create_table "blog_settings", :force => true do |t|
     t.string   "name"
@@ -73,6 +114,24 @@ ActiveRecord::Schema.define(:version => 20101205234348) do
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
+
+  create_table "food_categories", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "foods", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "food_category_id"
+    t.boolean  "daily_special"
+    t.decimal  "price"
+    t.boolean  "published"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "foods", ["id"], :name => "index_foods_on_id"
 
   create_table "images", :force => true do |t|
     t.integer  "parent_id"

@@ -1,0 +1,16 @@
+nb:
+  admin:
+    foods:
+      index:
+        create_new: Lag en ny Food
+        reorder: Endre rekkefølgen på Foods
+        reorder_done: Ferdig å endre rekkefølgen Foods
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen foods enda. Klikk på "Lag en ny Food" for å legge til din første food.
+      food:
+        view_live: Vis hvordan denne food ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne food
+        delete: Fjern denne food permanent
+  foods:
+    show:
+      other: Andre Foods

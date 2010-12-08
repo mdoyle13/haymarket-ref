@@ -1,0 +1,40 @@
+<% form_for [:admin, @food] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :description -%>
+    <%= f.text_area :description, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+ 
+	<div class='field'>
+    <%= f.label :food_category_id -%>
+		<%= collection_select(:food, :food_category_id, FoodCategory.all, :id, :name, {:include_blank => "N/A"}) %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :daily_special -%>
+    <%= f.check_box :daily_special -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :price -%>
+    <%= f.text_field :price -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.foods.food.delete')
+              } %>
+<% end -%>
