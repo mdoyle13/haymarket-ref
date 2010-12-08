@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205185949) do
+ActiveRecord::Schema.define(:version => 20101205234348) do
 
   create_table "blog_settings", :force => true do |t|
     t.string   "name"
@@ -150,6 +150,19 @@ ActiveRecord::Schema.define(:version => 20101205185949) do
 
   add_index "pages", ["id"], :name => "index_pages_on_id"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
+
+  create_table "presses", :force => true do |t|
+    t.string   "headline"
+    t.string   "author"
+    t.string   "publication"
+    t.text     "content"
+    t.integer  "pdf_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "presses", ["id"], :name => "index_presses_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"

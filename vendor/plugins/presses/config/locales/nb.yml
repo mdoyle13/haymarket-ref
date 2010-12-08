@@ -1,0 +1,16 @@
+nb:
+  admin:
+    presses:
+      index:
+        create_new: Lag en ny Press
+        reorder: Endre rekkefølgen på Presses
+        reorder_done: Ferdig å endre rekkefølgen Presses
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen presses enda. Klikk på "Lag en ny Press" for å legge til din første press.
+      press:
+        view_live: Vis hvordan denne press ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne press
+        delete: Fjern denne press permanent
+  presses:
+    show:
+      other: Andre Presses
