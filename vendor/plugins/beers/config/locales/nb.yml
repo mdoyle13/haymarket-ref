@@ -1,0 +1,16 @@
+nb:
+  admin:
+    beers:
+      index:
+        create_new: Lag en ny Beer
+        reorder: Endre rekkefølgen på Beers
+        reorder_done: Ferdig å endre rekkefølgen Beers
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen beers enda. Klikk på "Lag en ny Beer" for å legge til din første beer.
+      beer:
+        view_live: Vis hvordan denne beer ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne beer
+        delete: Fjern denne beer permanent
+  beers:
+    show:
+      other: Andre Beers
