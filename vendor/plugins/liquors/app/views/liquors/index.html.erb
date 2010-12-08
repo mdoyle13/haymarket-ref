@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="liquors">
+    <% @liquors.each do |liquor| %>
+      <li>
+        <%= link_to liquor.name, liquor_url(liquor) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101207125432) do
+ActiveRecord::Schema.define(:version => 20101208130020) do
 
   create_table "beer_categories", :force => true do |t|
     t.string   "name"
@@ -151,6 +151,17 @@ ActiveRecord::Schema.define(:version => 20101207125432) do
     t.datetime "updated_at"
   end
 
+  create_table "liquors", :force => true do |t|
+    t.string   "name"
+    t.boolean  "published"
+    t.decimal  "price"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "liquors", ["id"], :name => "index_liquors_on_id"
+
   create_table "page_parts", :force => true do |t|
     t.integer  "page_id"
     t.string   "title"
@@ -273,5 +284,17 @@ ActiveRecord::Schema.define(:version => 20101207125432) do
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"
+
+  create_table "wines", :force => true do |t|
+    t.string   "name"
+    t.boolean  "published"
+    t.decimal  "glass_price"
+    t.decimal  "bottle_price"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wines", ["id"], :name => "index_wines_on_id"
 
 end

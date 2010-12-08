@@ -1,0 +1,16 @@
+nb:
+  admin:
+    wines:
+      index:
+        create_new: Lag en ny Wine
+        reorder: Endre rekkefølgen på Wines
+        reorder_done: Ferdig å endre rekkefølgen Wines
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen wines enda. Klikk på "Lag en ny Wine" for å legge til din første wine.
+      wine:
+        view_live: Vis hvordan denne wine ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne wine
+        delete: Fjern denne wine permanent
+  wines:
+    show:
+      other: Andre Wines

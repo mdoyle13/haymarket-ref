@@ -1,0 +1,35 @@
+<% content_for :body_content_title do %>
+  <%= @liquor.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Name</h3>
+    <%= @liquor.name %>
+  </div>
+  
+  <div>
+    <h3>Published</h3>
+    <%= @liquor.published %>
+  </div>
+  
+  <div>
+    <h3>Price</h3>
+    <%= @liquor.price %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="liquors">
+    <% @liquors.each do |liquor| %>
+      <li>
+        <%= link_to liquor.name, liquor_url(liquor) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

@@ -1,0 +1,16 @@
+en:
+  admin:
+    wines:
+      index:
+        create_new: Create a new Wine
+        reorder: Reorder Wines
+        reorder_done: Done Reordering Wines
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no wines yet. Click "Create a new Wine" to add your first wine.
+      wine:
+        view_live: View this wine live <br/><em>(opens in a new window)</em>
+        edit: Edit this wine
+        delete: Remove this wine forever
+  wines:
+    show:
+      other: Other Wines

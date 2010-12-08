@@ -1,0 +1,16 @@
+nb:
+  admin:
+    liquors:
+      index:
+        create_new: Lag en ny Liquor
+        reorder: Endre rekkefølgen på Liquors
+        reorder_done: Ferdig å endre rekkefølgen Liquors
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen liquors enda. Klikk på "Lag en ny Liquor" for å legge til din første liquor.
+      liquor:
+        view_live: Vis hvordan denne liquor ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne liquor
+        delete: Fjern denne liquor permanent
+  liquors:
+    show:
+      other: Andre Liquors

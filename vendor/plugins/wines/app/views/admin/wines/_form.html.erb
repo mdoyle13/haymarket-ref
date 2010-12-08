@@ -1,0 +1,30 @@
+<% form_for [:admin, @wine] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :glass_price -%>
+    <%= f.text_field :glass_price -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :bottle_price -%>
+    <%= f.text_field :bottle_price -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.wines.wine.delete')
+              } %>
+<% end -%>

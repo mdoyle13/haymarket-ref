@@ -1,0 +1,40 @@
+<% content_for :body_content_title do %>
+  <%= @wine.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Name</h3>
+    <%= @wine.name %>
+  </div>
+  
+  <div>
+    <h3>Published</h3>
+    <%= @wine.published %>
+  </div>
+  
+  <div>
+    <h3>Glass Price</h3>
+    <%= @wine.glass_price %>
+  </div>
+  
+  <div>
+    <h3>Bottle Price</h3>
+    <%= @wine.bottle_price %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="wines">
+    <% @wines.each do |wine| %>
+      <li>
+        <%= link_to wine.name, wine_url(wine) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

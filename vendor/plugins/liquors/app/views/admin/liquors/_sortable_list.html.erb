@@ -1,0 +1,10 @@
+<h1>Published</h1>
+<%= render :partial => 'liquor', :collection => Liquor.find_all_by_published(true, :order => 'position') %>
+<br />
+<br />
+<br />
+
+<h1>Not Published</h1>
+<%= render :partial => 'liquor', :collection => Liquor.find_all_by_published(false, :order => 'position') %>
+
+<%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>

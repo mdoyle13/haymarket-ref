@@ -1,0 +1,16 @@
+nl:
+  admin:
+    liquors:
+      index:
+        create_new: Maak een nieuwe Liquor
+        reorder: Wijzig de volgorde van de Liquors
+        reorder_done: Klaar met het wijzingen van de volgorde van de Liquors
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen liquors. Druk op 'Maak een nieuwe Liquor' om de eerste aan te maken.
+      liquor:
+        view_live: Bekijk deze liquor op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze liquor
+        delete: Verwijder deze liquor voor eeuwig
+  liquors:
+    show:
+      other: Andere Liquors

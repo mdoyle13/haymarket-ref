@@ -1,0 +1,16 @@
+en:
+  admin:
+    liquors:
+      index:
+        create_new: Create a new Liquor
+        reorder: Reorder Liquors
+        reorder_done: Done Reordering Liquors
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no liquors yet. Click "Create a new Liquor" to add your first liquor.
+      liquor:
+        view_live: View this liquor live <br/><em>(opens in a new window)</em>
+        edit: Edit this liquor
+        delete: Remove this liquor forever
+  liquors:
+    show:
+      other: Other Liquors
