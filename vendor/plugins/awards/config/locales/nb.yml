@@ -1,0 +1,16 @@
+nb:
+  admin:
+    awards:
+      index:
+        create_new: Lag en ny Award
+        reorder: Endre rekkefølgen på Awards
+        reorder_done: Ferdig å endre rekkefølgen Awards
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen awards enda. Klikk på "Lag en ny Award" for å legge til din første award.
+      award:
+        view_live: Vis hvordan denne award ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne award
+        delete: Fjern denne award permanent
+  awards:
+    show:
+      other: Andre Awards

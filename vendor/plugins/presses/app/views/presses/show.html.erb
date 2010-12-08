@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @press.headline %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Headline</h3>
+    <%= @press.headline %>
+  </div>
+  
+  <div>
+    <h3>Author</h3>
+    <%= @press.author %>
+  </div>
+  
+  <div>
+    <h3>Publication</h3>
+    <%= @press.publication %>
+  </div>
+  
+  <div>
+    <h3>Content</h3>
+    <%= @press.content %>
+  </div>
+  
+  <div>
+    <h3>Pdf</h3>
+    <%= link_to 'pdf', @press.pdf.public_filename %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="presses">
+    <% @presses.each do |press| %>
+      <li>
+        <%= link_to press.headline, press_url(press) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

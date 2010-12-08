@@ -1,0 +1,35 @@
+<% form_for [:admin, @award] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :event_name -%>
+    <%= f.text_field :event_name, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :category -%>
+    <%= f.text_field :category -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :beer_name -%>
+    <%= f.text_field :beer_name -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :award -%>
+    <%= f.text_field :award -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :year -%>
+    <%= f.datetime_select :year -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.awards.award.delete')
+              } %>
+<% end -%>

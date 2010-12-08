@@ -11,6 +11,19 @@
 
 ActiveRecord::Schema.define(:version => 20101208130020) do
 
+  create_table "awards", :force => true do |t|
+    t.string   "event_name"
+    t.string   "category"
+    t.string   "beer_name"
+    t.string   "award"
+    t.datetime "year"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "awards", ["id"], :name => "index_awards_on_id"
+
   create_table "beer_categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -115,6 +128,24 @@ ActiveRecord::Schema.define(:version => 20101208130020) do
 
   add_index "events", ["id"], :name => "index_events_on_id"
 
+  create_table "food_categories", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "foods", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "food_category_id"
+    t.boolean  "daily_special"
+    t.decimal  "price"
+    t.boolean  "published"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "foods", ["id"], :name => "index_foods_on_id"
+
   create_table "images", :force => true do |t|
     t.integer  "parent_id"
     t.string   "content_type"
@@ -203,6 +234,19 @@ ActiveRecord::Schema.define(:version => 20101208130020) do
   add_index "pages", ["id"], :name => "index_pages_on_id"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
 
+  create_table "presses", :force => true do |t|
+    t.string   "headline"
+    t.string   "author"
+    t.string   "publication"
+    t.text     "content"
+    t.integer  "pdf_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "presses", ["id"], :name => "index_presses_on_id"
+
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
     t.text     "value"
@@ -262,6 +306,17 @@ ActiveRecord::Schema.define(:version => 20101208130020) do
   create_table "tags", :force => true do |t|
     t.string "name"
   end
+
+  create_table "testimonials", :force => true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.text     "testimonial"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "testimonials", ["id"], :name => "index_testimonials_on_id"
 
   create_table "user_plugins", :force => true do |t|
     t.integer "user_id"

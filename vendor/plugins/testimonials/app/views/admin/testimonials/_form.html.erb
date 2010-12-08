@@ -1,0 +1,25 @@
+<% form_for [:admin, @testimonial] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :city -%>
+    <%= f.text_field :city -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :testimonial -%>
+    <%= f.text_area :testimonial, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.testimonials.testimonial.delete')
+              } %>
+<% end -%>

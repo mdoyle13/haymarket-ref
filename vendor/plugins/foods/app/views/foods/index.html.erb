@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="foods">
+    <% @foods.each do |food| %>
+      <li>
+        <%= link_to food.name, food_url(food) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
