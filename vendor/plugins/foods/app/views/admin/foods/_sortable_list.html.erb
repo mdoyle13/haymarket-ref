@@ -1,2 +1,24 @@
-<%= render :partial => 'food', :collection => @foods %>
+<% food_categories = FoodCategory.all() %>
+
+<h1>On The Menu</h1>
+<% food_categories.each do |food_category| %>
+	<% unless food_category.foods.published.empty? %>
+		<h2><%= food_category.name %></h2>
+		<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
+		<% end %>
+	<br />
+	<br />
+<% end %>
+
+<h1>Not On The Menu</h1>
+<% food_categories.each do |food_category| %>
+	<% unless food_category.foods.unpublished.empty? %>
+		<h2><%= food_category.name %></h2>
+		<%= render :partial => 'food', :collection => food_category.foods.unpublished  %>
+	<%end %>
+	<br />
+	<br />
+<% end %>
+
+
 <%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>
