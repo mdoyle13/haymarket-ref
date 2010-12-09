@@ -156,12 +156,11 @@ a:visited.tbc {
 	clear:both;
 	position:relative;
 	top:-15px;
-	left:20px;
 }
 
 #navigation a {
 	display: block;
-	width: 110px;
+	width: 80px;
 	height: 40px;
 	float: left;
 	background-image: url('../images/nav_image.png');
@@ -252,13 +251,13 @@ a:visited.tbc {
 	background-position: 5px 7px;
 }
 .facebook{
-	background-image: url(../images/facebook_logo.jpg);
+	background-image: url(../images/facebook_logo.png);
 }
 .twitter{
-	background-image: url(../images/twitter_logo.jpg);
+	background-image: url(../images/twitter_logo.png);
 }
 .youtube{
-	background-image: url(../images/youtube_logo.jpg);
+	background-image: url(../images/youtube_logo.png);
 }
 
 
