@@ -1,11 +1,20 @@
-<% content_for :body_content_left do %>
-  <ul id="foods">
-    <% @foods.each do |food| %>
-      <li>
-        <%= link_to food.name, food_url(food) %>
-      </li>
-    <% end %>
-  </ul>
+<% theme ||= false -%>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "/theme/stylesheets/menu" %>
+	<%= stylesheet_link_tag "/theme/stylesheets/print_menu", :media => "print" %>
 <% end %>
 
-<%= render :partial => "/shared/content_page" %>
+<% food_categories = FoodCategory.all() %>
+
+<h1>Our Food Menu</h1>
+<a class="print_page" href="#">Print Menu</a>
+<div id="food_menu">
+	<% food_categories.each do |food_category| %>
+		<% unless food_category.foods.published.empty? %>
+		<div class="food_category">
+			<h2><%= food_category.name.pluralize %></h2>
+			<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
+		</div>
+		<% end %>
+	<% end %>
+</div>
