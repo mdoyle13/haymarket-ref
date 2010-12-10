@@ -1,5 +1,9 @@
 <% form_for [:admin, @award] do |f| -%>
   <%= f.error_messages %>
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
   
   <div class='field'>
     <%= f.label :event_name -%>

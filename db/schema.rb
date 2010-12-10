@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101208130020) do
+ActiveRecord::Schema.define(:version => 20101209234046) do
 
   create_table "awards", :force => true do |t|
     t.string   "event_name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20101208130020) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
   add_index "awards", ["id"], :name => "index_awards_on_id"
@@ -243,6 +244,7 @@ ActiveRecord::Schema.define(:version => 20101208130020) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
   add_index "presses", ["id"], :name => "index_presses_on_id"
@@ -314,6 +316,7 @@ ActiveRecord::Schema.define(:version => 20101208130020) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
   add_index "testimonials", ["id"], :name => "index_testimonials_on_id"
