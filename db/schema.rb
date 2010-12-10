@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
   add_index "awards", ["id"], :name => "index_awards_on_id"
@@ -243,6 +244,7 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
   add_index "presses", ["id"], :name => "index_presses_on_id"
@@ -320,6 +322,7 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
   add_index "testimonials", ["id"], :name => "index_testimonials_on_id"

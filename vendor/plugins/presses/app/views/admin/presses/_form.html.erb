@@ -1,6 +1,9 @@
 <% form_for [:admin, @press] do |f| -%>
   <%= f.error_messages %>
-  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
   <div class='field'>
     <%= f.label :headline -%>
     <%= f.text_field :headline, :class => 'larger' -%>
