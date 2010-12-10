@@ -20,7 +20,7 @@ class AwardsController < ApplicationController
 protected
 
   def find_all_awards
-    @awards = Award.find(:all, :order => "position ASC")
+    @awards = Award.published
   end
 
   def find_page
