@@ -20,7 +20,7 @@ class PressesController < ApplicationController
 protected
 
   def find_all_presses
-    @presses = Press.find(:all, :order => "position ASC")
+    @presses = Press.published
   end
 
   def find_page

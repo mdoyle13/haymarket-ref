@@ -20,7 +20,7 @@ class TestimonialsController < ApplicationController
 protected
 
   def find_all_testimonials
-    @testimonials = Testimonial.find(:all, :order => "position ASC")
+    @testimonials = Testimonial.published
   end
 
   def find_page
