@@ -80,10 +80,9 @@
 													</div>
 						<div class='contact'>
 							<h6>Signup for E-Newsletter</h6>
-							<form action='/subscribers' class='new_subscriber' id='new_subscriber' method='post'><div style='margin:0;padding:0;display:inline'><input name='authenticity_token' type='hidden' value='G5xvYGJdZ0xLfji3Z6GGKDgg6qYic4jyIXHAszHuZvM=' /></div>
-								<input id='subscriber_email' name='subscriber[email]' size='30' type='text' />
-								<input id='subscriber_submit' name='commit' type='submit' value='Signup' />
-							</form>
+							<% form_for Subscriber.new do |f| %>
+							<%= f.text_field :email %> <%= f.submit 'Signup' %>
+							<% end %>
 							<div id='contact_links'>
 								<%= link_to 'Contact Us', new_inquiry_path() %> | <a href='/applications/new'>Get Hired</a>
 							</div>

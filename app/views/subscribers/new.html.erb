@@ -1,0 +1,4 @@
+<h1>Sign Up for our Email List</h1>
+<% form_for Subscriber.new do |f| %>
+<%= f.text_field :email %> <%= f.submit 'Signup' %>
+<% end %>
