@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101211160518) do
+ActiveRecord::Schema.define(:version => 20101211163945) do
 
   create_table "awards", :force => true do |t|
     t.string   "event_name"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20101211160518) do
     t.integer  "beer_pricing_id"
     t.decimal  "og"
     t.decimal  "fg"
-    t.decimal  "ibv"
+    t.decimal  "ibu"
     t.decimal  "abv"
   end
 
