@@ -1,9 +1,22 @@
-<h1>Published</h1>
-<%= render :partial => 'wine', :collection => Wine.find_all_by_published(true, :order => 'position').to_a %>
-<br />
-<br />
-<br />
-<h1>Not Published</h1>
-<%= render :partial => 'wine', :collection => Wine.find_all_by_published(false, :order => 'position').to_a %>
+<% categories = WineCategory.all %>
 
+<h1>Published</h1>
+<% categories.each do |category| %>
+<h2><%= category.name %></h2>
+<%= render :partial => 'wine', :collection => category.wines.find_all_by_published(true, :order => 'position').to_a %>
+<br />
+<br />
+<% end %>
+
+<br />
+<br />
+<br />
+
+<h1>Not Published</h1>
+<% categories.each do |category| %>
+<h2><%= category.name %></h2>
+<%= render :partial => 'wine', :collection => category.wines.find_all_by_published(false, :order => 'position').to_a %>
+<br />
+<br />
+<% end %>
 <%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>

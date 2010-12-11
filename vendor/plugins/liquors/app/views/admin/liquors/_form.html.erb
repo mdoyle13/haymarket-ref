@@ -5,7 +5,12 @@
     <%= f.label :name -%>
     <%= f.text_field :name, :class => 'larger' -%>
   </div>
-  
+
+  <div class='field'>
+    <%= f.label :liquor_category_id -%>
+    <%= f.collection_select :liquor_category_id, LiquorCategory.all, :id, :name, :prompt => true -%>
+  </div>  
+
   <div class='field'>
     <%= f.label :published -%>
     <%= f.check_box :published -%>

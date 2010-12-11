@@ -5,6 +5,11 @@
     <%= f.label :name -%>
     <%= f.text_field :name, :class => 'larger' -%>
   </div>
+
+  <div class='field'>
+    <%= f.label :wine_category_id -%>
+    <%= f.collection_select :wine_category_id, WineCategory.all, :id, :name, :prompt => true -%>
+  </div>
   
   <div class='field'>
     <%= f.label :published -%>
