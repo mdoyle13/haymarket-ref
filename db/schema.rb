@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101210132557) do
+ActiveRecord::Schema.define(:version => 20101211163945) do
 
   create_table "awards", :force => true do |t|
     t.string   "event_name"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
     t.integer  "beer_pricing_id"
     t.decimal  "og"
     t.decimal  "fg"
-    t.decimal  "ibv"
+    t.decimal  "ibu"
     t.decimal  "abv"
   end
 
@@ -183,6 +183,12 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
     t.datetime "updated_at"
   end
 
+  create_table "liquor_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "liquors", :force => true do |t|
     t.string   "name"
     t.boolean  "published"
@@ -190,6 +196,7 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "liquor_category_id"
   end
 
   add_index "liquors", ["id"], :name => "index_liquors_on_id"
@@ -349,6 +356,12 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
 
   add_index "users", ["id"], :name => "index_users_on_id"
 
+  create_table "wine_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "wines", :force => true do |t|
     t.string   "name"
     t.boolean  "published"
@@ -357,6 +370,7 @@ ActiveRecord::Schema.define(:version => 20101210132557) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "wine_category_id"
   end
 
   add_index "wines", ["id"], :name => "index_wines_on_id"
