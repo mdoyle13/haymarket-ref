@@ -1,0 +1,16 @@
+h2 {
+	color: #000;
+	font-size: 24pt;
+}
+
+#menu {
+	/*border: 1px solid #666;*/
+	margin-top: 150px;
+}
+
+.food_category {
+	width: 270px;
+	text-align: center;
+	min-height: 250px;
+	/*border: 1px solid #666;*/
+}
