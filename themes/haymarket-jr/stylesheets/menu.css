@@ -1,7 +1,30 @@
+#menu h2 {
+	font-family: Copperplate, Helvetica, Arial, sans-serif;
+}
+
 .food_name {
+	font-family: Georgia, Times, "Times New Roman", serif;
 	font-size: 14px;
 }
 
 .food_category {
-	margin: 5px 0;
+	margin: 5px 15px 5px 0;
+	width: 265px;
+	min-height: 150px;
+	text-align: center;
 }
+
+.content {
+	width: 850px;
+}
+
+.menu_row {
+	/*min-height: 250px;*/
+	border: 1px solid #fff;
+}
+
+.daily_special {
+	font-size: 10px;
+	color: #fff;
+}
+

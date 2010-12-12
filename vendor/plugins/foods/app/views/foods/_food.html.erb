@@ -1,1 +1,1 @@
-<div class="food_name"><%= food.name %></div>
+<div class="food_name"><%= food.name %> - $<%= sprintf("%.2f", food.price) %> <%= "<span class=\"daily_special\"> *Daily Special</span>" if food.daily_special %></div>
