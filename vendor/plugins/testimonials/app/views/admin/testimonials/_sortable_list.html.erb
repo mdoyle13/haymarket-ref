@@ -1,2 +1,7 @@
-<%= render :partial => 'testimonial', :collection => @testimonials %>
+<h2>Published</h2>
+<%= render :partial => 'testimonial', :collection => Testimonial.published %>
+
+<h2>Unpublished</h2>
+<%= render :partial => 'testimonial', :collection => Testimonial.unpublished %>
+
 <%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>
