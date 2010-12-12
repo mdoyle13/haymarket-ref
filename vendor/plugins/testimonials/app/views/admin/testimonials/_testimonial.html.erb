@@ -1,6 +1,6 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(testimonial) -%>">
   <span class='title'>
-    <%=h testimonial.name %>
+    <%=h testimonial.testimonial.gsub(/<\/?[^>]*>/, "") %>
     <span class="preview">&nbsp;</span>
   </span>
   <span class='actions'>
