@@ -1,5 +1,7 @@
 class Award < ActiveRecord::Base
-
+  
+  belongs_to :beer
+  
   acts_as_indexed :fields => [:event_name, :category, :beer_name, :award]
 
   validates_presence_of :event_name

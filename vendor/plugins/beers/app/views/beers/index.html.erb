@@ -7,7 +7,7 @@
 			<div class="beer">
 	     	<h3><%= beer.name %></h3>
 				<%= beer.description %>
-				<%= beer.awards unless beer.awards.length < 10 %>
+				<%= beer.award.description %>
 				<p>
 					<%= "Original Gravity: #{beer.og}<br />" unless beer.og.nil? %>
 					<%= "Final Gravity: #{beer.fg}<br />" unless beer.fg.nil? %>

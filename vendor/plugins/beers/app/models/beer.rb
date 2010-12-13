@@ -9,6 +9,7 @@ class Beer < ActiveRecord::Base
 
   has_many :beer_pricings
   has_many :beer_sizes, :through => :beer_pricings
+  has_many :awards
   
   accepts_nested_attributes_for :beer_pricings, :allow_destroy => true
   
