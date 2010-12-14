@@ -4,7 +4,6 @@ class Beer < ActiveRecord::Base
 
   validates_presence_of :name
   validates_uniqueness_of :name
-	validates_presence_of :description
 	validates_presence_of :beer_category_id
 
   has_many :beer_pricings
