@@ -4,17 +4,52 @@
 	<%= stylesheet_link_tag "/theme/stylesheets/print_menu", :media => "print" %>
 <% end %>
 
-<% food_categories = FoodCategory.all() %>
+<% food_categories = FoodCategory.all %>
 
 <h1>Our Food Menu</h1>
 <a class="print_page" href="#">Print Menu</a>
 <div id="food_menu">
+	<div id="menu">
 	<% food_categories.each do |food_category| %>
 		<% unless food_category.foods.published.empty? %>
-		<div class="food_category">
-			<h2><%= food_category.name.pluralize %></h2>
-			<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
-		</div>
+			<% if food_category.name == "Appetizer" %>
+			<div class="food_category left" id="appetizers">
+				<h2><%= food_category.name.pluralize %></h2>
+				<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
+			</div>
+			<% end %>
+		
+			<% if food_category.name == "Soup" || food_category.name == "Salad" %>
+			<div class="food_category left" id="soups_salads">
+				<h2><%= food_category.name.pluralize %></h2>
+				<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
+			</div>
+			<% end %>
+
+			<% if food_category.name == "Entreé" %>
+			<div class="clear"></div>
+			<div class="food_category" id="entrees">
+				<h2><%= food_category.name.pluralize %></h2>
+				<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
+			</div>
+			<% end %>
+			
+			<% if food_category.name == "Side" %>
+			<div class="clear"></div>
+			<div class="food_category left" id="sides">
+				<h2><%= food_category.name.pluralize %></h2>
+				<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
+			</div>
+			<% end %>
+		
+			<% if food_category.name == "Dessert" %>
+			<div class="food_category left" id="dessert">
+				<h2><%= food_category.name.pluralize %></h2>
+				<%= render :partial => 'food', :collection => food_category.foods.published unless food_category.foods.published.nil? %>
+			</div>
+			<% end %>
 		<% end %>
 	<% end %>
+	<div class="clear"></div>
+	</div>
 </div>

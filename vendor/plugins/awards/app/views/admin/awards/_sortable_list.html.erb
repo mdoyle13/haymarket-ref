@@ -1,2 +1,13 @@
-<%= render :partial => 'award', :collection => @awards %>
+<h2>Published</h2>
+<% if Award.published.any? %>
+<%= render :partial => 'award', :collection => Award.published %>
+<% else %><p>Sorry there are no published testimonials</p>
+<% end %>
+<br />
+<h2>Unpublished</h2>
+<% if Award.unpublished.any? %>
+<%= render :partial => 'award', :collection => Award.unpublished %>
+<% else %><p>Sorry there are no unpublished testimonials</p>
+<% end %>
+
 <%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>
