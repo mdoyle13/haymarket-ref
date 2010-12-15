@@ -1,6 +1,12 @@
-<h2>Next Event</h2>
-	<%= Event.upcoming.published.find(:first).date.strftime("%m/%d/%Y") %> <br />
-	<%= Event.upcoming.published.find(:first).name %> <br />
+	<% @upcoming = Event.upcoming.published.find(:first) %>
+	<h2>Next Event</h2>
+	<% if !@upcoming.blank? %>
+	<%= @upcoming.date.strftime("%m/%d/%Y") %><br />
+	<%= @upcoming.name %> <br />
+	<% else %>
+	<small>Check back often to see what's going on here at the brewery</small>
+	<% end %>
 <h2>Featured Beer</h2>
-	
+	<% @featured_beer = Beer.find_by_featured(true) %>
+	<%= @featured_beer.name %>
 <h2>Food Special</h2>
