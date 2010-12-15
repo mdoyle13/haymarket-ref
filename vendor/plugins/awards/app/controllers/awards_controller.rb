@@ -5,13 +5,13 @@ class AwardsController < ApplicationController
 
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
-    # by swapping @page for @award in the line below:
+    # by swapping @page for @award in the line below:d
     present(@page)
   end
 
   def show
-    @award = Beer.awards.find(params[:id])
-
+    # @award = Beer.awards.find(params[:id])
+    @award = Award.find(params[:id])
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @award in the line below:
     present(@page)
@@ -20,7 +20,8 @@ class AwardsController < ApplicationController
 protected
 
   def find_all_awards
-    @awards = Beer.awards.published
+    # @awards = Beer.awards.published
+    @awards = Award.published
   end
 
   def find_page
