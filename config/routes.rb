@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # The priority is based upon order of creation: first created -> highest priority.
   map.resources :subscribers
+  map.resources :applications
   
   map.root :controller => "pages", :action => "home"
 
