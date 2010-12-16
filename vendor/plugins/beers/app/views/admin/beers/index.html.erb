@@ -24,11 +24,11 @@
     <% end %>
   <% else %>
     <% if @beers.any? %>
-      <%= will_paginate @beers, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+      <%# will_paginate @beers, :previous_label => '&laquo;', :next_label => '&raquo;' %>
        <ul id='sortable_list'>
         <%= render :partial => "sortable_list" %>
        </ul>
-      <%= will_paginate @beers, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+      <%# will_paginate @beers, :previous_label => '&laquo;', :next_label => '&raquo;' %>
     <% else %>
       <p>
         <strong>
