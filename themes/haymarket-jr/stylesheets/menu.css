@@ -1,30 +1,85 @@
+.content {
+	width: 890px;
+}
+
+.column {
+	margin: 0 5px;
+	width: 283px;
+	float: left;
+}
+
+.last {
+	margin-right: 0;
+}
+
 #menu h2 {
 	font-family: Copperplate, Helvetica, Arial, sans-serif;
 }
 
-.food_name {
+#menu h4 {
+	font-family: Copperplate, Helvetica, Arial, sans-serif;
+	color: #fff;
+}
+
+#menu p {
+	margin: 0;
+	padding: 0;
+}
+
+.right2_col {
+	width: 595px;
+	float: left;
+}
+
+.middle {
+	margin-right: 18px;
+}
+
+br {
+	display: block;
+	height: 0;
+}
+
+.food_item {
+	margin-bottom: 10px;
+}
+
+.food_name_description {
+	width: 235px;
+	float: left;
+}
+
+.note,
+.description {
 	font-family: Georgia, Times, "Times New Roman", serif;
-	font-size: 14px;
+	font-size: 12px;
+	display: block;
+	margin-left: 5px;
 }
 
-.food_category {
-	margin: 5px 15px 5px 0;
-	width: 265px;
-	min-height: 150px;
-	text-align: center;
-}
-
-.content {
-	width: 850px;
-}
-
-.menu_row {
-	/*min-height: 250px;*/
-	border: 1px solid #fff;
+.price {
+	font-family: Copperplate, Helvetica, Arial, sans-serif;
+	width: 35px;
+	float: right;
+	color: #fff;
 }
 
 .daily_special {
 	font-size: 10px;
 	color: #fff;
+}
+
+#sides .food_item h4,
+#sides .food_item,
+#sauces .food_item h4,
+#sauces .food_item {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+#sauces .food_item {
+	width: 140px;
+	float: left;
 }
 

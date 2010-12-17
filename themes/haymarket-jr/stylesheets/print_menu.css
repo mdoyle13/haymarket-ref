@@ -1,16 +1,25 @@
 h2 {
 	color: #000;
-	font-size: 24pt;
+}
+
+.note,
+.description {
+	font-size: 10pt;
+	color: #000;
+	line-height: 1;
+}
+
+.column {
+	width: 270px;
+	margin: 0 20px;
+}
+
+.right2_col {
+	width: 665px;
 }
 
 #menu {
-	/*border: 1px solid #666;*/
-	margin-top: 150px;
-}
-
-.food_category {
-	width: 270px;
-	text-align: center;
-	min-height: 250px;
-	/*border: 1px solid #666;*/
+	width: 980px;
+	margin: 0;
+	padding: 0;
 }

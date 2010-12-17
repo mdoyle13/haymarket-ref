@@ -1,1 +1,10 @@
-<div class="food_name"><%= food.name %> - $<%= sprintf("%.2f", food.price) %> <%= "<span class=\"daily_special\"> *Daily Special</span>" if food.daily_special %></div>
+<div class="food_item">
+	<div class="food_name_description">
+		<h4><%= food.name %></h4>
+		<span class="description"><%= food.description %></span>
+	</div>
+	<div class="price">
+		<%= "$" << format("%.0f", food.price) unless food.price.blank? %>
+	</div>
+	<div class="clear"></div>
+</div>
