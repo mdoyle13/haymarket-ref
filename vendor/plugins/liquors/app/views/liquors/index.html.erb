@@ -1,6 +1,6 @@
 <% content_for :body_content_left do %>
   <ul id="liquors">
-    <% @liquors.find_all_by_published(true).each do |liquor| %>
+    <% Liquor.find_all_by_published(true).each do |liquor| %>
       <li>
         <%= link_to liquor.name, liquor_url(liquor) %>
       </li>

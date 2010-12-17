@@ -9,18 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101211163945) do
+ActiveRecord::Schema.define(:version => 20101216140959) do
+
+  create_table "applications", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "position"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "awards", :force => true do |t|
     t.string   "event_name"
     t.string   "category"
     t.string   "beer_name"
-    t.string   "award"
+    t.string   "description"
     t.datetime "year"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "published"
+    t.integer  "beer_id"
   end
 
   add_index "awards", ["id"], :name => "index_awards_on_id"
@@ -48,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20101211163945) do
   create_table "beers", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.text     "awards"
     t.date     "date_tapped"
     t.string   "brewery"
     t.boolean  "featured"

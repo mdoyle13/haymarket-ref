@@ -4,11 +4,11 @@ class Beer < ActiveRecord::Base
 
   validates_presence_of :name
   validates_uniqueness_of :name
-	validates_presence_of :description
 	validates_presence_of :beer_category_id
 
   has_many :beer_pricings
   has_many :beer_sizes, :through => :beer_pricings
+  has_many :awards
   
   accepts_nested_attributes_for :beer_pricings, :allow_destroy => true
   

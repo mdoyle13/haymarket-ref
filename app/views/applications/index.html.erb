@@ -1,0 +1,26 @@
+<h1>Listing applications</h1>
+
+<table>
+  <tr>
+    <th>Namme</th>
+    <th>Email</th>
+    <th>Position</th>
+    <th>Message</th>
+  </tr>
+
+<% @applications.each do |application| %>
+  <tr>
+    <td><%=h application.name %></td>
+    <td><%=h application.email %></td>
+    <td><%=h application.position %></td>
+    <td><%=h application.message %></td>
+    <td><%= link_to 'Show', application %></td>
+    <td><%= link_to 'Edit', edit_application_path(application) %></td>
+    <td><%= link_to 'Destroy', application, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New application', new_application_path %>
