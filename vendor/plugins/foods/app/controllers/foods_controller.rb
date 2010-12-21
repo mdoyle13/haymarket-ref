@@ -12,7 +12,7 @@ class FoodsController < ApplicationController
     #Second Column
     @mussels = FoodCategory.find_by_name("Mussels")
     @chili_and_soup = FoodCategory.find_by_name("Chili & Soup")
-    @entrees = FoodCategory.find_by_name("Entreés")
+    @entrees = FoodCategory.find_by_name("Entrees")
     @barbeque = FoodCategory.find_by_name("Barbeque")
     @desserts = FoodCategory.find_by_name("Desserts")
     
