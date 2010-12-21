@@ -13,5 +13,6 @@ class Beer < ActiveRecord::Base
   accepts_nested_attributes_for :beer_pricings, :allow_destroy => true
   
   default_scope :order => :position
+  named_scope :live, :conditions => {:published => true}
 
 end
