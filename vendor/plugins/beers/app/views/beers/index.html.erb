@@ -1,7 +1,24 @@
 <% content_for :body_content_left do %>
+
+<div id="tabs">
+	
+	<ul>
+		
+		<% 
+		i = 1
+		@beer_categories.each do |category| 
+		%>
+			<% unless category.beers.empty? %>
+			<li><a href='#tabs-<%= i %>'><%= category.name %></a></li>
+			<% i += 1 %>
+			<% end  %>
+		<% end %>
+	</ul>
+	<% i = 1 %>
 	<% @beer_categories.each do |category| %>
 		<% unless category.beers.empty? %>
-			<div class="tab">
+			<div id="tabs-<%= i %>">
+				<% i += 1 %>
 				<h1><%= category.name %></h1>
 		    <% category.beers.live.each do |beer| %>
 					<div class="beer">
@@ -31,6 +48,7 @@
 			</div>
 		<% end %>
 	<% end %>
+</div>
 <% end %>
 
 <% content_for :body_content_right do %>
