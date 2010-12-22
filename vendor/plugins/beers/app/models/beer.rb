@@ -10,7 +10,7 @@ class Beer < ActiveRecord::Base
   has_many :beer_sizes, :through => :beer_pricings
   has_many :awards
   
-  accepts_nested_attributes_for :beer_pricings, :allow_destroy => true
+  accepts_nested_attributes_for :beer_pricings, :allow_destroy => true, :reject_if => lambda { |record| record[:price].empty? }
   
   default_scope :order => :position
   named_scope :live, :conditions => {:published => true}

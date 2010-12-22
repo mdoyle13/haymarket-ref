@@ -1,6 +1,12 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "/theme/stylesheets/beer_menu" %>
+	<%= stylesheet_link_tag "/theme/stylesheets/print_menu", :media => "print" %>
+	<%= stylesheet_link_tag "/theme/stylesheets/beer_print_menu", :media => "print" %>
+<% end %>
+
 <% content_for :body_content_left do %>
-<a class="print_page" href="#">Print Menu</a>
-<div id="tabs">
+<a class="print_beer_menu" href="#">Print Menu</a>
+<div id="tabs" class="beer_menu">
 	
 	<ul>
 		
@@ -19,28 +25,32 @@
 		<% unless category.beers.empty? %>
 			<div id="tabs-<%= i %>">
 				<% i += 1 %>
-				<h1><%= category.name %></h1>
+				<h1 class="beer-category-name"><%= category.name %></h1>
 		    <% category.beers.live.each do |beer| %>
 					<div class="beer">
-			     	<h3><%= beer.name %></h3>
-						<%= beer.brewery %>
-						<%= beer.description %>
+			     	<h3 class="beer_name"><%= beer.name %></h3>
+						<p class="brewery"><%= beer.brewery %></p>
+						<div class="beer-description"><%= beer.description %></div>
 						
 						<% if !beer.awards.empty? %>
-							<h4>Awards</h4>
+							<div class="awards">
+								<h4>Awards</h4>
 							<ul>
 								<% beer.awards.each do |award| %>
 								<%= link_to "#{award.description}", award_path(award) %>
 								<li><%= award.description %></li>
 								<% end %>
 							</ul>
+							</div>
 						<% end %>
-
+						
 						<% if beer.og or beer.fg or beer.ibu or beer.abv %>
+							<div class="beer-nerd-stuff">
 							<%= "Original Gravity: #{beer.og}" unless beer.og.nil? %>
 							<%= "Final Gravity: #{beer.fg}" unless beer.fg.nil? %>
 							<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
 							<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
+							</div>
 						<% end %>
 						
 					</div>

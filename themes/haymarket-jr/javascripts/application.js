@@ -5,7 +5,14 @@ $(document).ready(function() {
 		$("#food_menu").printElement({
 			pageTitle: 'Haymarket Brewery'
 		});
-
+		
 		return(false);
 	});
+	$("a.print_beer_menu").click( function() {
+		$(".beer_menu").printElement({
+			pageTitle: 'Haymarket Brewery'
+		})
+		
+		return(false);
+	})
 });
