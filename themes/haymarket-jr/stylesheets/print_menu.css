@@ -40,4 +40,12 @@ h2 {
 	height:175px;
 	background:url('../images/menuThingy.png') no-repeat;
 	-moz-background-size:590px;
+	margin:20px 0px 20px 0px;
+}
+#legend {
+	margin:0 auto;
+	margin-top:30px;
+	width:420px;
+	height:172px;
+	background:url('../images/legend.png') no-repeat;
 }
