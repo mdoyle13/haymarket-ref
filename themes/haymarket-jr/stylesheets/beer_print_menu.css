@@ -1,0 +1,72 @@
+body {
+	background-color: white;
+	background-image: none;
+	margin: 0;
+	padding: 0;
+	width: 800px;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	width: 800px;
+}
+
+div.ui-tabs {
+	background-color: white;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-tabs .ui-tabs-nav {
+	border-bottom: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+	background-image: url('../images/printMenuHeadBG.png') no-repeat !important;
+	background-color: transparent;
+	-moz-background-size:265px;
+}
+
+.ui-tabs .ui-tabs-nav li, .ui-tabs .ui-tabs-nav li a {
+	width: 390px;
+	text-align: center;
+	font-family: Copperplate, Helvetica, Arial, sans-serif;
+	color: white;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+
+.ui-tabs .ui-tabs-panel, .ui-tabs .ui-tabs-hide {
+	display: block !important;
+	width: 390px;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.beer_name {
+	float: left;
+	margin-left: 20px;
+	font-size: 10px;
+	color: black;
+}
+
+.brewery {
+	float: right;
+	margin-right: 20px;
+	font-size: 10px;
+	color: black;
+}
+
+.beer-description {
+	display: none;
+}
+
+.awards {
+	display: none;
+}
+
+.beer-nerd-stuff {
+	display: none;
+}

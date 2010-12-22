@@ -1,0 +1,8 @@
+.print_beer_menu {
+	display: block;
+	text-align: right;
+}
+
+h1.beer-category-name {
+	display: none;
+}

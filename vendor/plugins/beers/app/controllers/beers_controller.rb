@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
 
-  before_filter :find_all_beers
+  before_filter :find_beer_categories
   before_filter :find_page
 
   def index
@@ -16,10 +16,13 @@ class BeersController < ApplicationController
     # by swapping @page for @beer in the line below:
     present(@page)
   end
+  
+  def menu
+  end
 
 protected
 
-  def find_all_beers
+  def find_beer_categories
     @beer_categories = BeerCategory.all
   end
 
