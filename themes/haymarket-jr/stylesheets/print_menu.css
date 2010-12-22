@@ -23,3 +23,19 @@ h2 {
 	margin: 0;
 	padding: 0;
 }
+.container {
+	visibility:hidden;
+}
+body {
+	background:none;
+}
+h2 {
+	padding-left:10px;
+	padding-bottom:10px;
+	background:url('../images/printMenuHeadBG.png') no-repeat;
+	color:#ffffff;
+	-moz-background-size:265px;
+}
+#menu h4, .price {
+ 	color:#000000;
+}
