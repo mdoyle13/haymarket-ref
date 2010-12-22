@@ -24,5 +24,5 @@ ActionController::Routing::Routes.draw do |map|
 
   # Marketable URLs
   map.connect '*path', :controller => 'pages', :action => 'show'
-
+  map.resources :accolades
 end
