@@ -6,3 +6,25 @@
 h1.beer-category-name {
 	display: none;
 }
+
+.beer_name {
+	float: left;
+	height: 27px;
+}
+
+.date-tapped {
+	float: right;
+	margin: 0;
+	padding: 0;
+	height: 27px;
+}
+
+.brewery {
+	clear: left;
+	font-size: 12px;
+}
+.beer-nerd-stuff {
+	float: right;
+	clear: right;
+	font-size: 12px;
+}

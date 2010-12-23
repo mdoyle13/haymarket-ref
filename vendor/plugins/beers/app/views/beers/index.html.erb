@@ -29,6 +29,15 @@
 		    <% category.beers.live.each do |beer| %>
 					<div class="beer">
 			     	<h3 class="beer_name"><%= beer.name %></h3>
+						<% if category.name == 'Our Beers' %><p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p<% end %>
+						<% if beer.og or beer.fg or beer.ibu or beer.abv %>
+							<div class="beer-nerd-stuff">
+							<%= "Original Gravity: #{beer.og}" unless beer.og.nil? %>
+							<%= "Final Gravity: #{beer.fg}" unless beer.fg.nil? %>
+							<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
+							<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
+							</div>
+						<% end %>
 						<p class="brewery"><%= beer.brewery %></p>
 						<div class="beer-description"><%= beer.description %></div>
 						
@@ -41,15 +50,6 @@
 								<li><%= award.description %></li>
 								<% end %>
 							</ul>
-							</div>
-						<% end %>
-						
-						<% if beer.og or beer.fg or beer.ibu or beer.abv %>
-							<div class="beer-nerd-stuff">
-							<%= "Original Gravity: #{beer.og}" unless beer.og.nil? %>
-							<%= "Final Gravity: #{beer.fg}" unless beer.fg.nil? %>
-							<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
-							<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
 							</div>
 						<% end %>
 						
