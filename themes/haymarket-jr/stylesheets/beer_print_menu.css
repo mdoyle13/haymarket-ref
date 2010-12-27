@@ -22,41 +22,45 @@ div.ui-tabs {
 	border-bottom: none;
 }
 
-.ui-tabs .ui-tabs-nav li {
-	background-image: url('../images/printMenuHeadBG.png') no-repeat !important;
-	background-color: transparent;
-	-moz-background-size:265px;
-}
-
 .ui-tabs .ui-tabs-nav li, .ui-tabs .ui-tabs-nav li a {
-	width: 390px;
-	text-align: center;
-	font-family: Copperplate, Helvetica, Arial, sans-serif;
-	color: white;
-	margin: 0 0 10px 0;
-	padding: 0;
+	display: none;
 }
 
 .ui-tabs .ui-tabs-panel, .ui-tabs .ui-tabs-hide {
 	display: block !important;
-	width: 390px;
-	float: left;
-	margin: 0;
-	padding: 0;
+}
+
+.ui-tabs {
+	height: 1000px;
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+}
+
+h1.beer-category-name {
+	display: block;
+	padding-left:15px;
+	padding-bottom:10px;
+	background:url('../images/printMenuHeadBG.png') no-repeat;
+	color:#ffffff;
+	-moz-background-size: 100%;
 }
 
 .beer_name {
 	float: left;
 	clear: left;
-	margin-left: 20px;
 	margin-bottom: 3px;
 	font-size: 10px;
 	color: black;
 }
 
+.date-tapped {
+	display: none;
+}
+
 .brewery {
 	float: right;
-	margin-right: 20px 0 0 0;
+/*	margin: 0 20px 0 0;*/
+	clear: none;
 	padding: 0;
 	font-size: 10px;
 	color: black;
