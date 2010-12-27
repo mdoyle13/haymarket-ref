@@ -31,7 +31,7 @@ div.ui-tabs {
 }
 
 .ui-tabs {
-	height: 1000px;
+	height: 600px;
 	-moz-column-count: 2;
 	-moz-column-gap: 20px;
 }
