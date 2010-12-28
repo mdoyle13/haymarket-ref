@@ -28,3 +28,7 @@ h1.beer-category-name {
 	clear: right;
 	font-size: 12px;
 }
+
+#printer-friendly-beer-list {
+	display: none;
+}

@@ -9,7 +9,7 @@ $(document).ready(function() {
 		return(false);
 	});
 	$("a.print_beer_menu").click( function() {
-		$(".beer_menu").printElement({
+		$("#printer-friendly-beer-list").printElement({
 			pageTitle: 'Haymarket Brewery'
 		})
 		
