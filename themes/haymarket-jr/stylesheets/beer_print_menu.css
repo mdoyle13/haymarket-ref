@@ -17,13 +17,14 @@ html {
 	padding: 0;
 	margin: 0;
 	height: 1000px;
-	-moz-column-count: 2;
+/*	-moz-column-count: 2;*/
+	-moz-column-width: 390px;
 	-moz-column-gap: 40px;
 }
 
 h1.beer-category-name {
 	display: inline-block;
-	width: 100%;
+	width: 390px;
 	height: 1.5em;
 	padding-left:20px;
 	padding-bottom:10px;
@@ -36,7 +37,8 @@ h1.beer-category-name {
 .beer {
 	display: inline;
 	color: black;
-	margin-left: 20px;
+	text-indent: -20px;
+	padding-left: 20px;
 }
 
 .beer_name {
