@@ -200,7 +200,8 @@ ul#menu li ul li:first-child {
 }
 #menu li:hover ul li a {
 	background:#555555;
-	padding:0px 0px 5px 40px;
+	padding:0px 40px 5px 40px;
+	width:100%;
 	
 }
 #menu li:hover ul a:hover {
@@ -215,21 +216,6 @@ ul#menu li ul li:first-child {
 	-webkit-border-bottom-left-radius:7px;	
  
 }
-
-#navigation a {
-	display: block;
-	width: 80px;
-	height: 40px;
-	float: left;
-	background-image: url('../images/nav_image.png');
-	background-repeat: no-repeat;
-	background-position: left;
-	text-decoration: none;
-	padding: 20px 0 0 40px;
-	color: #f7941e;
-	font-weight: bold;
-}
-
 #navigation a:hover {
 	color: #fff;
 }
