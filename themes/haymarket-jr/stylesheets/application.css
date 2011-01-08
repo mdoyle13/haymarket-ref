@@ -149,19 +149,32 @@ a:visited.tbc {
 
 .header {
 	height: 344px;
+	padding:0px;
 }
 
-#navigation {
-	width:960px;	
+#menu {
 	clear:both;
+	width:960px;	
 	position:relative;
 	top:-15px;
+	margin:0px;
+	padding:0px;
 }
-
-#navigation a {
-	display: block;
+#menu li {
+	display:inline;
+	float:left;
+	margin:0;
+	padding:0;
+	width:120px;
+}
+#menu li:hover ul {
+	left:auto;
+	z-index:100;
+}
+#menu li a {
+	text-decoration:none;
+	padding:10px;
 	width: 80px;
-	height: 40px;
 	float: left;
 	background-image: url('../images/nav_image.png');
 	background-repeat: no-repeat;
@@ -171,7 +184,38 @@ a:visited.tbc {
 	color: #f7941e;
 	font-weight: bold;
 }
-
+#menu li a:hover {
+	color:#ffffff;
+}
+ul#menu li ul {
+	position:absolute;
+	left:-999em;
+	width:80px;
+	height:auto;
+	margin-top:40px;
+	padding:0px;
+}
+ul#menu li ul li:first-child {
+	margin-top:5px;
+}
+#menu li:hover ul li a {
+	background:#555555;
+	padding:0px 40px 5px 40px;
+	width:100%;
+	
+}
+#menu li:hover ul a:hover {
+	background:#000000;
+}
+#menu li:hover ul li:last-child a {
+	border-bottom-right-radius:7px;	
+	-moz-border-radius-bottomright:7px; 
+	-webkit-border-bottom-right-radius:7px;
+	border-bottom-left-radius:7px;	
+	-moz-border-radius-bottomleft:7px; 
+	-webkit-border-bottom-left-radius:7px;	
+ 
+}
 #navigation a:hover {
 	color: #fff;
 }
@@ -182,7 +226,10 @@ a:visited.tbc {
 	margin: auto;
 }
 
-.container {
+.container { /*THIS IS HACKTASTIC*/
+	position:relative;
+	top:-6px;
+	clear:both;
 	min-height: 600px;
 	background-image: url('../images/transparent.png');
 }

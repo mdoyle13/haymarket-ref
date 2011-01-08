@@ -6,7 +6,9 @@
 	<% else %>
 	<small>Check back often to see what's going on here at the brewery</small>
 	<% end %>
+	<% unless @featured_beer.nil? %>
 <h2>Featured Beer</h2>
 	<% @featured_beer = Beer.find_by_featured(true) %>
 	<%= @featured_beer.name %>
+	<% end %>
 <h2>Food Special</h2>
