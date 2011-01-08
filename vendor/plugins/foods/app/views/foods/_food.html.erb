@@ -7,7 +7,7 @@
 		<span class="description"><%= food.description %></span>
 	</div>
 	<div class="price">
-		<%= "$" << food.price unless food.price.blank? || food.price == 0 %>
+		<%= "$" << food.price unless food.price == nil %>
 	</div>
 	<div class="clear"></div>
 </div>
