@@ -12,27 +12,18 @@
 	margin-right: 0;
 }
 
-#menu h2 {
+#menu_container h2 {
 	font-family: Copperplate, Helvetica, Arial, sans-serif;
 }
 
-#menu h4 {
+#menu_container h4 {
 	font-family: Copperplate, Helvetica, Arial, sans-serif;
 	color: #fff;
 }
 
-#menu p {
+#menu_container p {
 	margin: 0;
 	padding: 0;
-}
-
-.right2_col {
-	width: 595px;
-	float: left;
-}
-
-.middle {
-	margin-right: 18px;
 }
 
 br {
@@ -88,3 +79,6 @@ br {
 	float: left;
 }
 
+.legend_icon {
+	display: none;
+}

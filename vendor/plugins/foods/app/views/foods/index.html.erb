@@ -9,8 +9,8 @@
 <h1>Our Food Menu</h1>
 <a class="print_page" href="#">Print Menu</a>
 <div id="food_menu">
-	<div id="menu">
-		<div class="column" id="col_1">
+	<div id="menu_container">
+		<div class="column" id="left_col">
 			<% unless @appetizers.foods.blank? %>
 			<div class="food_category">
 				<h2>Appetizers</h2>
@@ -28,6 +28,7 @@
 			<% unless @housemade_sauces.foods.blank? %>
 			<div id="sauces" class="food_category">
 				<h2>Housemade Sauces</h2>
+				<div class="note">Extra sauces $0.50 ea</div>
 				<%= render :partial => 'food', :collection => @housemade_sauces.foods.published unless @housemade_sauces.foods.published.nil? %>
 			</div>
 			<div class="clear"></div>
@@ -40,9 +41,9 @@
 			</div>
 			<% end %>
 		</div>
-	
+		<div id="legend"></div>
 
-		<div class="column">
+		<div class="column" id="right_col">
 			<% unless @entrees.foods.blank? %>
 			<div class="food_category">
 				<h2>Entreés</h2>
@@ -57,7 +58,6 @@
 			</div>
 			<% end %>
 		</div>
-
-	<div class="clear"></div>
+		<div class="clear"></div>
 	</div>
 </div>
