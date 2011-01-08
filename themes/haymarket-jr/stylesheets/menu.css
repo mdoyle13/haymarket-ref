@@ -4,7 +4,7 @@
 
 .column {
 	margin: 0 5px;
-	width: 283px;
+	width: 420px;
 	float: left;
 }
 
@@ -41,6 +41,7 @@ br {
 }
 
 .food_item {
+	width: 290px;
 	margin-bottom: 10px;
 }
 
@@ -76,6 +77,10 @@ br {
 	margin: 0;
 	padding: 0;
 	line-height: 1;
+}
+
+#sauces {
+	width: 290px;
 }
 
 #sauces .food_item {
