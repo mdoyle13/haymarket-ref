@@ -41,7 +41,12 @@
 			</div>
 			<% end %>
 		</div>
-		<div id="legend"></div>
+		<div id="legend">
+			<h3>Legend</h3>
+			<p><%= image_tag "/theme/images/icon_housemade.gif", :class => "legend_icon" -%> = HouseMade</p>
+			<p><%= image_tag "/theme/images/icon_vegan.gif", :class => "legend_icon" -%> = Vegan</p>
+			<p><%= image_tag "/theme/images/icon_spicy.gif", :class => "legend_icon" -%> = Spicy</p>
+		</div>
 
 		<div class="column" id="right_col">
 			<% unless @entrees.foods.blank? %>

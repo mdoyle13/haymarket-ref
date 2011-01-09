@@ -6,11 +6,11 @@
 }
 
 .column {
-	width: 290px;
+	width: 268px;
 }
 
 .column#left_col {
-	margin-right: 80px;
+	/*margin-right: 80px;*/
 }
 
 #menu_container {
@@ -48,11 +48,25 @@ h4 {
 }
 
 #legend {
-	/*margin:0 auto;
-	margin-top:30px;
-	width:283px;
-	height:116px;
-	background:url('../images/legend.png') no-repeat;*/
+	display: block;
+	float: left;
+	width: 100px;
+	border: 2px solid #000;
+	padding: 3px;
+	margin: 1100px 7px 0 7px;
+}
+
+#legend h3 {
+	font-family: Copperplate, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+}
+
+#legend p {
+	font-size: 12px;
+	color: #000;
 }
 
 .legend_icon {

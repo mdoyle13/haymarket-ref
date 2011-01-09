@@ -79,6 +79,7 @@ br {
 	float: left;
 }
 
+#legend,
 .legend_icon {
 	display: none;
 }
