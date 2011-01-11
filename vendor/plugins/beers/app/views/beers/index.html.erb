@@ -9,27 +9,20 @@
 <div id="tabs" class="beer_menu">
 	
 	<ul>
-		
-		<% 
-		i = 1
-		@beer_categories.each do |category| 
-		%>
-			<% unless category.beers.empty? %>
-			<li><a href='#tabs-<%= i %>'><%= category.name %></a></li>
-			<% i += 1 %>
-			<% end  %>
+		<% unless @drafts.empty? %>
+			<li><a href='#tabs-1'>Drafts</a></li>
+		<% end %>
+		<% unless @bottles.empty? %>
+			<li><a href='#tabs-2'>Bottles</a></li>
 		<% end %>
 	</ul>
-	<% i = 1 %>
-	<% @beer_categories.each do |category| %>
-		<% unless category.beers.empty? %>
-			<div id="tabs-<%= i %>">
-				<% i += 1 %>
-				<h1 class="beer-category-name"><%= category.name %></h1>
-		    <% category.beers.live.each do |beer| %>
+		<% unless @drafts.empty? %>
+			<div id="tabs-1">
+				<h1 class="beer-category-name">Drafts</h1>
+		    <% @drafts.each do |beer| %>
 					<div class="beer">
 			     	<h3 class="beer_name"><%= beer.name %></h3>
-						<% if category.name == 'Draft' %><p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p><% end %>
+						<p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p>
 						<% if beer.og or beer.fg or beer.ibu or beer.abv %>
 							<div class="beer-nerd-stuff">
 							<%= "OG: #{beer.og}" unless beer.og.nil? %>
@@ -41,7 +34,7 @@
 						<p class="brewery"><%= beer.brewery %></p>
 						<div class="beer-description"><%= beer.description %></div>
 						
-						<% if !beer.awards.empty? %>
+						<% if beer.awards.present? %>
 							<div class="awards">
 								<h4>Awards</h4>
 							<ul>
@@ -57,49 +50,42 @@
 				<br /><br />
 			</div>
 		<% end %>
-	<% end %>
-</div>
-
-<div id="printer-friendly-beer-list">
-	<div class="printer-friendly-beer-list-container">
-		<h2 class="beer_heading">Draft Beers</h2>
-	<% i = 0 %>
-	<% @beer_categories.each do |category| %>
-		<% if category.beers.present? and category.name == "Draft" %>
-	    <% category.beers.live.each do |beer| %>
-				<% i += 1 %>
-				<div class="beer">
-		     	<h3 class="beer_name"><%= beer.name %></h3>
-					<p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p>
-					<p class="brewery"><%= beer.brewery %></p>
-					<% if beer.og or beer.fg or beer.ibu or beer.abv %>
-						<div class="beer-nerd-stuff">
-						<%= "OG: #{beer.og}" unless beer.og.nil? %>
-						<%= "FG: #{beer.fg}" unless beer.fg.nil? %>
-						<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
-						<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
-						</div>
-					<% end %>
-					<!-- <div class="beer-description"><%= beer.description %></div> -->
-					<table class="beer-prices">
-						<tr>
-							<td>4oz: <%= number_to_currency(beer.draft_price_4oz) || "---" %></td>
-							<td>12oz: <%= number_to_currency(beer.draft_price_12oz) || "---" %></td>
-							<td>16oz: <%= number_to_currency(beer.draft_price_16oz) || "---" %></td>
-							<td>20oz: <%= number_to_currency(beer.draft_price_20oz) || "---" %></td>
-						</tr>
-					</table>
-				</div>
-				<% if i == 12 %>
-					</div><div class="printer-friendly-beer-list-container last">
-						<h2 class="beer_heading">Draft Beers</h2>
-				<% end %>
-			<% end %>
-
+		<% unless @bottles.empty? %>
+			<div id="tabs-2">
+				<h1 class="beer-category-name">Bottles</h1>
+		    <% @bottles.each do |beer| %>
+					<div class="beer">
+			     	<h3 class="beer_name"><%= beer.name %></h3>
+						<% if beer.og or beer.fg or beer.ibu or beer.abv %>
+							<div class="beer-nerd-stuff">
+							<%= "OG: #{beer.og}" unless beer.og.nil? %>
+							<%= "FG: #{beer.fg}" unless beer.fg.nil? %>
+							<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
+							<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
+							</div>
+						<% end %>
+						<p class="brewery"><%= beer.brewery %></p>
+						<div class="beer-description"><%= beer.description %></div>
+					
+						<% if beer.awards.present? %>
+							<div class="awards">
+								<h4>Awards</h4>
+							<ul>
+								<% beer.awards.each do |award| %>
+								<%= link_to "#{award.description}", award_path(award) %>
+								<li><%= award.description %></li>
+								<% end %>
+							</ul>
+							</div>
+						<% end %>
+					</div>
+		    <% end %>
+				<br /><br />
+			</div>
 		<% end %>
-	<% end %>
-	</div>
 </div>
+
+<%= render :partial => 'printer_friendly_beers' %>
 <% end %>
 
 <% content_for :body_content_right do %>

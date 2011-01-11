@@ -1,0 +1,35 @@
+<div id="printer-friendly-beer-list">
+	<div class="printer-friendly-beer-list-container">
+		<h2 class="beer_heading">Draft Beers</h2>
+		<% i = 0 %>
+    <% @drafts.each do |beer| %>
+			<% i += 1 %>
+			<div class="beer">
+	     	<h3 class="beer_name"><%= beer.name %></h3>
+				<p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p>
+				<p class="brewery"><%= beer.brewery %></p>
+				<% if beer.og or beer.fg or beer.ibu or beer.abv %>
+					<div class="beer-nerd-stuff">
+					<%= "OG: #{beer.og}" unless beer.og.nil? %>
+					<%= "FG: #{beer.fg}" unless beer.fg.nil? %>
+					<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
+					<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
+					</div>
+				<% end %>
+				<!-- <div class="beer-description"><%= beer.description %></div> -->
+				<table class="beer-prices">
+					<tr>
+						<td>4oz: <%= number_to_currency(beer.draft_price_4oz) || "---" %></td>
+						<td>12oz: <%= number_to_currency(beer.draft_price_12oz) || "---" %></td>
+						<td>16oz: <%= number_to_currency(beer.draft_price_16oz) || "---" %></td>
+						<td>20oz: <%= number_to_currency(beer.draft_price_20oz) || "---" %></td>
+					</tr>
+				</table>
+			</div>
+			<% if i == 12 %>
+				</div><div class="printer-friendly-beer-list-container last">
+					<h2 class="beer_heading">Draft Beers</h2>
+			<% end %>
+		<% end %>
+	</div>
+</div>
