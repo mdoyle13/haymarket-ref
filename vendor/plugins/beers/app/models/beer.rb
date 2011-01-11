@@ -14,5 +14,14 @@ class Beer < ActiveRecord::Base
   
   default_scope :order => :position
   named_scope :live, :conditions => {:published => true}
+  
+  def draft_price_4oz
+  end
+  def draft_price_12oz
+  end
+  def draft_price_16oz
+  end
+  def draft_price_20oz
+  end
 
 end

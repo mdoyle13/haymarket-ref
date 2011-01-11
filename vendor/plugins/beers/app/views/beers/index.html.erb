@@ -29,11 +29,11 @@
 		    <% category.beers.live.each do |beer| %>
 					<div class="beer">
 			     	<h3 class="beer_name"><%= beer.name %></h3>
-						<% if category.name == 'Draft' %><p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p<% end %>
+						<% if category.name == 'Draft' %><p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p><% end %>
 						<% if beer.og or beer.fg or beer.ibu or beer.abv %>
 							<div class="beer-nerd-stuff">
-							<%= "Original Gravity: #{beer.og}" unless beer.og.nil? %>
-							<%= "Final Gravity: #{beer.fg}" unless beer.fg.nil? %>
+							<%= "OG: #{beer.og}" unless beer.og.nil? %>
+							<%= "FG: #{beer.fg}" unless beer.fg.nil? %>
 							<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
 							<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
 							</div>
@@ -61,18 +61,39 @@
 </div>
 
 <div id="printer-friendly-beer-list">
-	<div id="printer-friendly-beer-list-container">
-	<% i = 1 %>
+	<div class="printer-friendly-beer-list-container">
+	<% i = 0 %>
 	<% @beer_categories.each do |category| %>
-		<% unless category.beers.empty? %>
-			<% i += 1 %>
-			<h1 class="beer-category-name"><%= category.name %></h1><br />
+		<% if category.beers.present? and category.name == "Draft" %>
 	    <% category.beers.live.each do |beer| %>
-				<p class="beer">
-		     	<%= beer.name %><%= ", #{beer.brewery}" unless beer.brewery.empty? %><br />
-				</p>
-	    <% end %>
-			<br /><br />
+				<% i += 1 %>
+				<div class="beer">
+		     	<h3 class="beer_name"><%= beer.name %></h3>
+					<p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p>
+					<p class="brewery"><%= beer.brewery %></p>
+					<% if beer.og or beer.fg or beer.ibu or beer.abv %>
+						<div class="beer-nerd-stuff">
+						<%= "OG: #{beer.og}" unless beer.og.nil? %>
+						<%= "FG: #{beer.fg}" unless beer.fg.nil? %>
+						<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
+						<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
+						</div>
+					<% end %>
+					<!-- <div class="beer-description"><%= beer.description %></div> -->
+					<table class="beer-prices">
+						<tr>
+							<td><%= beer.draft_price_4oz || "---" %></td>
+							<td><%= beer.draft_price_12oz || "---" %></td>
+							<td><%= beer.draft_price_16oz || "---" %></td>
+							<td><%= beer.draft_price_20oz || "---" %></td>
+						</tr>
+					</table>
+				</div>
+				<% if i == 12 %>
+					</div><div class="printer-friendly-beer-list-container last">
+				<% end %>
+			<% end %>
+
 		<% end %>
 	<% end %>
 	</div>
