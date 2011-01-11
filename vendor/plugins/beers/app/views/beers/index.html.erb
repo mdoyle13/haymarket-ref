@@ -62,6 +62,7 @@
 
 <div id="printer-friendly-beer-list">
 	<div class="printer-friendly-beer-list-container">
+		<h2 class="beer_heading">Draft Beers</h2>
 	<% i = 0 %>
 	<% @beer_categories.each do |category| %>
 		<% if category.beers.present? and category.name == "Draft" %>
@@ -82,15 +83,16 @@
 					<!-- <div class="beer-description"><%= beer.description %></div> -->
 					<table class="beer-prices">
 						<tr>
-							<td><%= beer.draft_price_4oz || "---" %></td>
-							<td><%= beer.draft_price_12oz || "---" %></td>
-							<td><%= beer.draft_price_16oz || "---" %></td>
-							<td><%= beer.draft_price_20oz || "---" %></td>
+							<td>4oz: <%= number_to_currency(beer.draft_price_4oz) || "---" %></td>
+							<td>12oz: <%= number_to_currency(beer.draft_price_12oz) || "---" %></td>
+							<td>16oz: <%= number_to_currency(beer.draft_price_16oz) || "---" %></td>
+							<td>20oz: <%= number_to_currency(beer.draft_price_20oz) || "---" %></td>
 						</tr>
 					</table>
 				</div>
 				<% if i == 12 %>
 					</div><div class="printer-friendly-beer-list-container last">
+						<h2 class="beer_heading">Draft Beers</h2>
 				<% end %>
 			<% end %>
 

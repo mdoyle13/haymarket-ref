@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-
+  include ActionView::Helpers::NumberHelper
   before_filter :find_beer_categories
   before_filter :find_page
 

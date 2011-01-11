@@ -22,18 +22,21 @@ h3.beer_name {
 
 .beer-prices {
 	clear: left;
+	width: 390px;
 }
 .beer-prices td {
-	width: 50px;
+	width: 25%;
+	text-align: center;
 }
 
 .beer {
-	height: 90px;
+	height: 80px;
 	margin: 0;
 }
 
 .brewery {
 	float: left;
+	padding-bottom: 0;
 }
 
 #printer-friendly-beer-list {
@@ -45,6 +48,18 @@ h3.beer_name {
 	float: left;
 	margin-right: 20px;
 }
+
+h2.beer_heading {
+	color: white;
+	padding-top: 3px;
+	padding-left: 0;
+	text-align: center;
+	background-position: center top;
+}
+
 .last {
 	margin-right: 0;
+}
+.page_break {
+	page-break-after: always;
 }
