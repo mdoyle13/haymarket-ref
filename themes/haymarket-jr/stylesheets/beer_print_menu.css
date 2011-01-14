@@ -1,6 +1,7 @@
 body {
 	background-color: white;
 	background-image: none;
+	color: black;
 	margin: 0;
 	padding: 0;
 	width: 800px;
@@ -12,52 +13,53 @@ html {
 	width: 800px;
 }
 
-#printer-friendly-beer-list-container {
-	background-color: white;
-	padding: 0;
-	margin: 0;
-	height: 1000px;
-/*	-moz-column-count: 2;*/
-	-moz-column-width: 380px;
-	-moz-column-gap: 40px;
+h3.beer_name {
+	color: black;
+}
+.beer, .beer-description {
+	clear: both;
 }
 
-h1.beer-category-name {
-	display: inline-block;
-	width: 380px;
-	height: 1.5em;
-	padding-left:20px;
-	padding-bottom:10px;
-	padding-top: 3px;
-	background:url('../images/printMenuHeadBG.png') no-repeat;
-	color:#ffffff;
-	-moz-background-size: 100%;
+.beer-prices {
+	clear: left;
+	width: 390px;
+}
+.beer-prices td {
+	width: 25%;
+	text-align: center;
 }
 
 .beer {
-	display: inline;
-	width: 380px;
-	color: black;
-	font-size: 11px;
-}
-
-.beer_name {
-	float: left;
-	clear: left;
-	margin-bottom: 3px;
-	font-size: 10px;
-	color: black;
+	height: 80px;
+	margin: 0;
 }
 
 .brewery {
-	float: right;
-/*	margin: 0 20px 0 0;*/
-	clear: none;
-	padding: 0;
-	font-size: 10px;
-	color: black;
+	float: left;
+	padding-bottom: 0;
 }
 
-.beer-description, .awards, .beer-nerd-stuff, .date-tapped {
-	display: none;
+#printer-friendly-beer-list {
+	width: 800px;
+}
+
+.printer-friendly-beer-list-container {
+	width: 390px;
+	float: left;
+	margin-right: 20px;
+}
+
+h2.beer_heading {
+	color: white;
+	padding-top: 3px;
+	padding-left: 0;
+	text-align: center;
+	background-position: center top;
+}
+
+.last {
+	margin-right: 0;
+}
+.page_break {
+	page-break-after: always;
 }

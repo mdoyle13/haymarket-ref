@@ -56,28 +56,35 @@
 		<%= f.text_field :abv %>
 	</div>
 
-<% unless @beer.beer_pricings.count == 0 %>
-	<div class='field'>
-		<%= f.label :beer_pricing_id, 'Menu Size' %>
-		<%= f.collection_select :beer_pricing_id, @beer.beer_pricings, :id, :size_name, :prompt => true %>
+	<div class="field">
+		<%= f.label :draft_price_4oz, "4oz Draft Price" %>
+		<%= f.text_field :draft_price_4oz %>
 	</div>
-<% end %>
-
-<% unless @beer.id.nil? %>
-	<h2>Prices</h2>
-	<% f.fields_for :beer_pricings do |nf| %>
-		<%= nf.hidden_field :beer_id %>
-		<div class='field'>
-			<%= nf.label :beer_size_id %>
-			<%= nf.collection_select :beer_size_id, BeerSize.all, :id, :name, :prompt => true %>
-		</div>
-		<div class='field'>
-			<%= nf.label :price %>
-			<%= nf.text_field :price %>
-		</div>
-	<% end %>
-<% end %>
-  
+	
+	<div class="field">
+		<%= f.label :draft_price_12oz, "12oz Draft Price" %>
+		<%= f.text_field :draft_price_12oz %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :draft_price_16oz, '16oz Draft Price' %>
+		<%= f.text_field :draft_price_16oz %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :draft_price_20oz, "20oz Draft Price" %>
+		<%= f.text_field :draft_price_20oz %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :bottle_price %>
+		<%= f.text_field :bottle_price %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :bottle_oz, "Bottle Size (oz)" %>
+		<%= f.text_field :bottle_oz %>
+	</div>  
 
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {

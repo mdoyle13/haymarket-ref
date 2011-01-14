@@ -4,7 +4,7 @@
 
 .column {
 	margin: 0 5px;
-	width: 283px;
+	width: 420px;
 	float: left;
 }
 
@@ -12,27 +12,18 @@
 	margin-right: 0;
 }
 
-#menu h2 {
+#menu_container h2 {
 	font-family: Copperplate, Helvetica, Arial, sans-serif;
 }
 
-#menu h4 {
+#menu_container h4 {
 	font-family: Copperplate, Helvetica, Arial, sans-serif;
 	color: #fff;
 }
 
-#menu p {
+#menu_container p {
 	margin: 0;
 	padding: 0;
-}
-
-.right2_col {
-	width: 595px;
-	float: left;
-}
-
-.middle {
-	margin-right: 18px;
 }
 
 br {
@@ -41,6 +32,7 @@ br {
 }
 
 .food_item {
+	width: 290px;
 	margin-bottom: 10px;
 }
 
@@ -75,7 +67,11 @@ br {
 #sauces .food_item {
 	margin: 0;
 	padding: 0;
-	line-height: 1;
+	line-height: 1.3;
+}
+
+#sauces {
+	width: 290px;
 }
 
 #sauces .food_item {
@@ -83,3 +79,7 @@ br {
 	float: left;
 }
 
+#legend,
+.legend_icon {
+	display: none;
+}

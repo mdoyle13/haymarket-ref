@@ -1,10 +1,13 @@
 <div class="food_item">
 	<div class="food_name_description">
 		<h4><%= food.name %></h4>
+			<%= image_tag "/theme/images/icon_housemade.gif", :class => "legend_icon" if food.housemade -%>
+			<%= image_tag "/theme/images/icon_vegan.gif", :class => "legend_icon" if food.vegan -%>
+			<%= image_tag "/theme/images/icon_spicy.gif", :class => "legend_icon" if food.spicy -%>
 		<span class="description"><%= food.description %></span>
 	</div>
 	<div class="price">
-		<%= "$" << format("%.0f", food.price) unless food.price.blank? %>
+		<%= "$" << food.price unless food.price == "0" || food.price == nil %>
 	</div>
 	<div class="clear"></div>
 </div>

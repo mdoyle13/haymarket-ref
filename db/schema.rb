@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101216140959) do
+ActiveRecord::Schema.define(:version => 20110108183955) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -71,6 +71,12 @@ ActiveRecord::Schema.define(:version => 20101216140959) do
     t.decimal  "fg"
     t.decimal  "ibu"
     t.decimal  "abv"
+    t.decimal  "draft_price_4oz"
+    t.decimal  "draft_price_12oz"
+    t.decimal  "draft_price_16oz"
+    t.decimal  "draft_price_20oz"
+    t.decimal  "bottle_oz"
+    t.decimal  "bottle_price"
   end
 
   add_index "beers", ["id"], :name => "index_beers_on_id"
@@ -147,11 +153,14 @@ ActiveRecord::Schema.define(:version => 20101216140959) do
     t.text     "description"
     t.integer  "food_category_id"
     t.boolean  "daily_special"
-    t.decimal  "price"
+    t.string   "price"
     t.boolean  "published"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "housemade"
+    t.boolean  "vegan"
+    t.boolean  "spicy"
   end
 
   add_index "foods", ["id"], :name => "index_foods_on_id"

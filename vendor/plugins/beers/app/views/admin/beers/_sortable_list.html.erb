@@ -1,14 +1,11 @@
-<%
-categories = BeerCategory.all()
-%>
-
 <h1>Published</h1>
-<% categories.each do |category| %>
-	<h2><%= category.name %></h2>
-	<%= render :partial => 'beer', :collection => category.beers.find_all_by_published(true) unless category.beers.find_all_by_published(true).nil? %>
+	<h2>Drafts</h2>
+	<%= render :partial => 'beer', :collection => Beer.drafts.live unless Beer.drafts.live.nil? %>
 	<br />
 	<br />
-<% end %>
+	<h2>Bottles</h2>
+	<%= render :partial => 'beer', :collection => Beer.bottles.live unless Beer.bottles.live.nil? %>
+	<br /><br />
 
 <br />
 <br />
@@ -16,12 +13,20 @@ categories = BeerCategory.all()
 
 
 <h1>Not Published</h1>
-<% categories.each do |category| %>
-	<h2><%= category.name %></h2>
-	<%= render :partial => 'beer', :collection => category.beers.find_all_by_published(false) unless category.beers.find_all_by_published(false).nil? %>
+	<h2>Drafts</h2>
+	<%= render :partial => 'beer', :collection => Beer.drafts.pending.by_name unless Beer.drafts.pending.nil? %>
 	<br />
 	<br />
-<% end %>
+	<h2>Bottles</h2>
+	<%= render :partial => 'beer', :collection => Beer.pending.pending.by_name unless Beer.bottles.pending.nil? %>
+	<br /><br />
+
+<br />
+<br />
+<br />
+
+<h1>Unpriced</h1>
+	<%= render :partial => 'beer', :collection => Beer.unpriced.by_name unless Beer.unpriced.nil? %>
 
 
 <%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>
