@@ -22,6 +22,7 @@ protected
   def find_all_awards
     # @awards = Beer.awards.published
     @awards = Award.published
+    @award_year = @awards.group_by { |a| a.year }
   end
 
   def find_page

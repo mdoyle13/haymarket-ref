@@ -417,3 +417,11 @@ ul#menu li ul li:first-child {
 	-webkit-border-radius:5px;
 	margin-bottom:40px;
 }
+/*Accolades*/
+.award-info {
+	clear:both;
+}
+.award-description {
+	width:100px;
+	float:right;
+}
