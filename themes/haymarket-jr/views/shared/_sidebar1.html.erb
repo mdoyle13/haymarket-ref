@@ -2,13 +2,23 @@
 	<h2>Next Event</h2>
 	<% if !@upcoming.blank? %>
 	<%= @upcoming.date.strftime("%m/%d/%Y") %><br />
-	<%= @upcoming.name %> <br />
+	<small style="font-style:italic;"><%= @upcoming.name %></small> <br />
+	<%= link_to "For Tickets Click Here", @upcoming.purchase_link unless @upcoming.purchase_link.empty? %>
+	<br /><br />
 	<% else %>
 	<small>Check back often to see what's going on here at the brewery</small>
 	<% end %>
-	<% unless @featured_beer.nil? %>
-<h2>Featured Beer</h2>
+	
 	<% @featured_beer = Beer.find_by_featured(true) %>
+	<% unless @featured_beer.nil? %>
+	<h2>Featured Beer</h2>
 	<%= @featured_beer.name %>
 	<% end %>
-<h2>Food Special</h2>
+	<br /><br />
+	<% @featured_food = Food.find_by_daily_special(true) %>
+	<%unless @featured_food.nil? %>
+	<h2>Today's Special</h2>
+	<%= @featured_food.name %> - $<%= @featured_food.price %><br />
+	<small style="font-style:italic;"><%= @featured_food.description %></small>
+	<% end %>
+	
