@@ -1,0 +1,14 @@
+<!-- This is the events sidebar this will not show the featured event for obvious reasons. -->
+<% @featured_beer = Beer.find_by_featured(true) %>
+<% unless @featured_beer.nil? %>
+<h2>Featured Beer</h2>
+<%= @featured_beer.name %> <br />
+<small style="font-style:italic;"><%= @featured_beer.description %></small>
+<% end %>
+<br />
+<% @featured_food = Food.find_by_daily_special(true) %>
+<%unless @featured_food.nil? %>
+<h2>Today's Special</h2>
+<%= @featured_food.name %> - $<%= @featured_food.price %><br />
+<small style="font-style:italic;"><%= @featured_food.description %></small>
+<% end %>

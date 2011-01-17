@@ -1,3 +1,4 @@
+	<!-- This is the main sidebar that contains all 3 featured items. -->
 	<% @upcoming = Event.upcoming.published.find(:first) %>
 	<h2>Next Event</h2>
 	<% if !@upcoming.blank? %>
@@ -12,9 +13,10 @@
 	<% @featured_beer = Beer.find_by_featured(true) %>
 	<% unless @featured_beer.nil? %>
 	<h2>Featured Beer</h2>
-	<%= @featured_beer.name %>
+	<%= @featured_beer.name %> <br />
+	<small style="font-style:italic;"><%= @featured_beer.description %></small>
 	<% end %>
-	<br /><br />
+	<br />
 	<% @featured_food = Food.find_by_daily_special(true) %>
 	<%unless @featured_food.nil? %>
 	<h2>Today's Special</h2>
