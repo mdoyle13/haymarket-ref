@@ -54,7 +54,7 @@
 						</div>
 						<div id='right_column'>
 							<div class='side_content'>
-						<% unless @page[:title]=="Foods" %>
+						<% if @show_sidebar %>
 							<%= render :partial => "shared/sidebar1" %>
 						<% end %>
 						
