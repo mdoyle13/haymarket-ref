@@ -273,6 +273,9 @@ ul#menu li ul li:first-child {
 .side_content {
 	padding: 20px;
 }
+.side_content br {
+	line-height:0;
+}
 
 .bottom {
 /*	background-image: url(../images/bg_footer.jpg);
@@ -422,6 +425,6 @@ ul#menu li ul li:first-child {
 	clear:both;
 }
 .award-description {
-	width:100px;
+	width:10f0px;
 	float:right;
 }
