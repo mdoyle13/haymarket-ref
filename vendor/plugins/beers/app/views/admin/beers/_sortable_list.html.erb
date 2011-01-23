@@ -1,20 +1,29 @@
 <h1>Published</h1>
-	<h2>Drafts</h2>
-	<%= render :partial => 'beer', :collection => Beer.drafts.live unless Beer.drafts.live.nil? %>
+	<h2>Haymarket Drafts</h2>
+	<%= render :partial => 'beer', :collection => Beer.drafts.haymarket.live unless Beer.drafts.haymarket.live.nil? %>
+	<br />
+	<br />
+	<h2>Guest Drafts</h2>
+	<%= render :partial => 'beer', :collection => Beer.drafts.not_haymarket.live unless Beer.drafts.not_haymarket.live.nil? %>
 	<br />
 	<br />
 	<h2>Bottles</h2>
 	<%= render :partial => 'beer', :collection => Beer.bottles.live unless Beer.bottles.live.nil? %>
-	<br /><br />
-
+	<br />
+	<br />
+	
 <br />
 <br />
 <br />
 
 
 <h1>Not Published</h1>
-	<h2>Drafts</h2>
-	<%= render :partial => 'beer', :collection => Beer.drafts.pending.by_name unless Beer.drafts.pending.nil? %>
+	<h2>Haymarket Drafts</h2>
+	<%= render :partial => 'beer', :collection => Beer.drafts.haymarket.pending unless Beer.drafts.haymarket.pending.nil? %>
+	<br />
+	<br />
+	<h2>Guest Drafts</h2>
+	<%= render :partial => 'beer', :collection => Beer.drafts.not_haymarket.pending.by_name unless Beer.drafts.pending.nil? %>
 	<br />
 	<br />
 	<h2>Bottles</h2>

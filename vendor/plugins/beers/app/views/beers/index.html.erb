@@ -9,17 +9,57 @@
 <div id="tabs" class="beer_menu">
 	
 	<ul>
-		<% unless @drafts.empty? %>
-			<li><a href='#tabs-1'>Drafts</a></li>
+		<% unless @haymarket_drafts.empty? %>
+			<li><a href='#tabs-1'>Our Drafts</a></li>
 		<% end %>
+		<% unless @guest_drafts.empty? %>
+			<li><a href='#tabs-2'>Guest Drafts</a></li>
+		<% end %>
+		
 		<% unless @bottles.empty? %>
-			<li><a href='#tabs-2'>Bottles</a></li>
+			<li><a href='#tabs-3'>Bottles</a></li>
 		<% end %>
 	</ul>
-		<% unless @drafts.empty? %>
+		<% unless @haymarket_drafts.empty? %>
 			<div id="tabs-1">
 				<h1 class="beer-category-name">Drafts</h1>
-		    <% @drafts.each do |beer| %>
+		    <% @haymarket_drafts.each do |beer| %>
+					<div class="beer">
+			     	<h3 class="beer_name"><%= beer.name %></h3>
+						<% if beer.show_date_tapped %>
+							<p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p>
+						<% end %>
+						<% if beer.og or beer.fg or beer.ibu or beer.abv %>
+							<div class="beer-nerd-stuff">
+							<%= "OG: #{beer.og}" unless beer.og.nil? %>
+							<%= "FG: #{beer.fg}" unless beer.fg.nil? %>
+							<%= "IBU: #{beer.ibu}" unless beer.ibu.nil? %>
+							<%= "ABV: #{beer.abv}" unless beer.abv.nil? %>
+							</div>
+						<% end %>
+						<p class="brewery"><%= beer.brewery %></p>
+						<div class="beer-description"><%= beer.description %></div>
+						
+						<% if beer.awards.present? %>
+							<div class="awards">
+								<h4>Awards</h4>
+							<ul>
+								<% beer.awards.each do |award| %>
+								<%= link_to "#{award.description}", award_path(award) %>
+								<li><%= award.description %></li>
+								<% end %>
+							</ul>
+							</div>
+						<% end %>
+					</div>
+		    <% end %>
+				<br /><br />
+			</div>
+		<% end %>
+		<% unless @guest_drafts.empty? %>
+			<div id="tabs-2">
+				<h1 class="beer-category-name">Drafts</h1>
+		    <% @guest_drafts.each do |beer| %>
 					<div class="beer">
 			     	<h3 class="beer_name"><%= beer.name %></h3>
 						<% if beer.show_date_tapped %>
