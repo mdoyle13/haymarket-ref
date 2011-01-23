@@ -165,7 +165,7 @@ a:visited.tbc {
 	float:left;
 	margin:0;
 	padding:0;
-	width:140px;
+	width:120px;
 }
 #menu li:hover ul {
 	left:auto;
@@ -197,6 +197,9 @@ ul#menu li ul {
 }
 ul#menu li ul li:first-child {
 	margin-top:5px;
+}
+ul#menu li ul li {
+	width:150px;
 }
 #menu li:hover ul li a {
 	background:#555555;
