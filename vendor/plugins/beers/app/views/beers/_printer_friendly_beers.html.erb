@@ -6,7 +6,9 @@
 			<% i += 1 %>
 			<div class="beer">
 	     	<h3 class="beer_name"><%= beer.name %></h3>
-				<p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p>
+				<% if beer.show_date_tapped %>
+					<p class="date-tapped">Date Tapped: <%= beer.date_tapped.strftime('%m/%d/%Y') %></p>
+				<% end %>
 				<p class="brewery"><%= beer.brewery %></p>
 				<% if beer.og or beer.fg or beer.ibu or beer.abv %>
 					<div class="beer-nerd-stuff">

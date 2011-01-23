@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110108183955) do
+ActiveRecord::Schema.define(:version => 20110123164952) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20110108183955) do
     t.decimal  "draft_price_20oz"
     t.decimal  "bottle_oz"
     t.decimal  "bottle_price"
+    t.boolean  "show_date_tapped"
   end
 
   add_index "beers", ["id"], :name => "index_beers_on_id"

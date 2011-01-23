@@ -2,6 +2,11 @@ class FoodsController < ApplicationController
 
   before_filter :find_all_foods
   before_filter :find_page
+  before_filter :hide_sidebar
+
+  def hide_sidebar
+    @show_sidebar = false
+  end
 
   def index
     #First Column

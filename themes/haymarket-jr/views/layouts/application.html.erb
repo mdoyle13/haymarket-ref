@@ -35,9 +35,7 @@
 								<%= render :partial => 'blogs/blog_post', :collection => Blog.published.latest_post %>
 							</div>
 							<div class='theater'>
-								<% @dw = Blog.find_by_permalink('drinking-writing-theater') %>
-								<h2><%= @dw.title unless @dw.blank? %></h2>
-								<%= @dw.excerpt unless @dw.blank? %>
+									<%= @page[:drinking_and_writing] %>
 							</div>
 							<% else %>
 							<div class="content">
@@ -51,7 +49,7 @@
 						</div>
 						<div id='right_column'>
 							<div class='side_content'>
-						<% unless @page[:title]=="Foods" %>
+						<% if @show_sidebar %>
 							<%= render :partial => "shared/sidebar1" %>
 						<% end %>
 						
