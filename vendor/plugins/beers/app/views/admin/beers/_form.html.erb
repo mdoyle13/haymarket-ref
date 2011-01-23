@@ -6,10 +6,10 @@
     <%= f.text_field :name, :class => 'larger' -%>
   </div>
 
-  <div class='field'>
+  <!-- <div class='field'>
     <%= f.label :beer_category_id -%>
     <%= f.collection_select :beer_category_id, BeerCategory.all, :id, :name, :prompt => true -%>
-  </div>
+  </div> -->
 
   <div class='field'>
     <%= f.label :featured -%>
@@ -26,6 +26,11 @@
     <%= f.text_area :description, :rows => 20, :class => 'wymeditor widest' -%>
   </div>
   
+	<div class='field'>
+		<%= f.label :show_date_tapped %>
+		<%= f.check_box :show_date_tapped %>
+	</div>
+	
   <div class='field'>
     <%= f.label :date_tapped -%>
     <%= f.date_select :date_tapped -%>
