@@ -18,7 +18,7 @@ class Beer < ActiveRecord::Base
   named_scope :bottles, :conditions => ["bottle_price IS NOT NULL"]
   named_scope :drafts, :conditions => ["draft_price_4oz IS NOT NULL OR draft_price_12oz IS NOT NULL OR draft_price_16oz IS NOT NULL or draft_price_20oz IS NOT NULL"]
   named_scope :haymarket, :conditions => {:brewery => 'Haymarket'}
-  named_scope :not_haymarket, :conditions => ["brewery IS NOT 'Haymarket'"]
+  named_scope :not_haymarket, :conditions => ["brewery != Haymarket"]
   named_scope :by_name, :order => :name
   named_scope :unpriced, :conditions => {:bottle_price => nil, :draft_price_4oz => nil, :draft_price_12oz => nil, :draft_price_16oz => nil, :draft_price_20oz => nil}
 
