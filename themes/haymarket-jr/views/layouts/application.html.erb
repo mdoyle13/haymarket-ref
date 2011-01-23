@@ -35,12 +35,9 @@
 								<%= render :partial => 'blogs/blog_post', :collection => Blog.published.latest_post %>
 							</div>
 							<div class='theater'>
-								<h2>Drinking & Writing Theater</h2>
-								<img alt='Drinkingandwriting_logo' class='left' src='/images/drinkingandwriting_logo.gif?1285118572' />
-								<p>
-								Through our radio program, The Drinking & Writing Brewery Radio Show, and productions on stage and in bars, our website, and on the page, The Drinking & Writing Brewery exists to preserve the spirit and devotion of the hard drinking writer and to uphold the rituals of creativity through their passion for the written word. We strive to attract others who share these principles. <br />
-								<a href='http://www.drinkingandwriting.com' class='tbc' target='_blank'>find out more about drinking & writing</a>
-								</p>
+								<% @dw = Blog.find_by_permalink('drinking-writing-theater') %>
+								<h2><%= @dw.title unless @dw.blank? %></h2>
+								<%= @dw.excerpt unless @dw.blank? %>
 							</div>
 							<% else %>
 							<div class="content">
