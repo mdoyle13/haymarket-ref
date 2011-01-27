@@ -13,8 +13,14 @@ class Beer < ActiveRecord::Base
   accepts_nested_attributes_for :beer_pricings, :allow_destroy => true, :reject_if => lambda { |record| record[:price].empty? }
   
   default_scope :order => :position
-  named_scope :live, :conditions => {:published => true}
-  named_scope :pending, :conditions => {:published => false}
+  # named_scope :live, :conditions => {:published => true}
+  # named_scope :pending, :conditions => {:published => false}
+	named_scope :on_draft, :conditions => {:on_draft => true}
+	named_scope :on_bottle, :conditions => {:on_bottle => true}
+	
+	named_scope :not_on_draft, :conditions => {:on_draft => false}
+	named_scope :not_on_bottle, :conditions => {:on_bottle => false}
+	
   named_scope :bottles, :conditions => ["bottle_price IS NOT NULL"]
   named_scope :drafts, :conditions => ["draft_price_4oz IS NOT NULL OR draft_price_12oz IS NOT NULL OR draft_price_16oz IS NOT NULL or draft_price_20oz IS NOT NULL"]
   named_scope :haymarket, :conditions => ['`brewery` LIKE ?', '%Haymarket%']
