@@ -64,6 +64,7 @@ body {
 	background-image: url(../images/bg_pattern.jpg);
 	background-position: center top;
 	line-height: 1.5;
+	background-repeat:repeat-y;
 }
 
 h1, h2, h3, h4, h5, h6 {
