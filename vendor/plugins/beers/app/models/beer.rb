@@ -13,8 +13,14 @@ class Beer < ActiveRecord::Base
   accepts_nested_attributes_for :beer_pricings, :allow_destroy => true, :reject_if => lambda { |record| record[:price].empty? }
   
   default_scope :order => :position
-  # named_scope :live, :conditions => {:published => true}
-  # named_scope :pending, :conditions => {:published => false}
+
+
+
+  named_scope :live, :conditions => {:published => true}
+  named_scope :pending, :conditions => {:published => false}
+
+
+
 	named_scope :on_draft, :conditions => {:on_draft => true}
 	named_scope :on_bottle, :conditions => {:on_bottle => true}
 	

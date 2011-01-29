@@ -61,6 +61,11 @@
 		<%= f.text_field :abv %>
 	</div>
 
+	<div class='field'>
+		<%= f.label :on_draft %>
+		<%= f.check_box :on_draft %>
+	</div>
+
 	<div class="field">
 		<%= f.label :draft_price_4oz, "4oz Draft Price" %>
 		<%= f.text_field :draft_price_4oz %>
@@ -79,6 +84,11 @@
 	<div class="field">
 		<%= f.label :draft_price_20oz, "20oz Draft Price" %>
 		<%= f.text_field :draft_price_20oz %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :on_bottle %>
+		<%= f.check_box :on_bottle %>
 	</div>
 	
 	<div class="field">
