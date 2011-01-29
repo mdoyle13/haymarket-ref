@@ -38,7 +38,9 @@
 							</div>
 						<% end %>
 						<p class="brewery"><%= beer.brewery %></p>
-						<div class="beer-description"><%= beer.description %></div>
+						<% if beer.description.present? %>
+							<div class="beer-description"><%= beer.description %></div>
+						<% end %>
 						
 						<% if beer.awards.present? %>
 							<div class="awards">
