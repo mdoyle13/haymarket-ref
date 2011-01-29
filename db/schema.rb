@@ -67,19 +67,19 @@ ActiveRecord::Schema.define(:version => 20110128134900) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "beer_pricing_id"
-    t.integer  "og",               :limit => 10, :precision => 10, :scale => 0
-    t.integer  "fg",               :limit => 10, :precision => 10, :scale => 0
-    t.integer  "ibu",              :limit => 10, :precision => 10, :scale => 0
-    t.integer  "abv",              :limit => 10, :precision => 10, :scale => 0
-    t.integer  "draft_price_4oz",  :limit => 10, :precision => 10, :scale => 0
-    t.integer  "draft_price_12oz", :limit => 10, :precision => 10, :scale => 0
-    t.integer  "draft_price_16oz", :limit => 10, :precision => 10, :scale => 0
-    t.integer  "draft_price_20oz", :limit => 10, :precision => 10, :scale => 0
-    t.integer  "bottle_oz",        :limit => 10, :precision => 10, :scale => 0
-    t.integer  "bottle_price",     :limit => 10, :precision => 10, :scale => 0
+    t.decimal  "og"
+    t.decimal  "fg"
+    t.decimal  "ibu"
+    t.decimal  "abv"
+    t.decimal  "draft_price_4oz"
+    t.decimal  "draft_price_12oz"
+    t.decimal  "draft_price_16oz"
+    t.decimal  "draft_price_20oz"
+    t.decimal  "bottle_oz"
+    t.decimal  "bottle_price"
     t.boolean  "show_date_tapped"
-    t.boolean  "on_draft",                                                      :default => false
-    t.boolean  "on_bottle",                                                     :default => false
+    t.boolean  "on_draft",         :default => false
+    t.boolean  "on_bottle",        :default => false
   end
 
   add_index "beers", ["id"], :name => "index_beers_on_id"
@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(:version => 20110128134900) do
   create_table "liquors", :force => true do |t|
     t.string   "name"
     t.boolean  "published"
-    t.integer  "price",              :limit => 10, :precision => 10, :scale => 0
+    t.decimal  "price"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -386,8 +386,8 @@ ActiveRecord::Schema.define(:version => 20110128134900) do
   create_table "wines", :force => true do |t|
     t.string   "name"
     t.boolean  "published"
-    t.integer  "glass_price",      :limit => 10, :precision => 10, :scale => 0
-    t.integer  "bottle_price",     :limit => 10, :precision => 10, :scale => 0
+    t.decimal  "glass_price"
+    t.decimal  "bottle_price"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
