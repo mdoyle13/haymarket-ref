@@ -7,9 +7,9 @@ class BeersController < ApplicationController
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @beer in the line below:
     @drafts = Beer.drafts.live
-    @haymarket_drafts = Beer.drafts.haymarket.live
-    @guest_drafts = Beer.drafts.not_haymarket.live
-    @bottles = Beer.bottles.live
+    @haymarket_drafts = Beer.drafts.haymarket.on_draft
+    @guest_drafts = Beer.drafts.not_haymarket.on_draft
+    @bottles = Beer.bottles.on_bottle
     present(@page)
   end
 

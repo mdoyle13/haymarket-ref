@@ -16,10 +16,20 @@
     <%= f.check_box :featured -%>
   </div>
   
-  <div class='field'>
-    <%= f.label :published -%>
-    <%= f.check_box :published -%>
-  </div>
+	<div class='field'>
+		<%= f.label :on_draft %>
+		<%= f.check_box :on_draft %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :on_bottle %>
+		<%= f.check_box :on_bottle %>
+	</div>
+	
+  <!-- <div class='field'>
+    <%# f.label :published %>
+    <%# f.check_box :published %>
+  </div> -->
 
   <div class='field'>
     <%= f.label :description -%>

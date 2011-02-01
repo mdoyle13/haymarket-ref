@@ -12,6 +12,6 @@ class Event < ActiveRecord::Base
   named_scope :featured, :conditions => { :featured => true }, :limit => 1
   named_scope :beer, :conditions => [ "event_type_id = ?", 1 ]
   named_scope :theatre, :conditions => [ "event_type_id = ?", 2 ]
-  named_scope :upcoming, :conditions => [ "date >= ?", Time.now ], :order => "date ASC"
+  named_scope :upcoming, :conditions => [ "end_date >= ?", Time.now ], :order => "date ASC"
 
 end
