@@ -1,15 +1,29 @@
-	<!-- This is the main sidebar that contains all 3 featured items. -->
-	<% @upcoming = Event.upcoming.published.find(:first) %>
-	<h4>Next Event</h4>
+	<% @upcoming_beer = Event.upcoming.published.find_by_event_type_id(1, :first) %>
+	<% @upcoming_theater = Event.upcoming.published.find_by_event_type_id(2, :first) %>
+	<h4>Upcoming Events</h4>
+	<img class="event-type-image" src="/theme/images/eventBeer.png" />
 	<p>
-	<% if !@upcoming.blank? %>
-	<strong>	<span style="color:#ffffff;"><%= @upcoming.name %></span></strong><br />
-	<small><%= @upcoming.date.strftime("%m/%d/%Y") %></small>&nbsp;&nbsp;
-	<small><%= link_to "For Tickets Click Here", @upcoming.purchase_link unless @upcoming.purchase_link.empty? %></small>
+	<% if !@upcoming_beer.blank? %>
+	<strong><span style="color:#ffffff;"><%= @upcoming_beer.name %></span></strong><br />
+
+	<small><%= @upcoming_beer.date.strftime("%m/%d/%Y") %></small>&nbsp;&nbsp;
+	<small><%= link_to "For Tickets Click Here", @upcoming_beer.purchase_link unless @upcoming_beer.purchase_link.empty? %></small>
 	<% else %>
 		<small>Check back often to see what's going on here at the brewery</small>
 	<% end %>
 	</p>
+	<img class="event-type-image" src="/theme/images/eventDW.png" />
+		<p>
+	<% if !@upcoming_theater.blank? %>
+	<strong>	<span style="color:#ffffff;"><%= @upcoming_theater.name %></span></strong><br />
+
+	<small><%= @upcoming_theater.date.strftime("%m/%d/%Y") %></small>&nbsp;&nbsp;
+	<% else %>
+		<small>Check back often to see what's going on here at the brewery</small>
+	<% end %>
+	</p>
+	
+	
 	<% @featured_beer = Beer.find_by_featured(true) %>
 	<% unless @featured_beer.nil? %>
 	<h4>Featured Beer</h4>
@@ -26,4 +40,4 @@
 		<small><%= @featured_food.description %></small>
 	</p>
 	<% end %>
-	
+
