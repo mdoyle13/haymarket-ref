@@ -16,9 +16,8 @@
 			<p>
 				<%= f.required_label :send_to, 'Send To:' %><br />
 				<select name="inquiry[send_to]">
-						<option value="">Select...</option>
-					<% @recipients.each do |key, value| %>
-						<option value="<%= key %>"><%= key %></option>
+					<% @recipients.each do |recipient| %>
+						<option value="<%= recipient[0] %>"><%= recipient[0] %></option>
 					<% end %>
 				</select>
 			</p>

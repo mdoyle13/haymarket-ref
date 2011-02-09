@@ -38,20 +38,17 @@
 							</div>
 						<% end %>
 						<p class="brewery"><%= beer.brewery %></p>
-						<% if beer.description.present? %>
-							<div class="beer-description"><%= beer.description %></div>
-						<% end %>
 						
 						<% if beer.awards.present? %>
-							<div class="awards">
-								<h4>Awards</h4>
-							<ul>
-								<% beer.awards.each do |award| %>
-								<%= link_to "#{award.description}", award_path(award) %>
-								<li><%= award.description %></li>
-								<% end %>
-							</ul>
-							</div>
+						<div class="beer_awards">
+							<% beer.awards.each do |award| %>
+							<p><b><%= award.event_name %>:</b> <%= award.category %>, <%= award.description %></p>
+							<% end %>
+						</div>
+						<% end %>
+						
+						<% if beer.description.present? %>
+							<div class="beer-description"><%= beer.description %></div>
 						<% end %>
 					</div>
 		    <% end %>

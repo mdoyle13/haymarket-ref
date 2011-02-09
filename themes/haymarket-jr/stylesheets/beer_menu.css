@@ -22,6 +22,7 @@ h1.beer-category-name {
 .brewery {
 	clear: left;
 	font-size: 12px;
+	padding-bottom: 3px;
 }
 .beer-nerd-stuff {
 	float: right;
@@ -31,4 +32,16 @@ h1.beer-category-name {
 
 #printer-friendly-beer-list {
 	display: none;
+}
+
+.beer_awards {
+	padding-bottom: 10px;
+}
+
+.beer_awards p {
+	padding-bottom: 0;
+}
+
+.beer_awards b {
+	color: white;
 }

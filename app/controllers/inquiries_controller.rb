@@ -17,11 +17,11 @@ class InquiriesController < ApplicationController
 
   def create
     @inquiry = Inquiry.new(params[:inquiry])
-		@inquiry.send_to = @recipients[@inquiry.send_to]
+		@inquiry.send_to = @recipients.assoc(@inquiry.send_to)[1]
     if @inquiry.save
       if @inquiry.ham?
         begin
-          InquiryMailer.deliver_notification(@inquiry, request)
+          InquiryMailer.deliver_notification(@inquiry)
         rescue
           logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
         end
@@ -40,7 +40,13 @@ protected
   end
 
 	def set_recipients
-		@recipients = { "Pete Crowley" => 'pete@haymarketbrewing.com', 'John Neurauter' => 'john@haymarketbrewing.com', 'Chris Buccheri' => 'chris@haymarketbrewing.com'}
+		@recipients = [ 
+		  ["Info/Comments", 'info@haymarketbrewing.com'],
+		  ["Events", 'clare@haymarketbrewing.com'],
+		  ["Pete Crowley, Owner/Brewmaster", 'pete@haymarketbrewing.com'],
+		  ['John Neurauter, Owner', 'john@haymarketbrewing.com'], 
+		  ['Chris Buccheri, Chef', 'chris@haymarketbrewing.com']
+		]
 	end
 
 end
