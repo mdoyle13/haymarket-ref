@@ -42,7 +42,7 @@
 						<% if beer.awards.present? %>
 						<div class="beer_awards">
 							<% beer.awards.each do |award| %>
-							<p><b><%= award.event_name %>:</b> <%= award.category %>, <%= award.description %></p>
+							<p><b><%= award.event_name %>:</b> <%= award.category %>, <span class="white"><%= award.description %></span></p>
 							<% end %>
 						</div>
 						<% end %>

@@ -43,5 +43,10 @@ h1.beer-category-name {
 }
 
 .beer_awards b {
+/*	color: #F7941E;*/
+	color: #5293CD;
+}
+
+.beer_awards .white {
 	color: white;
 }
