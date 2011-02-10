@@ -2,13 +2,15 @@
   <%= auto_discovery_link_tag(:rss, blog_url(:format => 'rss'), {:title => "#{RefinerySetting.find_or_set(:site_name, "Company Name")} Blog"}) %>
 <% end %>
 
-<% content_for :body_content_title do %>
-  <%= @blog.title %>
-<% end %>
-
 <% content_for :body_content_left do %>
   <div class="body">
-    <%= @blog.body %>
+		<h2><%= @blog.title %></h2>
+	
+		<% unless @blog.body == "<br />" %>
+    	<%= @blog.body %>
+		<% else %>
+			<%= @blog.excerpt %>
+		<% end %>
   </div>
   
   <%= render :partial => '/blogs/post/authors' %>
