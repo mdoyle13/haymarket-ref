@@ -7,18 +7,19 @@
 	<div id="tabs-1">
 		<p>Check out the awards Pete Crowley has won over his long, storied brewing career</p>
 		<div id="awards-wrapper">
-		
-		<% @award_year.each do |year, award| %>
-			<h1><%= year %></h1>
-	    	<% for award in awards %>
+		<% @award_year.each do |year, awards| %>
+		<div class="award_year">
+		<h2><%= year %></h2>
+			<% for award in awards %>
+			<h4><%= award.event_name %></h4>
 		      		<div class="award-info">
-	        		<h4><%= award.event_name %>	</h4>		
 							<p class="award-description"><%= award.description %></p>
-					 		<%= award.category %> - <%= award.beer.name %><br />
+					 		<%= award.category %> - <%= award.beer_name %><br />
 	      		</div>
 					<br />
-	    	<% end %>		
 			<% end %>	
+		</div>	
+		<% end %>	
 	
 		</div>
 	</div>
