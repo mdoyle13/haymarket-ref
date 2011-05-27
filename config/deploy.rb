@@ -9,7 +9,7 @@ set :application, 'haymarket-ref'
 set :user, "hmb"
 set :use_sudo, false
 
-set :repository,  "git@tallgreentree.com:haymarket-ref.git"
+set :repository,  "git@git.tallgreentree.com:haymarket-ref.git"
 set :scm, :git
 set :deploy_via, :remote_cache
 
