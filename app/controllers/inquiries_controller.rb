@@ -42,7 +42,7 @@ protected
 	def set_recipients
 		@recipients = [ 
 		  ["Info/Comments", 'info@haymarketbrewing.com'],
-		  ["Events", 'clare@haymarketbrewing.com'],
+		  ["Events", 'events@haymarketbrewing.com'],
 		  ["Pete Crowley, Owner/Brewmaster", 'pete@haymarketbrewing.com'],
 		  ['John Neurauter, Owner', 'john@haymarketbrewing.com'], 
 		  ['Chris Buccheri, Chef', 'chris@haymarketbrewing.com']
