@@ -11,7 +11,7 @@ set :use_sudo, false
 
 set :repository,  "git@dosesdoyle.com:haymarket-ref.git"
 set :scm, :git
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 
 role :web, "173.203.83.43"                          # Your HTTP server, Apache/etc
 role :app, "173.203.83.43"                          # This may be the same as your `Web` server
