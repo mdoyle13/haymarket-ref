@@ -29,7 +29,7 @@
 	<% if !@upcoming_theater.blank? %>
 	<strong><span style="color:#ffffff;"><%= @upcoming_theater.name %></span></strong><br />
 	<small><%= @upcoming_theater.date.strftime("%m/%d/%Y") %></small>&nbsp;&nbsp;<br>
-	<small><%= link_to "For Tickets Click Here", @upcoming_theater.purchase_link unless @upcoming_theater.purchase_link.empty? %></small>
+	<small><%= link_to "For Tickets Click Here", @upcoming_theater.purchase_link unless @upcoming_theater.purchase_link.empty? %></small><br>
 	<% if !@add_to_sidebar_theatre.blank? %>
 		<% @add_to_sidebar_theatre.each do |e| %>
 			<strong><span style="color:#ffffff;"><%= e.name %></span></strong><br />
