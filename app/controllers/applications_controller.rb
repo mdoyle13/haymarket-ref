@@ -48,7 +48,7 @@ class ApplicationsController < ApplicationController
         ApplicationMailer.deliver_application_notification(@application)
         # ApplicationMailer.deliver_applicant_notification(@application)
         flash[:notice] = 'Thanks for your interest. We\'ve received your info.'
-        format.html { redirect_to(root_path) }
+        format.html { redirect_to(new_application_path) }
         format.xml  { render :xml => @application, :status => :created, :location => root_path }
       else
         format.html { render :action => "new" }
