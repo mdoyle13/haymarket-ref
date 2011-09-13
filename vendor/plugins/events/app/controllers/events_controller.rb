@@ -44,5 +44,5 @@ protected
   def find_page
     @page = Page.find_by_link_url("/events")
   end
-
+  
 end

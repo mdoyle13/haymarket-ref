@@ -9,6 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20110908011301) do
 
   create_table "applications", :force => true do |t|
@@ -143,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20110908011301) do
     t.string   "editor"
     t.boolean  "published"
     t.string   "venue"
+    t.boolean  "add_to_sidebar"
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"

@@ -1,23 +1,43 @@
-	<% @upcoming_beer = Event.upcoming.published.find_by_event_type_id(1, :first) %>
+	<% @upcoming_beer = Event.upcoming.published.find_by_event_type_id(1, :first)  %>
 	<% @upcoming_theater = Event.upcoming.published.find_by_event_type_id(2, :first) %>
+	<% @add_to_sidebar_theatre = Event.published.theatre.add_to_sidebar %>
+	<% @add_to_sidebar_beer = Event.published.beer.add_to_sidebar %>
+	
 	<h4>Upcoming Events</h4>
 	<img class="event-type-image" src="/theme/images/eventBeer.png" />
 	<p>
-	<% if !@upcoming_beer.blank? %>
-	<strong><span style="color:#ffffff;"><%= @upcoming_beer.name %></span></strong><br />
-
-	<small><%= @upcoming_beer.date.strftime("%m/%d/%Y") %></small>&nbsp;&nbsp;
-	<small><%= link_to "For Tickets Click Here", @upcoming_beer.purchase_link unless @upcoming_beer.purchase_link.empty? %></small>
+		<% if !@upcoming_beer.blank? %>
+		<strong><span style="color:#ffffff;"><%= @upcoming_beer.name %></span></strong><br />
+		<small><%= @upcoming_beer.date.strftime("%m/%d/%Y") %></small>&nbsp;&nbsp;
+		<small><%= link_to "For Tickets Click Here", @upcoming_beer.purchase_link unless @upcoming_beer.purchase_link.empty? %></small><br>
+		<%if !@add_to_sidebar_beer.blank? %>
+			<% @add_to_sidebar_beer.each do |e| %>
+				<strong><span style="color:#ffffff;"><%= e.name %></span></strong><br />
+				<small><%= e.date.strftime("%m/%d/%Y") %></small>
+				<small><%= link_to "For Tickets Click Here", e.purchase_link unless e.purchase_link.empty? %></small>
+				<br />
+			<% end %>
+		<% end %>
 	<% else %>
 		<small>Check back often to see what's going on here at the brewery</small>
 	<% end %>
 	</p>
+	
+	
 	<img class="event-type-image" src="/theme/images/eventDW.png" />
 		<p>
 	<% if !@upcoming_theater.blank? %>
-	<strong>	<span style="color:#ffffff;"><%= @upcoming_theater.name %></span></strong><br />
-
+	<strong><span style="color:#ffffff;"><%= @upcoming_theater.name %></span></strong><br />
 	<small><%= @upcoming_theater.date.strftime("%m/%d/%Y") %></small>&nbsp;&nbsp;
+	<small><%= link_to "For Tickets Click Here", @upcoming_theater.purchase_link unless @upcoming_theater.purchase_link.empty? %></small><br />
+	<% if !@add_to_sidebar_theatre.blank? %>
+		<% @add_to_sidebar_theatre.each do |e| %>
+			<strong><span style="color:#ffffff;"><%= e.name %></span></strong><br />
+			<small><%= e.date.strftime("%m/%d/%Y") %></small>		
+			<small><%= link_to "For Tickets Click Here", e.purchase_link unless e.purchase_link.empty? %></small>
+			<br />
+		<% end %>
+	<%end %>
 	<% else %>
 		<small>Check back often to see what's going on at the drinking and writing theater</small>
 	<% end %>
