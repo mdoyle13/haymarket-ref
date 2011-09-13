@@ -15,6 +15,15 @@
     <%= f.label :food_category_id -%>
 		<%= collection_select(:food, :food_category_id, FoodCategory.all, :id, :name, {:include_blank => "N/A"}) %>
   </div>
+
+  <div class='field'>
+	<%= f.label 'Menus' %>
+	<% for meal_time in MealTime.all %>
+		<% fields_for "food[meal_time_attributes]", meal_time do |mf| %>
+		  <%= mf.check_box :id, :value => meal_time.id %> <%= meal_time.name %>
+		<% end %>
+	<% end%>
+  </div>
   
   <div class='field'>
     <%= f.label :daily_special -%>

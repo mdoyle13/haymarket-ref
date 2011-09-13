@@ -43,18 +43,22 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new(params[:application])
 
-    respond_to do |format|
-      if @application.save
+
+    if @application.save
+      begin
         ApplicationMailer.deliver_application_notification(@application)
-        # ApplicationMailer.deliver_applicant_notification(@application)
-        flash[:notice] = 'Thanks for your interest. We\'ve received your info.'
-        format.html { redirect_to(root_path) }
-        format.xml  { render :xml => @application, :status => :created, :location => root_path }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @application.errors, :status => :unprocessable_entity }
+      rescue
+        logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
       end
+      # ApplicationMailer.deliver_applicant_notification(@application)
+      flash[:notice] = 'Thanks for your interest. We\'ve received your info.'
+      #format.html { redirect_to(root_path) }
+      #format.xml  { render :xml => @application, :status => :created, :location => root_path }
+      redirect_to new_application_path
+    else
+      render :action => "new"
     end
+
   end
 
   # PUT /applications/1
