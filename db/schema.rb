@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110128134900) do
+ActiveRecord::Schema.define(:version => 20110907234010) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -61,25 +61,25 @@ ActiveRecord::Schema.define(:version => 20110128134900) do
     t.date     "date_tapped"
     t.string   "brewery"
     t.boolean  "featured"
-    t.boolean  "published"
+    t.boolean  "published",                                                     :default => false, :null => false
     t.integer  "beer_category_id"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "beer_pricing_id"
-    t.decimal  "og"
-    t.decimal  "fg"
-    t.decimal  "ibu"
-    t.decimal  "abv"
-    t.decimal  "draft_price_4oz"
-    t.decimal  "draft_price_12oz"
-    t.decimal  "draft_price_16oz"
-    t.decimal  "draft_price_20oz"
-    t.decimal  "bottle_oz"
-    t.decimal  "bottle_price"
+    t.decimal  "og",                             :precision => 11, :scale => 3
+    t.decimal  "fg",                             :precision => 11, :scale => 3
+    t.integer  "ibu",              :limit => 10, :precision => 10, :scale => 0
+    t.decimal  "abv",                            :precision => 11, :scale => 1
+    t.decimal  "draft_price_4oz",                :precision => 11, :scale => 2
+    t.decimal  "draft_price_12oz",               :precision => 11, :scale => 2
+    t.decimal  "draft_price_16oz",               :precision => 11, :scale => 2
+    t.decimal  "draft_price_20oz",               :precision => 11, :scale => 2
+    t.decimal  "bottle_oz",                      :precision => 11, :scale => 1
+    t.decimal  "bottle_price",                   :precision => 11, :scale => 2
     t.boolean  "show_date_tapped"
-    t.boolean  "on_draft",         :default => false
-    t.boolean  "on_bottle",        :default => false
+    t.boolean  "on_draft",                                                      :default => false
+    t.boolean  "on_bottle",                                                     :default => false
   end
 
   add_index "beers", ["id"], :name => "index_beers_on_id"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(:version => 20110128134900) do
     t.string   "editor"
     t.boolean  "published"
     t.string   "venue"
+    t.boolean  "add_to_sidebar"
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
@@ -213,7 +214,7 @@ ActiveRecord::Schema.define(:version => 20110128134900) do
   create_table "liquors", :force => true do |t|
     t.string   "name"
     t.boolean  "published"
-    t.decimal  "price"
+    t.integer  "price",              :limit => 10, :precision => 10, :scale => 0
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -386,8 +387,8 @@ ActiveRecord::Schema.define(:version => 20110128134900) do
   create_table "wines", :force => true do |t|
     t.string   "name"
     t.boolean  "published"
-    t.decimal  "glass_price"
-    t.decimal  "bottle_price"
+    t.integer  "glass_price",      :limit => 10, :precision => 10, :scale => 0
+    t.integer  "bottle_price",     :limit => 10, :precision => 10, :scale => 0
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
