@@ -33,5 +33,8 @@ class Beer < ActiveRecord::Base
   named_scope :not_haymarket, :conditions => ['`brewery` NOT LIKE ?', '%Haymarket%']
   named_scope :by_name, :order => :name
   named_scope :unpriced, :conditions => {:bottle_price => nil, :draft_price_4oz => nil, :draft_price_12oz => nil, :draft_price_16oz => nil, :draft_price_20oz => nil}
+  
+  named_scope :front_bar, :conditions => {:front_bar => true}
+  named_scope :back_bar, :conditions => {:back_bar => true}
 
 end

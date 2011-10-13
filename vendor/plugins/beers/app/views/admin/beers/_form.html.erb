@@ -50,7 +50,14 @@
     <%= f.label :brewery -%>
     <%= f.text_field :brewery -%>
   </div>
-
+	<div class='field'>
+		<%= f.label :front_bar %>
+		<%= f.check_box :front_bar %>
+	</div>
+	<div class='field'>
+		<%= f.label :back_bar %>
+		<%= f.check_box :back_bar %>
+	</div>
 	<div class='field'>
 		<%= f.label :og, 'Original Gravity' %>
 		<%= f.text_field :og %>
