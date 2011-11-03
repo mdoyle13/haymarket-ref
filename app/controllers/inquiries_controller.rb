@@ -45,7 +45,7 @@ protected
 		  ["Events", 'events@haymarketbrewing.com'],
 		  ["Pete Crowley, Owner/Brewmaster", 'pete@haymarketbrewing.com'],
 		  ['John Neurauter, Owner', 'john@haymarketbrewing.com'], 
-		  ['Chris Buccheri, Chef', 'chris@haymarketbrewing.com']
+		  ['Chris McCoy, Chef', 'christopher@haymarketbrewing.com']
 		]
 	end
 

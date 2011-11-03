@@ -1,7 +1,7 @@
 <% theme ||= false -%>
 <% content_for :head do %>
   <%= stylesheet_link_tag "/theme/stylesheets/menu" %>
-	<%= stylesheet_link_tag "/theme/stylesheets/print_menu", :media => "print" %>
+  <%= stylesheet_link_tag "/theme/stylesheets/print_menu", :media => "print" %>
 <% end %>
 
 <% food_categories = FoodCategory.all %>
@@ -10,59 +10,23 @@
 <a class="print_page" href="#">Print Menu</a>
 <div id="food_menu">
 	<div id="menu_container">
-		<div class="column" id="left_col">
-			<% unless @appetizers.foods.blank? %>
-			<div class="food_category">
-				<h2>Appetizers</h2>
-				<%= render :partial => 'food', :collection => @appetizers.foods.published unless @appetizers.foods.published.nil? %>
-			</div>
-			<% end %>
-			
-			<% unless @sides.foods.blank? %>
-			<div id="sides" class="food_category">
-				<h2>Sides</h2>
-				<%= render :partial => 'food', :collection => @sides.foods.published unless @sides.foods.published.nil? %>
-			</div>
-			<% end %>
-			
-			<% unless @housemade_sauces.foods.blank? %>
-			<div id="sauces" class="food_category">
-				<h2>Housemade Sauces</h2>
-				<div class="note">Extra sauces $0.50 ea</div>
-				<%= render :partial => 'food', :collection => @housemade_sauces.foods.published unless @housemade_sauces.foods.published.nil? %>
-			</div>
-			<div class="clear"></div>
-			<% end %>
-			
-			<% unless @kids.foods.blank? %>
-			<div class="food_category">
-				<h2>Kids</h2>
-				<%= render :partial => 'food', :collection => @kids.foods.published unless @kids.foods.published.nil? %>
-			</div>
-			<% end %>
-		</div>
-		<div id="legend">
-			<h3>Legend</h3>
-			<p><%= image_tag "/theme/images/icon_housemade.gif", :class => "legend_icon" -%> = HouseMade</p>
-			<p><%= image_tag "/theme/images/icon_vegan.gif", :class => "legend_icon" -%> = Vegan</p>
-			<p><%= image_tag "/theme/images/icon_spicy.gif", :class => "legend_icon" -%> = Spicy</p>
-		</div>
-
-		<div class="column" id="right_col">
-			<% unless @entrees.foods.blank? %>
-			<div class="food_category">
-				<h2>Entreés</h2>
-				<%= render :partial => 'food', :collection => @entrees.foods.published unless @entrees.foods.published.nil? %>
-			</div>
-			<% end %>
-		
-			<% unless @desserts.foods.blank? %>
-			<div class="food_category">
-				<h2>Desserts</h2>
-				<%= render :partial => 'food', :collection => @desserts.foods.published unless @desserts.foods.published.nil? %>
-			</div>
-			<% end %>
-		</div>
-		<div class="clear"></div>
+		<ul>
+			<li>
+				<h4><a href="#brunch">Brunch</a></h4>
+			</li>
+			<li>
+				<h4><a href="#lunch">Lunch</a></h4>
+			</li>
+			<li>
+				<h4><a href="#dinner">Dinner</a></h4>
+			</li>
+			<li>
+				<h4><a href="#late_night">Late Night</a></h4>
+			</li>
+		</ul>
+		<div id="brunch"><%= render :partial => "brunch" %></div>
+		<div id="lunch"><%= render :partial => "lunch" %></div>
+		<div id="dinner"><%= render :partial => "dinner" %></div>
+		<div id="late_night"><%= render :partial => "late_night" %></div>
 	</div>
 </div>

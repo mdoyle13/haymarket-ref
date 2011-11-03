@@ -10,7 +10,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 
-ActiveRecord::Schema.define(:version => 20110908011301) do
+ActiveRecord::Schema.define(:version => 20111013221700) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(:version => 20110908011301) do
     t.boolean  "show_date_tapped"
     t.boolean  "on_draft",                                                      :default => false
     t.boolean  "on_bottle",                                                     :default => false
+    t.boolean  "front_bar"
+    t.boolean  "back_bar"
   end
 
   add_index "beers", ["id"], :name => "index_beers_on_id"

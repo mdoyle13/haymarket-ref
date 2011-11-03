@@ -17,11 +17,11 @@
   </div>
 
   <div class='field'>
-	<%= f.label 'Menus' %>
 	<% for meal_time in MealTime.all %>
-		<% fields_for "food[meal_time_attributes]", meal_time do |mf| %>
-		  <%= mf.check_box :id, :value => meal_time.id %> <%= meal_time.name %>
-		<% end %>
+		<%# hidden_field_tag("meal_time_foods[food_ids][]", params[:id]) %>
+		<%# check_box_tag('meal_time_foods[meal_time_ids][]', meal_time.id) %> <%# meal_time.name %>
+		<%= label_tag :meal_time_ids, meal_time.name %>
+		<%= check_box_tag :meal_time_ids, meal_time.id, @food.meal_times.include?(meal_time), :name => 'food[meal_time_ids][]' %>
 	<% end%>
   </div>
   

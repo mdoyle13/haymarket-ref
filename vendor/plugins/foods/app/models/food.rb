@@ -12,9 +12,6 @@ class Food < ActiveRecord::Base
   named_scope :published, :conditions => { :published => true }, :order => "position ASC"
   named_scope :unpublished, :conditions => { :published => false }
 
-  def meal_time_attributes=(meal_time_attributes)
-    meal_time_attributes.each do |attributes|
-      meal_time.build(attributes)
-    end
-  end
+  accepts_nested_attributes_for :meal_time_foods
+  accepts_nested_attributes_for :meal_times
 end

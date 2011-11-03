@@ -16,8 +16,8 @@
   </div>
   
   <div class='field'>
-    <%= f.label :beer_name -%>
-    <%= f.collection_select :beer_name, Beer.all, :name, :name, :prompt => true -%>
+    <%= f.label :beer_id -%>
+    <%= f.collection_select :beer_id, Beer.haymarket, :id, :name, :prompt => true -%>
   </div>
   
   <div class='field'>

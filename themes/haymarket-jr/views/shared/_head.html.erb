@@ -19,8 +19,9 @@
  <%= javascript_include_tag "jquery", "jquery-ui", "application", "printelement", :theme => theme %>
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
-			$('.accordion').accordion({collapsible:true,active:false,autoHeight:false,icons: { 'header': 'ui-icon-plus', 'headerSelected': 'ui-icon-minus' }});
-					$( "#tabs" ).tabs();
+			//$('.accordion').accordion({collapsible:true,active:false,autoHeight:false,icons: { 'header': 'ui-icon-plus', 'headerSelected': 'ui-icon-minus' }});
+			$( "#tabs" ).tabs();
+			$( "#menu_container" ).tabs();
 		});
 	</script>
 </head>
