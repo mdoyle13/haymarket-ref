@@ -9,23 +9,24 @@ class FoodsController < ApplicationController
   end
 
   def index
-    #First Column
-    @appetizers = FoodCategory.find_by_name("Appetizers")
-    @sandwiches = FoodCategory.find_by_name("Sandwiches")
-    @pizza = FoodCategory.find_by_name("Pizza")
-    
-    #Second Column
-    @mussels = FoodCategory.find_by_name("Mussels")
-    @chili_and_soup = FoodCategory.find_by_name("Chili & Soup")
-    @entrees = FoodCategory.find_by_name("Entrees")
-    @barbeque = FoodCategory.find_by_name("Barbeque")
-    @desserts = FoodCategory.find_by_name("Desserts")
-    
-    #Third Column
-    @salads = FoodCategory.find_by_name("Salads")
-    @sides = FoodCategory.find_by_name("Sides")
-    @housemade_sauces = FoodCategory.find_by_name("Housemade Sauces")
-    @kids = FoodCategory.find_by_name("Kids")
+    # @appetizers = FoodCategory.find_by_name("Appetizers")
+    # @sandwiches = FoodCategory.find_by_name("Sandwiches")
+    # @pizza = FoodCategory.find_by_name("Pizza")
+    # 
+    # @mussels = FoodCategory.find_by_name("Mussels")
+    # @chili_and_soup = FoodCategory.find_by_name("Chili & Soup")
+    # @entrees = FoodCategory.find_by_name("Entrees")
+    # @barbeque = FoodCategory.find_by_name("Barbeque")
+    # @desserts = FoodCategory.find_by_name("Desserts")
+    # 
+    # @salads = FoodCategory.find_by_name("Salads")
+    # @sides = FoodCategory.find_by_name("Sides")
+    # @housemade_sauces = FoodCategory.find_by_name("Housemade Sauces")
+    # @kids = FoodCategory.find_by_name("Kids")
+    @brunch = MealTime.find_by_id(1)
+    @lunch = MealTime.find_by_id(2)
+    @dinner = MealTime.find_by_id(3)
+    @late_night = MealTime.find_by_id(4)
   end
 
   def show

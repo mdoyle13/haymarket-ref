@@ -15,13 +15,10 @@
     <%= f.label :food_category_id -%>
 		<%= collection_select(:food, :food_category_id, FoodCategory.all, :id, :name, {:include_blank => "N/A"}) %>
   </div>
-
+  <br />
   <div class='field'>
 	<% for meal_time in MealTime.all %>
-		<%# hidden_field_tag("meal_time_foods[food_ids][]", params[:id]) %>
-		<%# check_box_tag('meal_time_foods[meal_time_ids][]', meal_time.id) %> <%# meal_time.name %>
-		<%= label_tag :meal_time_ids, meal_time.name %>
-		<%= check_box_tag :meal_time_ids, meal_time.id, @food.meal_times.include?(meal_time), :name => 'food[meal_time_ids][]' %>
+		<%= check_box_tag :meal_time_ids, meal_time.id, @food.meal_times.include?(meal_time), :name => 'food[meal_time_ids][]' %> <%= meal_time.name %>&nbsp;&nbsp;
 	<% end%>
   </div>
   
