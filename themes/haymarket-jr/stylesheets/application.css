@@ -454,3 +454,10 @@ ul#menu li ul li {
 	font-size:30px;
 	color:#5292cd;
 }
+#sidebar_image {
+}
+#sidebar_image img {
+	display:block;
+	width:229px;
+	height:auto;
+}

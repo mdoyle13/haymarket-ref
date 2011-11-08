@@ -1,0 +1,16 @@
+nb:
+  admin:
+    sidebars:
+      index:
+        create_new: Lag en ny Sidebar
+        reorder: Endre rekkefølgen på Sidebars
+        reorder_done: Ferdig å endre rekkefølgen Sidebars
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen sidebars enda. Klikk på "Lag en ny Sidebar" for å legge til din første sidebar.
+      sidebar:
+        view_live: Vis hvordan denne sidebar ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne sidebar
+        delete: Fjern denne sidebar permanent
+  sidebars:
+    show:
+      other: Andre Sidebars

@@ -1,0 +1,16 @@
+en:
+  admin:
+    sidebars:
+      index:
+        create_new: Create a new Sidebar
+        reorder: Reorder Sidebars
+        reorder_done: Done Reordering Sidebars
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no sidebars yet. Click "Create a new Sidebar" to add your first sidebar.
+      sidebar:
+        view_live: View this sidebar live <br/><em>(opens in a new window)</em>
+        edit: Edit this sidebar
+        delete: Remove this sidebar forever
+  sidebars:
+    show:
+      other: Other Sidebars

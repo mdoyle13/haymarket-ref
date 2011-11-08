@@ -9,8 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20111013221700) do
+ActiveRecord::Schema.define(:version => 20111108231738) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -320,6 +319,17 @@ ActiveRecord::Schema.define(:version => 20111013221700) do
     t.integer "user_id"
     t.integer "role_id"
   end
+
+  create_table "sidebars", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url"
+  end
+
+  add_index "sidebars", ["id"], :name => "index_sidebars_on_id"
 
   create_table "slugs", :force => true do |t|
     t.string   "name"

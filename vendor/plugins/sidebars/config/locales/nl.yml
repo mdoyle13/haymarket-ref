@@ -1,0 +1,16 @@
+nl:
+  admin:
+    sidebars:
+      index:
+        create_new: Maak een nieuwe Sidebar
+        reorder: Wijzig de volgorde van de Sidebars
+        reorder_done: Klaar met het wijzingen van de volgorde van de Sidebars
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen sidebars. Druk op 'Maak een nieuwe Sidebar' om de eerste aan te maken.
+      sidebar:
+        view_live: Bekijk deze sidebar op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze sidebar
+        delete: Verwijder deze sidebar voor eeuwig
+  sidebars:
+    show:
+      other: Andere Sidebars

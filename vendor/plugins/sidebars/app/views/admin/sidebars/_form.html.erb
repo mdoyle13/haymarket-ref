@@ -1,0 +1,30 @@
+<% form_for [:admin, @sidebar] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger' -%>
+  </div>
+
+ <div class='field'>
+    <%= f.label :url -%>
+    <%= f.text_field :url, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+      :f => f,
+      :field => :image_id,
+      :image => @sidebar.image,
+      :toggle_image_display => false
+    } %>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.sidebars.sidebar.delete')
+              } %>
+<% end -%>

@@ -2,7 +2,7 @@
 	<% @upcoming_theater = Event.upcoming.published.find_by_event_type_id(2, :first) %>
 	<% @add_to_sidebar_theatre = Event.published.theatre.add_to_sidebar %>
 	<% @add_to_sidebar_beer = Event.published.beer.add_to_sidebar %>
-	
+	<% @sidebar_image = Sidebar.first(1, :first) %>
 	<h4>Upcoming Events</h4>
 	<img class="event-type-image" src="/theme/images/eventBeer.png" />
 	<p>
@@ -61,5 +61,8 @@
 	</p>
 	<% end %>
 	<br />
-	<a href="http://www.drinkingandwriting.com"><img src="/theme/images/dw_abc.jpg"  style="display:block; margin-bottom:15px;"/></a>
+	<div id="sidebar_image">
+		<%=link_to image_fu(@sidebar_image.image), @sidebar_image.url, :target => "blank" %>
+	</div>	
+	<!-- <a href="http://www.drinkingandwriting.com"><img src="/theme/images/dw_abc.jpg"  style="display:block; margin-bottom:15px;"/></a> -->
 <!-- <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F%23%21%2FHaymarketBrewing&amp;width=300&amp;colorscheme=dark&amp;show_faces=true&amp;stream=true&amp;header=false&amp;height=556" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:556px;" allowTransparency="true"></iframe> -->
