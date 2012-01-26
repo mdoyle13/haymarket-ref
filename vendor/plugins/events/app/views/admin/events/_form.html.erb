@@ -58,7 +58,7 @@
 
   <div class='field'>
     <%= f.label :published -%>
-    <%= f.check_box(:published, :checked => "checked") -%>
+    <%= f.check_box(:published) %>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
