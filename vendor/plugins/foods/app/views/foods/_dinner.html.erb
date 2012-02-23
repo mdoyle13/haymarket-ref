@@ -22,6 +22,13 @@
 	<div class="clear"></div>
 	<% end %>
 	
+	<% unless @dinner.foods.desserts.published.blank? %>
+	<div class="food_category">
+		<h2>Desserts</h2>
+		<%= render :partial => 'food', :collection => @dinner.foods.desserts.published unless @dinner.foods.desserts.published.nil? %>
+	</div>
+	<% end %>
+	
 	<% unless @dinner.foods.kids.published.blank? %>
 	<div class="food_category">
 		<h2>Kids</h2>
@@ -43,12 +50,20 @@
 		<%= render :partial => 'food', :collection => @dinner.foods.entrees.published unless @dinner.foods.entrees.published.nil? %>
 	</div>
 	<% end %>
-
-	<% unless @dinner.foods.desserts.published.blank? %>
+	
+	<% unless @lunch.foods.sandwiches.published.blank? %>
 	<div class="food_category">
-		<h2>Desserts</h2>
-		<%= render :partial => 'food', :collection => @dinner.foods.desserts.published unless @dinner.foods.desserts.published.nil? %>
+		<h2>Sandwiches</h2>
+		<%= render :partial => 'food', :collection => @lunch.foods.sandwiches.published unless @lunch.foods.sandwiches.published.nil? %>
 	</div>
 	<% end %>
+	
+	<% unless @lunch.foods.pizzas.published.blank? %>
+	<div class="food_category">
+		<h2>Pizza</h2>
+		<%= render :partial => 'food', :collection => @lunch.foods.pizzas.published unless @lunch.foods.pizzas.published.nil? %>
+	</div>
+	<% end %>
+
 </div>
 <div class="clear"></div>

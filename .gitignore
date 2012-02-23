@@ -3,6 +3,7 @@
 db/*.sqlite3
 *.log
 tmp/**/*
+.rvmrc
 
 # Documentation
 doc/api
