@@ -23,6 +23,7 @@ class Food < ActiveRecord::Base
   named_scope :french_toast, :conditions => { :food_category_id => 13 }
   named_scope :eggs, :conditions => { :food_category_id => 14 }
   named_scope :healthier, :conditions => { :food_category_id => 15 }
+  named_scope :beverages, :conditions => { :food_category_id => 16 }
 
   accepts_nested_attributes_for :meal_time_foods
   accepts_nested_attributes_for :meal_times

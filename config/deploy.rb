@@ -9,7 +9,7 @@ set :application, 'haymarket-ref'
 set :user, "hmb"
 set :use_sudo, false
 
-set :repository,  "git@dosesdoyle.com:haymarket-ref.git"
+set :repository,  "git://github.com/mdoyle13/haymarket-ref.git"
 set :scm, :git
 set :deploy_via, :remote_cache
 
