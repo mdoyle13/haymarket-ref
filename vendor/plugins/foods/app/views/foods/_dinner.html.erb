@@ -6,6 +6,13 @@
 	</div>
 	<% end %>
 	
+	<% unless @dinner.foods.soups_salads.published.blank? %>
+	<div class="food_category">
+		<h2>Soups & Salads</h2>
+		<%= render :partial => 'food', :collection => @dinner.foods.soups_salads.published unless @dinner.foods.soups_salads.published.nil? %>
+	</div>
+	<% end %>
+	
 	<% unless @dinner.foods.sides.published.blank? %>
 	<div id="sides" class="food_category">
 		<h2>Sides</h2>
