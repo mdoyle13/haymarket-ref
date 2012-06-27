@@ -1,8 +1,16 @@
 <div class="column" id="left_col">
+	
 	<% unless @brunch.foods.appetizers.published.blank? %>
 	<div class="food_category">
 		<h2>Appetizers</h2>
 		<%= render :partial => 'food', :collection => @brunch.foods.appetizers.published unless @brunch.foods.appetizers.published.nil? %>
+	</div>
+	<% end %>
+	
+	<% unless @brunch.foods.soups_salads.published.blank? %>
+	<div class="food_category">
+		<h2>Soups & Salads</h2>
+		<%= render :partial => 'food', :collection => @brunch.foods.soups_salads.published unless @brunch.foods.soups_salads.published.nil? %>
 	</div>
 	<% end %>
 	
