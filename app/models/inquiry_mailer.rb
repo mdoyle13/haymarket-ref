@@ -1,7 +1,7 @@
 class InquiryMailer < ActionMailer::Base
 
   def notification(inquiry)
-    subject     '[HMBWEB] Contact Form Notification'
+    subject     "[HMBWEB] Contact Form Notification - #{Time.now()}"
     recipients  inquiry.send_to
     from        'website@haymarketbrewing.com'
 		@headers['Reply-to'] = inquiry.email
