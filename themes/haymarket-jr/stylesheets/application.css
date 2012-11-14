@@ -462,3 +462,9 @@ ul#menu li ul li {
 	width:229px;
 	height:auto;
 }
+.small {
+	font-size: 10px;
+}
+.center {
+	text-align: center;
+}
