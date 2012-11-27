@@ -4,29 +4,23 @@
   <%= stylesheet_link_tag "/theme/stylesheets/print_menu", :media => "print" %>
 <% end %>
 
-<% food_categories = FoodCategory.all %>
+<script type="text/javascript" src="http://menus.singleplatform.co/jsload?load=menus.2&apiKey=ke09z8icq4xu8uiiccighy1bw"></script>
+<script>
+    var menuApi = new MenusApi("ke09z8icq4xu8uiiccighy1bw");
+    menuApi.loadMenusForLocation("haymarket-pub--brewery", "menusContainer");
+    menuApi.setSectionTitleBackgroundColor("#333");
+    menuApi.setPrimaryBackgroundColor("#333");
+    menuApi.setMenuDescBackgroundColor("transparent");
+    menuApi.setSecondaryBackgroundColor("transparent");
+    menuApi.setPrimaryFontColor("#fff");
+    menuApi.setPrimaryFontFamily('Copperplate, "Copperplate Gothic Bold", Helvetica, Arial, sans-serif');
+    menuApi.setSectionTitleFontColor("#F7941E");
+    menuApi.setItemDescFontFamily("Georgia, Times, 'Times New Roman', serif");
+    menuApi.setItemDescFontColor("#F9F4A8");
+    menuApi.setBaseFontSize("14px");
+</script>
 
 <h1>Our Food Menu</h1>
-<a class="print_page" href="#">Print Menu</a>
-<div id="food_menu">
-	<div id="menu_container">
-		<ul>
-			<li>
-				<h4><a href="#brunch">Brunch</a></h4>
-			</li>
-			<li>
-				<h4><a href="#lunch">Lunch</a></h4>
-			</li>
-			<li>
-				<h4><a href="#dinner">Dinner</a></h4>
-			</li>
-			<li>
-				<h4><a href="#late_night">Late Night</a></h4>
-			</li>
-		</ul>
-		<div id="brunch"><%= render :partial => "brunch" %></div>
-		<div id="lunch"><%= render :partial => "lunch" %></div>
-		<div id="dinner"><%= render :partial => "dinner" %></div>
-		<div id="late_night"><%= render :partial => "late_night" %></div>
-	</div>
+<div id="menusContainer">
+    
 </div>
