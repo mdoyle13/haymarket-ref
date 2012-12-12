@@ -77,14 +77,50 @@
 													</div>
 						<div class='contact'>
 							<h6>Signup for E-Newsletter</h6>
-							<% form_for Subscriber.new do |f| %>
-							<%= f.text_field :email %> <%= f.submit 'Signup' %>
-							<% end %>
-							<div id='contact_links'>
-								<%= link_to 'Contact Us', new_inquiry_path() %> | <a href='/applications/new'>Get Hired</a>
+							<form method="post" action="https://app.icontact.com/icp/signup.php" name="icpsignup" id="icpsignup4167" accept-charset="UTF-8" onsubmit="return verifyRequired4167();" >
+							<input type="hidden" name="redirect" value="http://www.icontact.com/www/signup/thanks.html">
+							<input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html">
+
+							<div id="SignUp" style="margin-bottom:15px;">
+							<table width="220" class="signupframe" border="0" cellspacing="0" cellpadding="0">
+							        <tr>
+							      <td align="left">
+							        <input type="text" placeholder="E-mail address" name="fields_email">
+							      </td>
+										<td><input type="submit" name="Submit" value="Submit"></td>
+							    </tr>
+							    <input type="hidden" name="listid" value="48606">
+							    <input type="hidden" name="specialid:48606" value="YKND">
+
+							    <input type="hidden" name="clientid" value="1036345">
+							    <input type="hidden" name="formid" value="4167">
+							    <input type="hidden" name="reallistid" value="1">
+							    <input type="hidden" name="doubleopt" value="0">
+							    </table>
 							</div>
+							</form>
+							<script type="text/javascript">
+
+							var icpForm4167 = document.getElementById('icpsignup4167');
+
+							if (document.location.protocol === "https:")
+
+							        icpForm4167.action = "https://app.icontact.com/icp/signup.php";
+							function verifyRequired4167() {
+							  if (icpForm4167["fields_email"].value == "") {
+							    icpForm4167["fields_email"].focus();
+							    alert("The Email field is required.");
+							    return false;
+							  }
+
+
+							return true;
+							}
+							</script>
 						</div>
-						
+						<div id='contact_links'>
+							<%= link_to 'Contact Us', new_inquiry_path() %> | <a href='/applications/new'>Get Hired</a>
+						</div>
 						<div class='clear'></div>
 					</div>
 					<p class="small center">Haymarket is a registered service mark of Haymarket Brewing Company, LLC.</p>
