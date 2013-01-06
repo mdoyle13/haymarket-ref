@@ -1,13 +1,19 @@
-<div class="food_item">
-	<div class="food_name_description">
-		<h4><%= food.name %></h4>
-			<%= image_tag "/theme/images/icon_housemade.gif", :class => "legend_icon" if food.housemade -%>
-			<%= image_tag "/theme/images/icon_vegan.gif", :class => "legend_icon" if food.vegan -%>
-			<%= image_tag "/theme/images/icon_spicy.gif", :class => "legend_icon" if food.spicy -%>
-		<span class="description"><%= food.description %></span>
+<% menu_items.each do |item| %>
+	<% if item["type"] == "section" %>
+		<h2><%= item["title"] %></h2>
+	<% end %>
+	
+	<% if item["type"] == "item" %>
+	<div class="food_item">
+		<div class="food_name_description">
+			<h4 class="menu_title"><%= item["title"] %></h4>
+			<div class="price">
+				<%= "$" << item["prices"][0]["price"] %>
+			</div>
+			
+			<span class="description"><%= item["desc"] %></span>
+		</div>
+		<div class="clear"></div>
 	</div>
-	<div class="price">
-		<%= "$" << food.price unless food.price == "0" || food.price == nil %>
-	</div>
-	<div class="clear"></div>
-</div>
+	<% end %>
+<% end %>

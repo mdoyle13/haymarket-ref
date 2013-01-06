@@ -1,6 +1,4 @@
 class FoodsController < ApplicationController
-
-  before_filter :find_all_foods
   before_filter :find_page
   before_filter :hide_sidebar
 
@@ -9,24 +7,14 @@ class FoodsController < ApplicationController
   end
 
   def index
-    # @appetizers = FoodCategory.find_by_name("Appetizers")
-    # @sandwiches = FoodCategory.find_by_name("Sandwiches")
-    # @pizza = FoodCategory.find_by_name("Pizza")
-    # 
-    # @mussels = FoodCategory.find_by_name("Mussels")
-    # @chili_and_soup = FoodCategory.find_by_name("Chili & Soup")
-    # @entrees = FoodCategory.find_by_name("Entrees")
-    # @barbeque = FoodCategory.find_by_name("Barbeque")
-    # @desserts = FoodCategory.find_by_name("Desserts")
-    # 
-    # @salads = FoodCategory.find_by_name("Salads")
-    # @sides = FoodCategory.find_by_name("Sides")
-    # @housemade_sauces = FoodCategory.find_by_name("Housemade Sauces")
-    # @kids = FoodCategory.find_by_name("Kids")
-    @brunch = MealTime.find_by_id(1)
-    @lunch = MealTime.find_by_id(2)
-    @dinner = MealTime.find_by_id(3)
-    @late_night = MealTime.find_by_id(4)
+    sp = Singleplatform.new
+    response = sp.request('/restaurants/haymarket-pub--brewery/menu')
+    entries = response["menus"][0]["entries"]
+
+    @brunch     = sp.get_items_between(entries, "id", "s1279155", "s1279164")
+    @lunch      = sp.get_items_between(entries, "id", "s1279164", "s1279171")
+    @dinner     = sp.get_items_between(entries, "id", "s1279171", "s1279183")
+    @late_night = sp.get_items_between(entries, "id", "s1279183", "")
   end
 
   def show
@@ -38,10 +26,6 @@ class FoodsController < ApplicationController
   end
 
 protected
-
-  def find_all_foods
-    @foods = Food.find(:all, :order => "position ASC")
-  end
 
   def find_page
     @page = Page.find_by_link_url("/foods")

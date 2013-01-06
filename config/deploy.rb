@@ -35,6 +35,11 @@ task :symlink_database_yml do
 	run "ln -s #{deploy_to}/#{shared_dir}/config/database.yml #{current_release}/config/database.yml"
 end
 
+task :symlink_singleplatform_yml do
+	run "ln -s #{deploy_to}/#{shared_dir}/config/singleplatform.yml #{current_release}/config/singleplatform.yml"
+end
+
 after "deploy:update_code", :symlink_database_yml
+after "deploy:update_code", :symlink_singleplatform_yml
 
 after "deploy", "deploy:cleanup"

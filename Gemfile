@@ -25,6 +25,8 @@ gem 'rmagick',         '~> 2.12.0'
 gem 'truncate_html',   '= 0.3.2', :require => 'truncate_html'
 gem 'will_paginate',   '= 2.3.14', :require => 'will_paginate'
 
+gem 'ruby-hmac'
+
 group :test do
   gem 'json_pure', :require => 'json/pure'#, :git => 'git://github.com/parndt/json.git', :branch => 'master'
   gem 'factory_girl'
