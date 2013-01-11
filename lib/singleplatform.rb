@@ -1,5 +1,5 @@
 require 'hmac-sha1'
-require 'json/add/rails'
+require 'json'
 
 class String
   def hash_gsub(pattern, hash)
