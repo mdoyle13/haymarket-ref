@@ -1,6 +1,8 @@
 #configure for a multistage deployment
+
 require 'capistrano/ext/multistage'
-require 'bundler/capistrano' #bundler task
+require "rvm/capistrano"
+require "bundler/capistrano"
 
 set :stages, %w(staging production)
 
@@ -13,9 +15,9 @@ set :repository,  "git://github.com/mdoyle13/haymarket-ref.git"
 set :scm, :git
 set :deploy_via, :remote_cache
 
-role :web, "173.203.83.43"                          # Your HTTP server, Apache/etc
-role :app, "173.203.83.43"                          # This may be the same as your `Web` server
-role :db,  "173.203.83.43", :primary => true # This is where Rails migrations will run
+role :web, "184.106.71.81"                          # Your HTTP server, Apache/etc
+role :app, "184.106.71.81"                          # This may be the same as your `Web` server
+role :db,  "184.106.71.81", :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
