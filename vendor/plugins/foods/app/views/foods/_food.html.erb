@@ -8,7 +8,7 @@
 		<div class="food_name_description">
 			<h4 class="menu_title"><%= item["title"] %></h4>
 			<div class="price">
-				<%= "$" << item["prices"][0]["price"] %>
+				<%= "$" << item["prices"][0]["price"] unless item["prices"][0].nil? %>
 			</div>
 			
 			<span class="description"><%= item["desc"] %></span>
