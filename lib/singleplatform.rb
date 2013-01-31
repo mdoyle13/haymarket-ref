@@ -1,5 +1,4 @@
 require 'hmac-sha1'
-require 'json'
 
 class String
   def hash_gsub(pattern, hash)
