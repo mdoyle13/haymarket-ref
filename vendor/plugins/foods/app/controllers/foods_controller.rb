@@ -11,7 +11,7 @@ class FoodsController < ApplicationController
     response = sp.request('/restaurants/haymarket-pub--brewery/menu')
     entries = response["menus"][0]["entries"]
 
-    @brunch     = sp.get_items_between(entries, "id", "s1279155", "s1279164")
+    @brunch     = sp.get_items_between(entries, "id", "s1279156", "s1279164")
     @lunch      = sp.get_items_between(entries, "id", "s1279164", "s1279171")
     @dinner     = sp.get_items_between(entries, "id", "s1279171", "s1279183")
     @late_night = sp.get_items_between(entries, "id", "s1279183", "")
