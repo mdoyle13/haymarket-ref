@@ -20,7 +20,7 @@ config.action_controller.perform_caching             = true
 # Log level is set to :info by default which is the minimum to let you know what
 # is going on but without being chatty and therefore slow.
 config.log_level = :debug
-
+config.action_mailer.delivery_method = :sendmail
 # When true will use Amazon's Simple Storage Service on your production machine
 # instead of the default file system for resources and images
 # Make sure to your bucket info is correct in amazon_s3.yml
