@@ -6,4 +6,5 @@ class Sidebar < ActiveRecord::Base
   validates_uniqueness_of :title
 
   belongs_to :image
+
 end

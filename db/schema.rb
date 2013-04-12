@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108231738) do
+ActiveRecord::Schema.define(:version => 20130412200005) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -170,6 +170,20 @@ ActiveRecord::Schema.define(:version => 20111108231738) do
   end
 
   add_index "foods", ["id"], :name => "index_foods_on_id"
+
+  create_table "homeslides", :force => true do |t|
+    t.string   "caption"
+    t.integer  "photo_id"
+    t.string   "video_embed"
+    t.integer  "order"
+    t.boolean  "is_video"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "published"
+  end
+
+  add_index "homeslides", ["id"], :name => "index_homeslides_on_id"
 
   create_table "images", :force => true do |t|
     t.integer  "parent_id"

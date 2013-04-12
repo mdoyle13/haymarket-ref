@@ -1,7 +1,7 @@
 <% if refinery_user? %>
   <% unless admin? or login? # jquery scripts should already be cached when using the site bar as login has happened. %>
     <%= stylesheet_link_tag('refinery/site_bar') %>
-    <%= jquery_include_tags %>
+    <%#= jquery_include_tags %>
     <%= javascript_include_tag 'jquery/jquery.corner.js' %>
     <script type='text/javascript'>
       $(document).ready(function() {

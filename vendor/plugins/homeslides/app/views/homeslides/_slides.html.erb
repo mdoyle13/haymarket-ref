@@ -1,0 +1,10 @@
+<% @slides = Homeslide.published %>
+<ul class="slides">
+<% @slides.each do |slide| %>
+	<% if slide.is_video? %>
+		<li><%= slide.video_embed %></li>
+	<% else %>
+		<li><%= image_fu slide.photo %></li>
+	<% end %>
+<% end %>	
+</ul>

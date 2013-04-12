@@ -263,9 +263,9 @@ ul#menu li ul li {
 #blog_page h3 {
 	color: #fff;
 }
-
+.home-slides-wrapper,
 .home .featured_post {
-	padding: 20px 40px;
+	padding: 20px 20px 20px 40px ; /*540 px width*/
 }
 
 .home .theater {

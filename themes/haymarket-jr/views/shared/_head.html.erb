@@ -5,7 +5,7 @@
   <%= "<!--[if lt IE 9]>#{javascript_include_tag('http://html5shiv.googlecode.com/svn/trunk/html5.js')}<![endif]-->".html_safe if request.env['HTTP_USER_AGENT'] =~ /MSIE/ %>
   
 <%= stylesheet_link_tag "application", "formatting", :theme => theme %>
-	<%= stylesheet_link_tag "jquery-ui-1.8.6.custom.css", :theme => theme %>
+<%= stylesheet_link_tag "jquery-ui-1.8.6.custom.css", :theme => theme %>
 
   <%= stylesheet_link_tag "theme" %>
    <%= stylesheet_link_tag "home", :theme => theme if home_page? %>
@@ -17,6 +17,10 @@
   <%= yield :head_libraries %>
   <%= yield :head %>
  <%= javascript_include_tag "jquery", "jquery-ui", "application", "printelement", :theme => theme %>
+	<% if request.path == "/" %>
+		<%= javascript_include_tag "jquery.flexslider-min.js", :theme => theme %>
+		<%= stylesheet_link_tag "flexslider", :theme => theme %>
+	<% end %>
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
 			//$('.accordion').accordion({collapsible:true,active:false,autoHeight:false,icons: { 'header': 'ui-icon-plus', 'headerSelected': 'ui-icon-minus' }});

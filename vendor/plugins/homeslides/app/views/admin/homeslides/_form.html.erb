@@ -1,0 +1,45 @@
+<% form_for [:admin, @homeslide] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :caption -%>
+    <%= f.text_field :caption, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+      :f => f,
+      :field => :photo_id,
+      :image => @homeslide.photo,
+      :toggle_image_display => false
+    } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :video_embed -%>
+    <%= f.text_field :video_embed -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :order -%>
+    <%= f.text_field :order -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :is_video -%>
+    <%= f.check_box :is_video -%>
+  </div>
+
+ <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.homeslides.homeslide.delete')
+              } %>
+<% end -%>

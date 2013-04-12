@@ -209,7 +209,9 @@ a:visited.tbc {
 #blog_page h3 {
 	color: #fff;
 }
-
+.home-slides-wrapper {
+  padding: 20px 40px;
+}
 .home .featured_post {
 	padding: 20px 40px;
 }

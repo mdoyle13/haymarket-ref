@@ -1,0 +1,16 @@
+nb:
+  admin:
+    homeslides:
+      index:
+        create_new: Lag en ny Homeslide
+        reorder: Endre rekkefølgen på Homeslides
+        reorder_done: Ferdig å endre rekkefølgen Homeslides
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen homeslides enda. Klikk på "Lag en ny Homeslide" for å legge til din første homeslide.
+      homeslide:
+        view_live: Vis hvordan denne homeslide ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne homeslide
+        delete: Fjern denne homeslide permanent
+  homeslides:
+    show:
+      other: Andre Homeslides
