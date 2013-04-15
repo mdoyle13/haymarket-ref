@@ -1,7 +1,5 @@
 class Inquiry < ActiveRecord::Base
 
-  #cattr_accessor :human_check
-  #validates_length_of :human_check, :is => 0
   validates_presence_of :name, :message
   validates_format_of :email,
                       :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i

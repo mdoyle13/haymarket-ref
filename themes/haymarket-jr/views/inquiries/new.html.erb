@@ -5,8 +5,6 @@
 
     <% form_for @inquiry do |f| %>
       <%= f.error_messages :header_message => t('.header_message'), :message => t('.message') %>
-      <p style="display:none;"><%#= f.text_field :human_check %></p>
-      
       <p>
         <%= f.required_label :name, 'Your Name' %><br />
         <%= f.text_field :name %>
