@@ -7,5 +7,5 @@ class Homeslide < ActiveRecord::Base
 
   belongs_to :photo, :class_name => 'Image'
   named_scope :published, :conditions => {:published => true}
-
+  default_scope :order => 'position'
 end
