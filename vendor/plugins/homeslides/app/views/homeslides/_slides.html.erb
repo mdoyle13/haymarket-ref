@@ -1,8 +1,8 @@
-<% @slides = Homeslide.published %>
+
 <ul class="slides">
 <% @slides.each do |slide| %>
 	<% if slide.is_video? %>
-		<li><%= slide.video_embed %></li>
+		<li><iframe id="<%= slide.id %>" src="<%= slide.video_embed %>?api=1&player_id=#{slide.id}" width="540" height="303" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
 	<% else %>
 		<li><%= image_fu slide.photo %></li>
 	<% end %>
