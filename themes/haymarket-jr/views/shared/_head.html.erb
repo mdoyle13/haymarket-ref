@@ -18,7 +18,7 @@
   <%= yield :head %>
  <%= javascript_include_tag "jquery", "jquery-ui", "application", "printelement", :theme => theme %>
 	<% if request.path == "/" %>
-		<%= javascript_include_tag "jquery.flexslider-min.js", :theme => theme %>
+		<%= javascript_include_tag "jquery.flexslider-min.js", :theme => theme %>		
 		<%= stylesheet_link_tag "flexslider", :theme => theme %>
 	<% end %>
 	<script type="text/javascript" charset="utf-8">
