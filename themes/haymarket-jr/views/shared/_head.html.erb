@@ -22,66 +22,53 @@
 		<%= javascript_include_tag "jquery.flexslider-min.js", :theme => theme %>		
 		<%= stylesheet_link_tag "flexslider", :theme => theme %>
 		<script type="text/javascript" charset="utf-8">
-		  $(window).load(function() {
-				var vimeoPlayers = jQuery('.flexslider').find('iframe'), player;
+		  $(window).load(function(){  
+
+				var vimeoPlayers = document.querySelectorAll('iframe.vimeo-player'),
+				    player;
 
 				for (var i = 0, length = vimeoPlayers.length; i < length; i++) {
-				        player = vimeoPlayers[i];
-				        $f(player).addEvent('ready', ready);
+				    player = vimeoPlayers[i];
+				    $f(player).addEvent('ready', ready);
 				}
 
 				function addEvent(element, eventName, callback) {
-				    if (element.addEventListener) {
-				        element.addEventListener(eventName, callback, false)
-				    } else {
-				        element.attachEvent(eventName, callback, false);
-				    }
+					(element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
 				}
 
 				function ready(player_id) {
-				    var froogaloop = $f(player_id);
-				    froogaloop.addEvent('play', function(data) {
-				     jQuery('.flexslider').flexslider("pause");
-				    });
+					var froogaloop = $f(player_id);
 
-				    froogaloop.addEvent('pause', function(data) {
-				        jQuery('.flexslider').flexslider("play");
-				    });
+					froogaloop.addEvent('play', function(data) {
+						$('.flexslider').flexslider("pause");
+					});
+
+					froogaloop.addEvent('pause', function(data) {
+						$('.flexslider').flexslider("play");
+					});
 				}
 
-				jQuery(".flexslider")
+				var slider = $(".flexslider");
 
-				.flexslider({
-				    animation: "slide",
-				    animationLoop: true,
-				    smoothHeight: true,
-				    slideshow: true,
-						slideshowSpeed: 8000,
-						pauseOnHover: true,
-						video: true,
-				    useCSS: false,
-				    before: function(slider){
-				        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
-				           $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
-				           /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
-				           playVideoAndPauseOthers($('.play3 iframe')[0]);
-				    }
+				slider.fitVids().flexslider({
+					animation: "slide",
+					animationLoop: true,
+					slideshowSpeed: 5000,
+					video: true, 
+					smoothHeight: true,
+					start: function(slider){
+						$('body').removeClass('loading');
+					},
+					before: function(slider){	
+						// this only pauses the last slide
+						$f(player).api('pause');
 
-
+						// this is the Flexslider API for targeting the current slide
+						var currentSlide = slider.slides.eq(slider.currentSlide + 1),
+							currentFrame = currentSlide.find('iframe');
+					}
 				});
-
-				function playVideoAndPauseOthers(frame) {
-				$('iframe').each(function(i) {
-				var func = this === frame ? 'playVideo' : 'stopVideo';
-				this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
-				});
-				}
-
-				/* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
-				$('.flex-next, .flex-prev').click(function() {
-				playVideoAndPauseOthers($('.play3 iframe')[0]);
-				});
-		  });
+			});
 		</script>
 	<% end %>
 	<script type="text/javascript" charset="utf-8">
