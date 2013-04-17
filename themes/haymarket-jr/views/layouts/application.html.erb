@@ -34,15 +34,16 @@
 										<script type="text/javascript" charset="utf-8">
 										  $(window).load(function() {
 										    $('.flexslider').fitVids().flexslider({
-													animation: "slide",
+																pause: true,
+																animation: "slide",
 													      directionNav: true,
-																animationLoop: true,
+																animationLoop: false,
 																useCSS: true,
-													      animationLoop: false,
 													      smoothHeight: true,
-																slideShow: false,
-																animationLoop: true
+																animationLoop: true,
+																slideShow: false
 															});
+												$('.flexslider').flexslider("pause");			
 										  });
 										</script>
 										<%= render :partial => 'homeslides/slides' %>
