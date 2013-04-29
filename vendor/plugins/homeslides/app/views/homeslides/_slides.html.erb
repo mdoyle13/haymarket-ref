@@ -3,9 +3,12 @@
 	<% if slide.is_video? %>
 		<li>
 			<iframe class="vimeo-player" id="player_<%= slide.id %>" src="<%= slide.video_embed %>?api=1&player_id=player_<%= slide.id %>" width="540" height="303" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-			</li>
+		  <p class="flex-caption"><%= slide.caption %></p>
+		</li>
 	<% else %>
-		<li><%= image_fu slide.photo %></li>
+		<li><%= image_fu slide.photo %>
+			<p class="flex-caption"><%= slide.caption %></p>
+		</li>
 	<% end %>
 <% end %>	
 </ul>
