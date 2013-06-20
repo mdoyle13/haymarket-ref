@@ -35,6 +35,23 @@
 										<%= render :partial => 'homeslides/slides' unless @slides.blank? %>
 									</div>	<!-- end flex -->							
 							</div>
+							<% if request.path == "/" %>
+	 					 						<div class='featured_post'>
+	 					 							<h2>Haymarket Blog</h2>
+	 					 							<%= render :partial => 'blogs/blog_post', :collection => Blog.published.latest_post %>
+	 					 						</div>
+	 					 						<div class='theater'>
+	 					 								<%= @page[:drinking_and_writing] %>
+	 					 						</div>
+	 					 						<% else %>
+	 					 						<div class="content">
+	 					 							<% unless yield(:body_content_left).blank? %>
+	 					 								<%= yield(:body_content_left) %>
+	 					 							<% else %>
+	 					 								<%= yield %>
+	 					 							<% end %>
+	 					 						</div>
+	 					 						<% end %>
 							<div class='theater'>
 									<%= @page[:drinking_and_writing] %>
 							</div> <!-- end theatre -->
