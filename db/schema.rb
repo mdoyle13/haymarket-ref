@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412200005) do
+ActiveRecord::Schema.define(:version => 20130708191633) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -124,6 +124,22 @@ ActiveRecord::Schema.define(:version => 20130412200005) do
   end
 
   add_index "comments", ["blog_id"], :name => "index_comments_on_blog_id"
+
+  create_table "event_inquiries", :force => true do |t|
+    t.string   "date"
+    t.string   "time"
+    t.string   "num_people"
+    t.string   "occasion"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "notes"
+    t.text     "extra_requirements"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "event_inquiries", ["id"], :name => "index_event_inquiries_on_id"
 
   create_table "event_types", :force => true do |t|
     t.string "name"

@@ -1,0 +1,42 @@
+<% content_for :body_content_left do %>
+  <div class='inquiries'>
+    <%= @page[:body] %>
+
+    <% form_for @event_inquiry do |f| %>
+      <%= f.error_messages %>
+
+     	<div class="field">
+				<%= f.required_label :date, "Desired Date" %><br>
+        <%= f.text_field :date %>
+			</div>
+			<div class="field">
+				<%= f.required_label :time, "Desired Time" %><br>
+        <%= f.text_field :time %>
+			</div>
+			<div class="field">
+				<%= f.required_label :num_people, "Number of People" %><br>
+        <%= f.text_field :num_people %>
+			</div>
+			<div class="field">
+				<%= f.required_label :occasion, "Occasion" %><br>
+        <%= f.text_field :occasion %>
+			</div>
+			<div class="field">
+				<%= f.required_label :phone, "Your Phone Number" %><br>
+        <%= f.text_field :phone %>
+			</div>
+			<div class="field">
+				<%= f.required_label :email, "Your Email" %><br>
+        <%= f.text_field :email %>
+			</div>
+			<div class="field">
+				<%= f.required_label :notes, "Notes" %><br>
+        <%= f.text_area :notes %>
+			</div>
+      <div class='actions'>
+        <%= f.submit "Send Inquiry" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<%= render :partial => "/shared/content_page" %>
