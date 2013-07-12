@@ -18,6 +18,8 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = false
 
 config.log_level = :debug
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
 # Uncomment the following lines if you're getting
 # "A copy of XX has been removed from the module tree but is still active!"

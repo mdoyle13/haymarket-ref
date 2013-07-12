@@ -1,0 +1,23 @@
+Hi there,
+
+You just received a new event inquiry on your website.
+
+--- inquiry starts ---
+
+From: <%= @event_inquiry.name %>
+Email: <%= @event_inquiry.email %>
+Phone: <%= @event_inquiry.phone %>
+Desired Date: <%= @event_inquiry.date %>
+Desired Time: <%= @event_inquiry.time %>
+Number of People: <%= @event_num_people %>
+Message:
+<%= @event_inquiry.notes %>
+
+Extras checked: <%= @event_inquiry.extra_requirements %>
+
+--- inquiry ends ---
+
+Kind Regards,
+Your Website.
+
+P.S. All your inquiries are stored in the "Inquiries" section of Refinery should you ever want to view it later there.

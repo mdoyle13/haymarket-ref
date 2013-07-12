@@ -14,5 +14,13 @@ $(document).ready(function() {
 		})
 		
 		return(false);
-	})
+	});
+	
+	$('#send-to').change(function(){
+    if ($(this).val() == "Events") {
+      document.location.href = 'event_inquiry';
+    } else {
+      $(".hidden").show();
+    }
+  });
 });

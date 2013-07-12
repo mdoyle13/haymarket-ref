@@ -16,5 +16,6 @@ class InquiryMailer < ActionMailer::Base
     sent_on     Time.now
     body        :inquiry => inquiry
   end
-
+  
+  
 end

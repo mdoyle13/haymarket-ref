@@ -468,3 +468,6 @@ ul#menu li ul li {
 .center {
 	text-align: center;
 }
+.hidden {
+  display:none;
+}

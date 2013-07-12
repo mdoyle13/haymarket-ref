@@ -1,5 +1,8 @@
 <% content_for :body_content_left do %>
   <div class='inquiries'>
+				
+				<h1>Event Booking Inquiry</h1>
+				<p>Get in touch with us. Just use the form below and we'll get back to you as soon as we can.</p>
     <%= @page[:body] %>
 
     <% form_for @event_inquiry do |f| %>
@@ -22,6 +25,10 @@
         <%= f.text_field :occasion %>
 			</div>
 			<div class="field">
+				<%= f.required_label :name, "Your Name" %><br>
+        <%= f.text_field :name %>
+			</div>
+			<div class="field">
 				<%= f.required_label :phone, "Your Phone Number" %><br>
         <%= f.text_field :phone %>
 			</div>
@@ -33,6 +40,14 @@
 				<%= f.required_label :notes, "Notes" %><br>
         <%= f.text_area :notes %>
 			</div>
+			<div class="field">
+				Check all that apply<br>
+				<input id="event_inquiry_extras" name="extras[]" type="checkbox" value="bar/drink packages, " />Bar / Drink Packages <br>
+				<input id="event_inquiry_extras" name="extras[]" type="checkbox" value="food buffet, " />Food Buffet<br>
+				<input id="event_inquiry_extras" name="extras[]" type="checkbox" value="seated dining options, " />Seated Dining Options<br>
+				<input id="event_inquiry_extras" name="extras[]" type="checkbox" value="live entertainment, " />Live Entertainment<br>
+				<input id="event_inquiry_extras" name="extras[]" type="checkbox" value="audio visual requirements" />audio visual requirements<br>
+			</div>	
       <div class='actions'>
         <%= f.submit "Send Inquiry" %>
       </div>

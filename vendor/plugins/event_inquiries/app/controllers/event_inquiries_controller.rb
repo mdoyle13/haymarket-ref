@@ -9,7 +9,10 @@ class EventInquiriesController < ApplicationController
   
   def create
     @event_inquiry = EventInquiry.new(params[:event_inquiry])
+    extras = params[:extras]
+    @event_inquiry.extra_requirements = extras.join(" ") unless extras.blank?
     if @event_inquiry.save
+      InquiryMailer.deliver_event_inquiry_notification(@event_inquiry)
       redirect_to thank_you_inquiries_url
     else
       render :new

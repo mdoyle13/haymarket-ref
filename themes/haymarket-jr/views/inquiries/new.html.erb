@@ -6,26 +6,28 @@
     <% form_for @inquiry do |f| %>
       <%= f.error_messages :header_message => t('.header_message'), :message => t('.message') %>
       <p>
-        <%= f.required_label :name, 'Your Name' %><br />
-        <%= f.text_field :name %>
-      </p>
-      <p>
-        <%= f.required_label :email, 'Your Email Address' %><br />
-        <%= f.text_field :email %>
-      </p>
-			<p>
-				<%= f.required_label :send_to, 'Send To:' %><br />
-				<select name="inquiry[send_to]">
+				<%= f.required_label :send_to, 'Topic:' %><br />
+				<select name="inquiry[send_to]" id="send-to">
+					<option></option>
 					<% @recipients.each do |recipient| %>
 						<option value="<%= recipient[0] %>"><%= recipient[0] %></option>
 					<% end %>
 				</select>
 			</p>
-      <p>
+			<p class="hidden">
+        <%= f.required_label :name, 'Your Name' %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p class="hidden">
+        <%= f.required_label :email, 'Your Email Address' %><br />
+        <%= f.text_field :email %>
+      </p>
+			
+      <p class="hidden">
         <%= f.required_label :message  %><br />
         <%= f.text_area :message, :rows => 8 %>
       </p>
-      <p>
+      <p class="hidden">
         <%= f.submit t('.send') %>
         <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if RefinerySetting.find_or_set(:show_contact_privacy_link, false) %>
       </p>
