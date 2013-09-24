@@ -1,5 +1,7 @@
 class EventInquiry < ActiveRecord::Base
 
+	NUM_PEOPLE = %w(10-20 25-40 50-60 75-100 100-150)
+
   acts_as_indexed :fields => [:date, :time, :num_people, :occasion, :phone, :email, :notes, :extra_requirements]
 
   validates_presence_of :date

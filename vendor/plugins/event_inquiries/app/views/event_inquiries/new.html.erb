@@ -18,7 +18,7 @@
 			</div>
 			<div class="field">
 				<%= f.required_label :num_people, "Number of People" %><br>
-        <%= f.text_field :num_people %>
+        <%= f.collection_select :num_people, EventInquiry::NUM_PEOPLE, :to_s, :titleize, :include_blank => true %>
 			</div>
 			<div class="field">
 				<%= f.required_label :occasion, "Occasion" %><br>
