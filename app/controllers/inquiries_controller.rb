@@ -43,8 +43,8 @@ protected
 		@recipients = [ 
 		  ["Info/Comments", 'info@haymarketbrewing.com'],
 		  ["Events", 'events@haymarketbrewing.com'],
-		  ["Pete Crowley, Owner/Brewmaster", 'pete@haymarketbrewing.com'],
-		  ['John Neurauter, Owner', 'john@haymarketbrewing.com'], 
+		  #["Pete Crowley, Owner/Brewmaster", 'pete@haymarketbrewing.com'],
+		  #['John Neurauter, Owner', 'john@haymarketbrewing.com'], 
 		  ['Chris McCoy, Chef', 'christopher@haymarketbrewing.com']
 		]
 	end
