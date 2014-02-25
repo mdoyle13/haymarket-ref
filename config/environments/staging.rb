@@ -27,9 +27,8 @@ config.log_level = :debug
 # Make sure to your bucket info is correct in amazon_s3.yml
 Refinery.s3_backend = !(ENV['S3_KEY'].nil? || ENV['S3_SECRET'].nil?)
 config.action_mailer.perform_deliveries = true
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-  :address => "localhost",
-  :port => 25,
-  :domain => "haymarketbrewing.com",
+config.action_mailer.delivery_method = :sendmail
+config.action_mailer.sendmail_settings = {
+  location: '/usr/sbin/sendmail',
+  arguments: '-i -t'
 }
