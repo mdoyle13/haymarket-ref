@@ -28,3 +28,14 @@ config.log_level = :debug
 Refinery.s3_backend = !(ENV['S3_KEY'].nil? || ENV['S3_SECRET'].nil?)
 
 config.action_mailer.perform_deliveries = true
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+  :address => "email-smtp.us-west-2.amazonaws.com",
+  :port => 587,
+  :domain => 'haymarketbrewing.com',
+  :user_name      => "AKIAJYEADVYQQFLAM5UQ",
+  :password       => "AqocVWHx3jgq9gjsGl5hkOUXzajELcYrgIhQdhWK7gHv",
+  :authentication => :login,
+  :enable_starttls_auto => true
+}
