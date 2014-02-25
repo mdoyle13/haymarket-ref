@@ -15,7 +15,7 @@ config.action_controller.perform_caching             = true
 # config.action_controller.asset_host                  = "http://assets.example.com"
 
 # Disable delivery errors, bad email addresses will be ignored
-# config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = true
 
 # Log level is set to :info by default which is the minimum to let you know what
 # is going on but without being chatty and therefore slow.
