@@ -26,7 +26,7 @@ config.log_level = :debug
 # instead of the default file system for resources and images
 # Make sure to your bucket info is correct in amazon_s3.yml
 Refinery.s3_backend = !(ENV['S3_KEY'].nil? || ENV['S3_SECRET'].nil?)
-
+config.action_mailer.perform_deliveries = true
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
   :address => "localhost",
