@@ -46,7 +46,7 @@ protected
 		  #["Pete Crowley, Owner/Brewmaster", 'pete@haymarketbrewing.com'],
 		  #['John Neurauter, Owner', 'john@haymarketbrewing.com'],
 		  ['Chris McCoy, Chef', 'christopher@haymarketbrewing.com'],
-      ['Janna Mestan', 'janna@haymarketbrewing.com'],
+      ['Janna Mestan', 'mdoyle13@gmail.com'],
 		]
 	end
 
